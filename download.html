@@ -50,7 +50,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
 .nav-dropdown{position:relative;}
 .nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
 .nav-dropdown-menu a:hover{background:var(--cloud);}
@@ -75,7 +75,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .phone-mockup-section{background:var(--cloud);padding:96px 0;}
 .phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
 @media(max-width:768px){.phone-grid{grid-template-columns:1fr;}.phone-mockup-img{display:none;}}
-.phone-mockup-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);max-width:320px;margin:0 auto;}
+.phone-mockup-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);max-width:448px;width:100%;margin:0 auto;}
 .features-cols{background:var(--white);padding:96px 0;}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 @media(max-width:768px){.feat-grid{grid-template-columns:1fr;}}
@@ -138,7 +138,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="nav-inner">
       <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
       </a>
       <ul class="nav-links" role="list">
         <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
@@ -193,7 +193,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     <p class="reveal reveal-delay-1">The FotoFinish mobile app puts photo verification in every janitor's pocket. Download it free on iOS and Android.</p>
     <div class="download-btns reveal reveal-delay-2">
       <!-- App Store -->
-      <a href="#" class="download-btn" aria-label="Download FotoFinish on the App Store (iOS)">
+      <a href="https://apps.apple.com/us/app/fotofinish-remote/id1535271698" class="download-btn" target="_blank" rel="noopener" aria-label="Download FotoFinish on the App Store (iOS)">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--navy)" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div>
           <span class="download-btn-sub">Download on the</span>
@@ -201,7 +201,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </div>
       </a>
       <!-- Google Play -->
-      <a href="#" class="download-btn" aria-label="Download FotoFinish on Google Play (Android)">
+      <a href="https://play.google.com/store/apps/details?id=com.moderncleaning.fotofinish_client_app" class="download-btn" target="_blank" rel="noopener" aria-label="Download FotoFinish on Google Play (Android)">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--navy)" aria-hidden="true"><path d="M3.18 23.76a2 2 0 01-.68-.64 2 2 0 01-.25-.98V1.86c0-.36.08-.68.25-.98.17-.29.4-.52.68-.64L13.5 12 3.18 23.76zm1.43.55L16.5 18.2l-2.88-2.88L4.61 24.31zM18.3 13.1L15.94 12l2.36-1.1 2.47 1.1-2.47 1.1zM4.61-.31l9.01 8.99-2.88 2.88L4.61-.31z"/></svg>
         <div>
           <span class="download-btn-sub">Get it on</span>
@@ -327,7 +327,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
       <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
@@ -348,7 +348,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
-window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});

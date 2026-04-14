@@ -50,7 +50,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
 .nav-dropdown{position:relative;}
 .nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
 .nav-dropdown-menu a:hover{background:var(--cloud);}
@@ -141,7 +141,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="nav-inner">
       <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
       </a>
       <ul class="nav-links" role="list">
         <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
@@ -194,26 +194,54 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <span aria-current="page">About Us</span>
       </nav>
       <h1 class="reveal">We Built FotoFinish to End the Guessing Game</h1>
-      <p class="reveal reveal-delay-1">A team of operators, technologists, and cleaning industry veterans — on a mission to make standards stick.</p>
+      <p class="reveal reveal-delay-1">We built FotoFinish because we lived the chaos of managing cleaning operations across dozens of sites and refused to accept that there was no better way.</p>
     </div>
   </div>
 </section>
 
-<!-- Our Story -->
+<!-- Our Story: Hero's Journey -->
 <section class="story-section" aria-labelledby="story-heading">
   <div class="container">
-    <div class="story-grid">
+
+    <div class="story-grid" style="margin-bottom:72px;">
       <div class="reveal">
-        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Our Story</span>
-        <h2 id="story-heading">Built by People Who Have Managed Cleaning Operations</h2>
-        <p style="margin:16px 0;">FotoFinish was founded on a simple insight: supervisors cannot be everywhere, but photo evidence can. We watched multi-site operators spend enormous amounts of time and money traveling to sites just to verify what had already been done — or not done.</p>
-        <p style="margin-bottom:16px;">We built FotoFinish because we knew there was a better way. The FotoFlow system uses patent-pending technology to create a random, daily-changing photo verification loop that makes it virtually impossible for on-site staff to game the system — and virtually effortless for supervisors to stay informed.</p>
-        <p>Today, FotoFinish is trusted at over 6,000 sites worldwide, across cleaning companies, facility management firms, franchises, retail chains, and more.</p>
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">The Problem We Lived</span>
+        <h2 id="story-heading">We Were Losing Our Minds Trying to Supervise at Scale</h2>
+        <p style="margin:16px 0;">We were operators first. Before FotoFinish, we managed cleaning contracts across dozens of locations — retail chains, office buildings, healthcare facilities. Every day we faced the same impossible question: how do you know the work was actually done?</p>
+        <p style="margin-bottom:16px;">Supervisors were spending two hours driving to a site just to verify what took fifteen minutes to clean. We were flying blind between visits, trusting verbal reports, reacting to angry client calls about things that had been wrong for days. We were constantly behind, constantly apologizing, and constantly losing money on unnecessary travel.</p>
+        <p>We tried clipboards, WhatsApp groups, shared spreadsheets, hired more supervisors. Nothing scaled. Nothing gave us real-time proof. Nothing changed the behavior of the people doing the work.</p>
       </div>
       <div class="story-img reveal reveal-delay-2">
-        <img src="assets/app-photos/Results Dashboard Laptop Man on Phone.png" alt="Man reviewing FotoFinish results dashboard on a laptop while speaking on the phone at a commercial office" loading="lazy">
+        <img src="assets/app-photos/Results Dashboard Laptop Man on Phone.png" alt="Operations manager reviewing site status remotely on a laptop" loading="lazy">
       </div>
     </div>
+
+    <div class="story-grid" style="margin-bottom:72px;">
+      <div class="story-img reveal reveal-delay-1" style="order:-1;">
+        <img src="assets/app-photos/FotoFlow Laptop 1 Person Camera.png" alt="FotoFinish FotoFlow setup screen on a laptop showing reference photo configuration" loading="lazy">
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">The Turning Point</span>
+        <h3>What If the Work Verified Itself?</h3>
+        <p style="margin:16px 0;">One night, after a particularly brutal week of surprise client complaints and a supervisor who swore a site had been cleaned when it clearly hadn't, we asked ourselves: what would it take to make dishonesty nearly impossible and verification nearly effortless?</p>
+        <p style="margin-bottom:16px;">The answer wasn't more people. It was smarter technology. We designed a system where employees submit photo evidence at the end of every shift — guided by reference images that rotate randomly so no one can game it. The photos go straight to the dashboard. Supervisors see everything. Clients see everything. The guessing stops.</p>
+        <p>We called it FotoFlow. And it changed how we ran our own operations before we ever offered it to anyone else.</p>
+      </div>
+    </div>
+
+    <div class="story-grid">
+      <div class="reveal">
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">The Result</span>
+        <h3>From Operators to Builders — and Back Again</h3>
+        <p style="margin:16px 0;">We rebuilt our entire supervision model around FotoFlow. Supervisor travel dropped by more than half. Client satisfaction went up. Staff performance improved because accountability was visible every single day — not just on inspection days.</p>
+        <p style="margin-bottom:16px;">We realized we had solved a problem that every multi-site operator faces, whether they manage 5 sites or 5,000. So we built FotoFinish into a full platform, added the Evaluation Center, the Manager App, attendance tracking, and analytics — and opened it to the world.</p>
+        <p>Today, FotoFinish is trusted at over 6,000 sites across cleaning companies, facility management firms, franchises, retail chains, and more. We are still operators at heart. We built this for people like us — and we are not done building.</p>
+      </div>
+      <div class="story-img reveal reveal-delay-2">
+        <img src="assets/app-photos/Team laptop History of Reports.png" alt="Team reviewing FotoFinish photo report history on a laptop" loading="lazy">
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -227,43 +255,6 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <span>"Every shift should be documentable.</span>
           <span>Every standard should be verifiable.</span>
           <span>Every site should be accountable."</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Team -->
-<section class="team-section" aria-labelledby="team-heading">
-  <div class="container">
-    <div class="section-header reveal">
-      <span class="label">The Team</span>
-      <h2 id="team-heading">Who We Are</h2>
-      <p>Three co-founders who have lived the problem firsthand — and built the solution.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal reveal-delay-1">
-        <img src="assets/team/Alejandro Bremer profile pic FF Background.png" alt="Alejandro Bremer, Co-founder and CEO of FotoFinish" class="team-photo" loading="lazy">
-        <div class="team-body">
-          <h4>Alejandro Bremer</h4>
-          <div class="team-role">Co-founder &amp; CEO</div>
-          <p>Operator and entrepreneur with deep experience in multi-site cleaning operations and facility management across North America and Latin America.</p>
-        </div>
-      </div>
-      <div class="team-card reveal reveal-delay-2">
-        <img src="assets/team/David Godfrey profile pic FF Background.png" alt="David Godfrey, Co-founder of FotoFinish" class="team-photo" loading="lazy">
-        <div class="team-body">
-          <h4>David Godfrey</h4>
-          <div class="team-role">Co-founder</div>
-          <p>Technology and product leader with a background in building scalable software platforms for operations-intensive industries.</p>
-        </div>
-      </div>
-      <div class="team-card reveal reveal-delay-3">
-        <img src="assets/team/Raj Uttamchandani profile pic FF Background.png" alt="Raj Uttamchandani, Co-founder of FotoFinish" class="team-photo" loading="lazy">
-        <div class="team-body">
-          <h4>Raj Uttamchandani</h4>
-          <div class="team-role">Co-founder</div>
-          <p>Business strategist and growth leader with experience scaling B2B SaaS companies across multiple verticals and geographies.</p>
         </div>
       </div>
     </div>
@@ -344,7 +335,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
       <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
@@ -365,7 +356,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
-window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 </script>

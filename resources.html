@@ -50,7 +50,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
 .nav-dropdown{position:relative;}
 .nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
 .nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
 .nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
 .nav-dropdown-menu a:hover{background:var(--cloud);}
@@ -127,7 +127,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="nav-inner">
       <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
       </a>
       <ul class="nav-links" role="list">
         <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
@@ -357,7 +357,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
       <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
@@ -378,7 +378,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
-window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 </script>
