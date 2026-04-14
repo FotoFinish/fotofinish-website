@@ -211,6 +211,12 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <span class="label" style="color:var(--blue);display:block;margin-bottom:16px;">Send Us a Message</span>
           <h2 id="contact-form-heading" style="font-size:clamp(22px,3vw,30px);margin-bottom:24px;">We Would Love to Hear from You</h2>
           <form id="contactForm" novalidate aria-label="Contact form">
+  <!-- Web3Forms: get your free access key at web3forms.com (enter hello@fotofinish.com) -->
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+  <input type="hidden" name="subject" value="New FotoFinish Website Inquiry">
+  <input type="hidden" name="from_name" value="FotoFinish Website">
+  <input type="hidden" name="redirect" value="false">
+  <input type="checkbox" name="botcheck" style="display:none;">
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">First Name <span aria-hidden="true" style="color:#c00;">*</span></label>
@@ -374,7 +380,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
       <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
-      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
+      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
@@ -398,14 +404,37 @@ const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)')
 if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
-// Form submit (client-side demo)
-document.getElementById('contactForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  const required=['firstName','lastName','email','subject','message'];
-  let valid=true;
-  required.forEach(id=>{const el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#c00';valid=false;}else{el.style.borderColor='';}});
-  if(valid){this.style.display='none';document.getElementById('formSuccess').classList.add('visible');}
-});
+// Contact form — Web3Forms submission
+const contactForm = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    try {
+      const data = new FormData(contactForm);
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: data
+      });
+      const json = await res.json();
+      if (json.success) {
+        formSuccess.classList.add('visible');
+        contactForm.reset();
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please try again or email us at hello@fotofinish.com');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      alert('Something went wrong. Please try again or email us at hello@fotofinish.com');
+    }
+  });
+}
 </script>
 </body>
 </html>
