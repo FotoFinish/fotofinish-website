@@ -75,10 +75,9 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
 .nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
 .nav.scrolled .nav-link{color:var(--navy);}
-.nav.scrolled .nav-logo-img{filter:none;}
 .nav-inner{display:flex;align-items:center;height:72px;gap:0;}
 .nav-logo{display:flex;align-items:center;flex-shrink:0;}
-.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;transition:opacity var(--transition);}
 .nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
 .nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
 .nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
@@ -1395,10 +1394,10 @@ const navLogo = document.getElementById('navLogo');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     nav.classList.add('scrolled');
-    navLogo.src = 'FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';
+    navLogo.src = 'assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';
   } else {
     nav.classList.remove('scrolled');
-    navLogo.src = 'FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';
+    navLogo.src = 'assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';
   }
 }, { passive: true });
 
