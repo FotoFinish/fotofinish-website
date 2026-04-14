@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On-site User Training | FotoFinish</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}ul{list-style:none;}
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
+.section-header h2{margin-bottom:16px;}
+.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .nav-logo-img{filter:none;}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}}
+.page-hero{min-height:420px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%);pointer-events:none;}
+.page-hero-inner{max-width:700px;}
+.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
+.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
+.page-hero .breadcrumb a:hover{color:var(--white);}
+.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
+.page-hero h1{color:var(--white);margin-bottom:16px;}
+.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
+.steps-section{background:var(--white);padding:96px 0;}
+.steps-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;}
+@media(max-width:900px){.steps-grid{grid-template-columns:1fr;}}
+.step-card{background:var(--cloud);border-radius:20px;padding:32px 24px;position:relative;text-align:center;}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.step-card h4{margin-bottom:10px;font-size:16px;}
+.step-card p{font-size:13px;}
+.video-section{background:var(--cloud);padding:96px 0;}
+.video-wrapper{max-width:760px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;}
+.video-wrapper iframe{width:100%;height:100%;border:none;display:block;}
+.faq-section{background:var(--white);padding:96px 0;}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);}
+.faq-item.open{border-color:rgba(0,63,115,.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:16px;color:var(--navy);background:var(--white);border:none;width:100%;text-align:left;transition:background var(--transition);}
+.faq-q:hover{background:var(--cloud);}
+.faq-q:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
+.faq-icon{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--cloud);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--navy);}
+.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition);}
+.faq-item.open .faq-icon svg{stroke:var(--white);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.7;border-top:1px solid rgba(0,63,115,.08);}
+.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
+.cta-band h2{color:var(--white);margin-bottom:16px;}
+.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-top-hook{background:var(--navy);padding:32px 0;}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link" aria-haspopup="true">Services <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="fotofinish-redesign.html#pricing" class="nav-link" aria-haspopup="true">Pricing <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="fotofinish-redesign.html#pricing" role="menuitem">Subscription Plans</a>
+            <a href="fotofinish-redesign.html#roi" role="menuitem">Cleaning ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">Training <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">About <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="On-site training hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="fotofinish-redesign.html">Home</a>
+        <span>/</span>
+        <a href="training-onsite.html">Training</a>
+        <span>/</span>
+        <span aria-current="page">On-site User</span>
+      </nav>
+      <h1 class="reveal">Training for On-site Users</h1>
+      <p class="reveal reveal-delay-1">Learn how to submit photo reports and complete your shift checklist in minutes. No prior experience needed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Step-by-step Guide -->
+<section class="steps-section" aria-labelledby="steps-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Step-by-step Guide</span>
+      <h2 id="steps-heading">How to Use FotoFinish in 5 Steps</h2>
+      <p>From downloading the app to submitting your first report, here is everything you need to know.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h4>Download the App</h4>
+        <p>Get the FotoFinish app from the <a href="download.html" style="color:var(--navy);font-weight:600;border-bottom:1px solid var(--blue);">App Store or Google Play</a>. It is free to download.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h4>Log In to Your Account</h4>
+        <p>Use the email and password your administrator provided. Tap "Log In" to access your assigned sites and FotoFlows.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h4>Select Your Site</h4>
+        <p>From the home screen, select the site you are working at today. Your assigned FotoFlow will load automatically.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h4>Capture and Replicate Photos</h4>
+        <p>The app shows you a reference photo from each slot. After cleaning, take a matching photo of that area from the same angle.</p>
+      </div>
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num" aria-hidden="true">5</div>
+        <h4>Tap "Finish" to Submit</h4>
+        <p>Once all photos are captured, tap "Finish" to submit your report. Your supervisor receives it instantly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Tutorial -->
+<section class="video-section" aria-labelledby="video-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Full Walkthrough</span>
+      <h2 id="video-heading">Watch the Full Training Video</h2>
+      <p>This video walks through the complete on-site user experience, from opening the app to submitting your first report.</p>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe src="https://www.youtube.com/embed/7qVWBk42mpk?rel=0&modestbranding=1" title="FotoFinish Full Walkthrough — On-site User Training" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="onsite-faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">FAQ</span>
+      <h2 id="onsite-faq-heading">Common Questions from On-site Users</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need WiFi to submit my photos?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">You need a data connection (WiFi or cellular) to submit your report. If your connection is poor, you can take the photos offline and they will sync when you reconnect. Most sites with a cell signal will work fine.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if I make a mistake while taking a photo?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">No problem. Before you tap "Finish," you can retake any photo in your report. Just tap back to that slot and capture the image again. The app will replace the previous photo.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How many photos do I need to take per shift?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">The number of photos depends on how your FotoFlow has been configured by your administrator. Typically it is between 5 and 15 photos per shift. The app will show you exactly how many are required before you begin.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does "random" mean? Why do the photos change each shift?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">Each "slot" in your FotoFlow contains several reference photos of different areas at your site. Every shift, the app randomly picks one from each slot. This means the exact set of photos you are asked to take changes each day, ensuring a representative and honest report of the whole site over time.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="onsite-cta-heading">
+  <div class="container">
+    <h2 class="reveal" id="onsite-cta-heading">Ready to Get Started?</h2>
+    <p class="reveal reveal-delay-1">Download the app and submit your first photo report today.</p>
+    <div class="cta-band-btns reveal reveal-delay-2">
+      <a href="download.html" class="btn btn-yellow btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download the App
+      </a>
+      <a href="training-admin.html" class="btn btn-ghost btn-lg">Admin Training</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer-top-hook">
+  <div class="container">
+    <div class="footer-hook-text"><h4>Stop guessing. Start verifying.</h4><p>10-day free trial · No credit card · Cancel anytime</p></div>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
+  </div>
+</div>
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
+      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
+</script>
+</body>
+</html>

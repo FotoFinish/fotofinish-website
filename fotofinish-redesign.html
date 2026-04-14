@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FotoFinish – Cut Supervision Costs by Up to 40%</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── BRAND TOKENS ─────────────────────────────────────── */
+:root {
+  --navy:    #003F73;
+  --blue:    #75BEE9;
+  --yellow:  #FBF49B;
+  --gray:    #555555;
+  --dark:    #1A2B3C;
+  --cloud:   #F2F5F9;
+  --white:   #FFFFFF;
+  --shadow:  0 4px 24px rgba(0,63,115,.10);
+  --shadow-lg: 0 12px 48px rgba(0,63,115,.16);
+  --radius:  12px;
+  --transition: .22s cubic-bezier(.4,0,.2,1);
+}
+
+/* ── REDUCED MOTION ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .hero-device { animation: none !important; }
+  .hero-stat   { animation: none !important; }
+  .reveal      { opacity: 1 !important; transform: none !important; }
+}
+
+/* ── RESET ─────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+
+/* ── TYPOGRAPHY ────────────────────────────────────────── */
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+
+/* ── LAYOUT ────────────────────────────────────────────── */
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
+.section-header h2{margin-bottom:16px;}
+.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
+
+/* ── BUTTONS ───────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+
+/* ── NAV ───────────────────────────────────────────────── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .nav-logo-img{filter:none;}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hamburger{display:flex;color:var(--white);}
+  .nav.scrolled .hamburger{color:var(--navy);}
+}
+
+/* ── HERO ──────────────────────────────────────────────── */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(117,190,233,.2);border:1px solid rgba(117,190,233,.4);color:var(--blue);font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;border-radius:20px;padding:6px 16px;margin-bottom:24px;}
+.hero h1{color:var(--white);margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--yellow);}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:36px;max-width:480px;}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px;}
+.hero-cta-secondary{margin-bottom:20px;}
+.hero-note{font-size:13px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px;}
+.hero-visual{position:relative;display:flex;justify-content:center;}
+.hero-device{border-radius:24px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.35);animation:floatY 4s ease-in-out infinite;max-width:420px;width:100%;}
+.hero-device img{width:100%;height:auto;display:block;object-fit:cover;}
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.hero-stat{position:absolute;bottom:-16px;left:-16px;background:var(--white);border-radius:var(--radius);padding:14px 20px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:12px;animation:floatY 4s ease-in-out infinite reverse;}
+.hero-stat-num{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:24px;color:var(--navy);}
+.hero-stat-label{font-size:13px;color:var(--gray);line-height:1.3;}
+@media(max-width:768px){.hero-grid{grid-template-columns:1fr;}.hero-visual{display:none;}}
+
+/* ── LOGO GRID ─────────────────────────────────────────── */
+.logos-section{background:var(--white);padding:64px 0;border-bottom:1px solid rgba(0,63,115,.07);}
+.logos-label{text-align:center;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(0,63,115,.35);margin-bottom:36px;}
+.logos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:28px 40px;align-items:center;justify-items:center;}
+.logo-item{filter:grayscale(1) opacity(.5);transition:filter var(--transition);cursor:pointer;}
+.logo-item:hover{filter:grayscale(0) opacity(1);}
+.logo-item img{height:32px;width:auto;object-fit:contain;display:block;}
+@media(max-width:900px){.logos-grid{grid-template-columns:repeat(4,1fr);}}
+@media(max-width:560px){.logos-grid{grid-template-columns:repeat(3,1fr);}}
+
+/* ── FEATURES ──────────────────────────────────────────── */
+.features{background:var(--cloud);}
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+.feature-card{background:var(--white);border:1px solid rgba(0,63,115,.07);border-radius:20px;padding:36px 32px;transition:box-shadow var(--transition),transform var(--transition),border-color var(--transition);cursor:pointer;}
+.feature-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);border-color:rgba(0,63,115,.18);}
+.feature-icon{width:52px;height:52px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.feature-icon svg{width:24px;height:24px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.feature-card h3{font-size:20px;margin-bottom:10px;}
+.feature-card p{font-size:15px;}
+@media(max-width:768px){.features-grid{grid-template-columns:1fr;}}
+
+/* ── SOLUTIONS BY ROLE ─────────────────────────────────── */
+.solutions{background:var(--white);}
+.role-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:48px;flex-wrap:wrap;}
+.role-tab{font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:14px;padding:10px 22px;border-radius:40px;border:2px solid rgba(0,63,115,.15);color:var(--gray);background:var(--white);cursor:pointer;transition:all var(--transition);}
+.role-tab:hover{border-color:var(--navy);color:var(--navy);}
+.role-tab.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.role-tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px;}
+.role-panel{display:none;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.role-panel.active{display:grid;}
+.role-panel-text .label{color:var(--blue);display:block;margin-bottom:12px;}
+.role-panel-text h3{font-size:clamp(22px,3vw,32px);margin-bottom:16px;}
+.role-panel-text p{font-size:17px;margin-bottom:24px;}
+.role-bullets{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.role-bullet{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);}
+.role-bullet svg{width:18px;height:18px;flex-shrink:0;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px;}
+.role-panel-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);}
+.role-panel-img img{width:100%;height:auto;display:block;object-fit:cover;max-height:360px;}
+.role-panel-img-placeholder{width:100%;aspect-ratio:4/3;background:linear-gradient(135deg,var(--navy),#005599);border-radius:20px;display:flex;align-items:center;justify-content:center;}
+@media(max-width:768px){.role-panel.active{grid-template-columns:1fr;}.role-panel-img{display:none;}}
+
+/* ── SOCIAL PROOF BAND ─────────────────────────────────── */
+.proof-band{background:linear-gradient(135deg,var(--navy),#005599);padding:64px 0;}
+.proof-inner{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center;}
+.proof-stat{text-align:center;}
+.proof-stat-num{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:72px;line-height:1;color:var(--yellow);}
+.proof-stat-label{font-size:16px;color:rgba(255,255,255,.7);margin-top:8px;}
+.proof-quote{border-left:3px solid var(--blue);padding-left:32px;}
+.proof-quote blockquote{font-family:'Plus Jakarta Sans',Arial;font-style:italic;font-weight:300;font-size:20px;color:rgba(255,255,255,.9);line-height:1.6;margin-bottom:16px;}
+.proof-attribution{font-weight:600;font-size:14px;color:var(--blue);letter-spacing:.5px;}
+@media(max-width:768px){.proof-inner{grid-template-columns:1fr;}.proof-stat-num{font-size:56px;}}
+
+/* ── BEFORE / AFTER ────────────────────────────────────── */
+.before-after{background:var(--cloud);padding:96px 0;}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;}
+.ba-card{border-radius:20px;overflow:hidden;position:relative;}
+.ba-card-label{position:absolute;top:16px;left:16px;z-index:2;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:20px;}
+.ba-card.before .ba-card-label{background:rgba(0,0,0,.6);color:rgba(255,255,255,.7);}
+.ba-card.after  .ba-card-label{background:var(--yellow);color:var(--navy);}
+.ba-card img{width:100%;height:280px;object-fit:cover;display:block;}
+.ba-card-body{background:var(--white);padding:24px 28px;}
+.ba-card.before .ba-card-body{background:#f8f8f8;}
+.ba-card h4{font-size:17px;margin-bottom:8px;}
+.ba-card p{font-size:14px;}
+.ba-card.before h4{color:var(--gray);}
+@media(max-width:768px){.ba-grid{grid-template-columns:1fr;}}
+
+/* ── DASHBOARD SHOWCASE ────────────────────────────────── */
+.dashboard-showcase{background:var(--navy);padding:96px 0;overflow:hidden;}
+.dashboard-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;}
+.dashboard-text .label{color:var(--blue);display:block;margin-bottom:12px;}
+.dashboard-text h2{color:var(--white);margin-bottom:16px;}
+.dashboard-text p{color:rgba(255,255,255,.75);font-size:17px;margin-bottom:32px;}
+.dashboard-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
+.dashboard-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:16px 20px;}
+.dashboard-stat-num{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:28px;color:var(--yellow);line-height:1;}
+.dashboard-stat-label{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;}
+.dashboard-img{border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,.4);}
+.dashboard-img img{width:100%;height:auto;display:block;}
+@media(max-width:768px){.dashboard-inner{grid-template-columns:1fr;}.dashboard-img{display:none;}}
+
+/* ── VIDEO ─────────────────────────────────────────────── */
+.video-section{background:var(--white);padding:96px 0;}
+.video-wrapper{max-width:760px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative;background:var(--dark);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;cursor:pointer;}
+.video-wrapper::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,63,115,.7),rgba(0,85,153,.4));}
+.video-play-btn{position:relative;z-index:1;width:80px;height:80px;border-radius:50%;background:var(--yellow);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),box-shadow var(--transition);}
+.video-wrapper:hover .video-play-btn{transform:scale(1.1);box-shadow:0 0 0 12px rgba(251,244,155,.2);}
+.video-play-btn svg{width:28px;height:28px;fill:var(--navy);margin-left:4px;}
+.video-caption{text-align:center;margin-top:20px;font-size:14px;color:var(--gray);}
+
+/* ── ROI CALCULATOR TEASER ─────────────────────────────── */
+.roi-teaser{background:linear-gradient(135deg,#EEF6FC,#F0F7F4);border-top:1px solid rgba(0,63,115,.08);border-bottom:1px solid rgba(0,63,115,.08);padding:64px 0;}
+.roi-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;}
+.roi-text h2{font-size:clamp(24px,3vw,36px);margin-bottom:12px;}
+.roi-text p{font-size:17px;margin-bottom:28px;}
+.roi-preview{background:var(--white);border-radius:20px;padding:32px;box-shadow:var(--shadow-lg);}
+.roi-row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--cloud);}
+.roi-row:last-of-type{border-bottom:none;}
+.roi-row-label{font-size:14px;color:var(--gray);}
+.roi-row-value{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:16px;color:var(--navy);}
+.roi-total{background:var(--navy);border-radius:var(--radius);padding:16px 20px;margin-top:16px;display:flex;justify-content:space-between;align-items:center;}
+.roi-total-label{font-size:14px;color:rgba(255,255,255,.7);}
+.roi-total-value{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:24px;color:var(--yellow);}
+@media(max-width:768px){.roi-inner{grid-template-columns:1fr;}}
+
+/* ── PRICING ───────────────────────────────────────────── */
+.pricing{background:var(--cloud);}
+.pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px;}
+.pricing-toggle-label{font-size:15px;font-weight:600;color:var(--gray);cursor:pointer;transition:color var(--transition);}
+.pricing-toggle-label.active{color:var(--navy);}
+.toggle-track{width:48px;height:26px;border-radius:13px;background:var(--navy);position:relative;cursor:pointer;border:none;transition:background var(--transition);}
+.toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--white);transition:transform var(--transition);}
+.toggle-track.annual::after{transform:translateX(22px);}
+.annual-badge{background:var(--yellow);color:var(--navy);font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+.pricing-card{background:var(--white);border:2px solid rgba(0,63,115,.08);border-radius:20px;padding:40px 32px;transition:box-shadow var(--transition),transform var(--transition),border-color var(--transition);cursor:pointer;}
+.pricing-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);}
+.pricing-card.featured{border-color:var(--navy);position:relative;transform:scale(1.03);}
+.pricing-card.featured:hover{transform:scale(1.03) translateY(-4px);}
+.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap;}
+.pricing-tier{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
+.pricing-card h3{font-size:24px;margin-bottom:4px;}
+.pricing-price{display:flex;align-items:baseline;gap:4px;margin:20px 0;}
+.pricing-amount{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:48px;color:var(--navy);line-height:1;}
+.pricing-period{font-size:14px;color:var(--gray);}
+.pricing-annual-note{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:8px;min-height:18px;}
+.pricing-desc{font-size:14px;color:var(--gray);margin-bottom:24px;min-height:40px;}
+.pricing-features{margin-bottom:32px;display:flex;flex-direction:column;gap:10px;}
+.pricing-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray);}
+.pricing-feature svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;}
+.pricing-divider{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,63,115,.4);margin:16px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--cloud);}
+.pricing-cta{width:100%;text-align:center;justify-content:center;}
+.pricing-note{text-align:center;font-size:13px;color:var(--gray);margin-top:10px;}
+/* Trust badges */
+.trust-badges{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;}
+.trust-badge{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);padding:10px 18px;}
+.trust-badge img{height:28px;width:auto;filter:grayscale(1) opacity(.6);object-fit:contain;}
+.trust-badge span{font-size:12px;font-weight:600;color:var(--gray);}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr;}.pricing-card.featured{transform:none;}}
+
+/* ── HOW IT WORKS ──────────────────────────────────────── */
+.hiw{background:var(--white);}
+.hiw-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;position:relative;}
+.hiw-steps::before{content:'';position:absolute;top:40px;left:calc(16.66% + 20px);right:calc(16.66% + 20px);height:2px;background:linear-gradient(90deg,var(--blue),var(--navy));z-index:0;}
+.hiw-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;z-index:1;}
+.step-num{width:80px;height:80px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;flex-shrink:0;transition:transform var(--transition),box-shadow var(--transition);}
+.step-num:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(0,63,115,.3);}
+.step-num svg{width:32px;height:32px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.hiw-step h4{font-size:18px;margin-bottom:10px;}
+.hiw-step p{font-size:14px;max-width:280px;margin:0 auto;}
+.hiw-cta{text-align:center;margin-top:52px;}
+.hiw-cta-funnel{display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:52px;}
+.funnel-arrow{color:var(--blue);}
+.funnel-arrow svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+@media(max-width:768px){.hiw-steps{grid-template-columns:1fr;gap:48px;}.hiw-steps::before{display:none;}.hiw-cta-funnel{flex-direction:column;}}
+
+/* ── TESTIMONIALS ──────────────────────────────────────── */
+.testimonials{background:var(--cloud);overflow:hidden;}
+.test-marquee-wrap{position:relative;width:100%;overflow:hidden;mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0%,black 8%,black 92%,transparent 100%);}
+.test-marquee-wrap:hover .test-track{animation-play-state:paused;}
+.test-track{display:flex;gap:24px;width:max-content;animation:marquee-scroll 40s linear infinite;}
+@keyframes marquee-scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.test-card{background:var(--white);border:1px solid rgba(0,63,115,.08);border-radius:20px;padding:32px 36px;width:360px;flex-shrink:0;transition:box-shadow var(--transition);cursor:default;}
+.test-card:hover{box-shadow:var(--shadow-lg);}
+.test-stars{display:flex;gap:4px;margin-bottom:16px;}
+.test-stars svg{width:18px;height:18px;fill:var(--yellow);stroke:none;}
+.test-metric{display:inline-flex;align-items:center;gap:6px;background:rgba(0,63,115,.06);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:14px;}
+.test-metric svg{width:12px;height:12px;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;}
+.test-quote{font-size:15px;font-style:italic;font-weight:400;line-height:1.75;color:var(--gray);margin-bottom:24px;}
+.test-author{display:flex;align-items:center;gap:14px;}
+.test-avatar{width:44px;height:44px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:16px;color:var(--navy);}
+.test-name{font-weight:700;font-size:15px;color:var(--navy);}
+.test-role{font-size:13px;color:var(--gray);}
+@media(prefers-reduced-motion:reduce){.test-track{animation:none;}}
+
+/* ── FAQ ───────────────────────────────────────────────── */
+.faq{background:var(--white);}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);}
+.faq-item.open{border-color:rgba(0,63,115,.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:16px;color:var(--navy);background:var(--white);border:none;width:100%;text-align:left;transition:background var(--transition);}
+.faq-q:hover{background:var(--cloud);}
+.faq-q:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
+.faq-icon{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--cloud);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--navy);}
+.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition);}
+.faq-item.open .faq-icon svg{stroke:var(--white);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.7;border-top:1px solid rgba(0,63,115,.08);}
+.faq-a-inner a{color:var(--navy);font-weight:600;border-bottom:1px solid var(--blue);}
+
+/* ── CTA BAND ──────────────────────────────────────────── */
+.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
+.cta-band h2{color:var(--white);margin-bottom:16px;}
+.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ── FOOTER ────────────────────────────────────────────── */
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-top-hook{background:var(--navy);padding:32px 0;margin-bottom:0;}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png"
+             alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">
+            Services
+            <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#pricing" class="nav-link" aria-haspopup="true">
+            Pricing
+            <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="#pricing" role="menuitem">Subscription Plans</a>
+            <a href="#roi" role="menuitem">Cleaning ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#how-it-works" class="nav-link" aria-haspopup="true">
+            Training
+            <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">
+            About
+            <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+            <a href="https://blog.fotofinish.com" role="menuitem">Blog</a>
+          </div>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <button class="hamburger" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section class="hero" aria-label="Hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-label" aria-hidden="true">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Photo Verification Platform
+        </div>
+        <h1>Cut Supervision Costs<br><em>by Up to 40%</em></h1>
+        <p class="hero-sub">FotoFinish delivers real-time photo verification so multi-site operators maintain consistent standards: no travel, no guesswork.</p>
+        <div class="hero-ctas">
+          <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow btn-lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Start Your Free 10-Day Trial
+          </a>
+          <a href="#" class="btn btn-ghost btn-lg">Book a Demo</a>
+        </div>
+        <div class="hero-cta-secondary">
+          <a href="#how-it-works" class="btn btn-ghost" style="background:transparent;border-color:rgba(255,255,255,.15);font-size:14px;padding:9px 18px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            See How It Works
+          </a>
+        </div>
+        <p class="hero-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          No Credit Card Required
+        </p>
+      </div>
+
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hero-device">
+          <img src="assets/photos/Hand Cellphone Sink.png"
+               alt="Cleaning staff using the FotoFinish mobile app to submit a photo report at a commercial sink"
+               width="420" height="560" loading="eager">
+        </div>
+        <div class="hero-stat" aria-label="300% increase in client satisfaction">
+          <div>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin-bottom:4px;" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div>
+            <div class="hero-stat-num">300%</div>
+            <div class="hero-stat-label">Increase in<br>client satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CLIENT LOGO GRID
+══════════════════════════════════════════════════════ -->
+<section class="logos-section" aria-label="Trusted by leading companies">
+  <div class="container">
+    <p class="logos-label">Trusted by leading organizations worldwide</p>
+    <div class="logos-grid" role="list">
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/CBRE-logo.png"
+             alt="CBRE" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/Fedex logo.png"
+             alt="FedEx" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/TheHomeDepot.svg.png"
+             alt="The Home Depot" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/DHL Logo.jpg"
+             alt="DHL" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/JLL Logo.png"
+             alt="JLL" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/Mondelez Logo.png"
+             alt="Mondelez" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-3" role="listitem">
+        <img src="assets/logos/CinepolisUSA_Logo.jpg"
+             alt="Cinépolis USA" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/Ford Logo.svg"
+             alt="Ford" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/RBC Logo.png"
+             alt="RBC" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/Broncos Logo.jpg"
+             alt="Denver Broncos" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/2560px-Cinnabon_logo.svg.png"
+             alt="Cinnabon" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/Vivaaerobus Logo.jpg"
+             alt="Viva Aerobús" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-3" role="listitem">
+        <img src="assets/logos/Deacero logo.jpeg"
+             alt="Deacero" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-1" role="listitem">
+        <img src="assets/logos/Sonic Logo.png"
+             alt="Sonic Drive-In" width="80" height="32" loading="lazy">
+      </div>
+      <div class="logo-item reveal reveal-delay-2" role="listitem">
+        <img src="assets/logos/petsmart_Logo.jpeg"
+             alt="PetSmart" width="80" height="32" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FEATURES
+══════════════════════════════════════════════════════ -->
+<section class="features section" aria-labelledby="features-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Why FotoFinish</span>
+      <h2 id="features-heading">Results That Pay for Themselves</h2>
+    </div>
+    <div class="features-grid">
+
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9 9h4.5a2.5 2.5 0 010 5H9m0 0h6"/></svg>
+        </div>
+        <h3>Cut Supervision Costs Up to 40%</h3>
+        <p>Decrease on-site visits and the travel costs that go with them. Remote photo-verified reports replace most in-person inspections.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <h3>Improve Cleaning Results</h3>
+        <p>Knowing that photos are reviewed by supervisors drives the cleaning culture you want. Accountability built in to every shift.</p>
+      </div>
+
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Consistency Across All Sites</h3>
+        <p>Every store, location, or facility looks up to standard. Every day, every shift, without exception.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SOLUTIONS BY ROLE
+══════════════════════════════════════════════════════ -->
+<section class="solutions section" id="solutions" aria-labelledby="solutions-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Solutions</span>
+      <h2 id="solutions-heading">Built for Every Role</h2>
+      <p>Whether you manage a cleaning company, a portfolio of facilities, or a franchise network, FotoFinish fits.</p>
+    </div>
+
+    <div class="role-tabs reveal" role="tablist" aria-label="Solution by role">
+      <button class="role-tab active" role="tab" aria-selected="true"  aria-controls="panel-cleaning"  id="tab-cleaning">Cleaning Company</button>
+      <button class="role-tab"        role="tab" aria-selected="false" aria-controls="panel-facility"  id="tab-facility">Facility Manager</button>
+      <button class="role-tab"        role="tab" aria-selected="false" aria-controls="panel-franchise" id="tab-franchise">Franchise / Retail</button>
+    </div>
+
+    <!-- Panel 1 -->
+    <div class="role-panel active" id="panel-cleaning" role="tabpanel" aria-labelledby="tab-cleaning">
+      <div class="role-panel-text">
+        <span class="label">Cleaning Companies</span>
+        <h3>Prove Your Quality Before the Client Calls</h3>
+        <p>Stop relying on word-of-mouth or rare inspections. Give your clients a live window into the quality of every shift, every day.</p>
+        <ul class="role-bullets">
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Photo reports delivered to clients automatically each shift
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Reduce supervisor travel by up to 60%
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Win and retain contracts with verifiable proof of service
+          </li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+      </div>
+      <div class="role-panel-img">
+        <img src="assets/photos/Hands FF Rest screenshot .png"
+             alt="Cleaning manager reviewing FotoFinish photo reports on a tablet"
+             width="480" height="360" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="role-panel" id="panel-facility" role="tabpanel" aria-labelledby="tab-facility" hidden>
+      <div class="role-panel-text">
+        <span class="label">Facility Managers</span>
+        <h3>Full Visibility Without Leaving Your Desk</h3>
+        <p>Manage dozens of sites from a single dashboard. Instantly see which locations are passing standards and which need attention.</p>
+        <ul class="role-bullets">
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Dashboard view across all facilities, all shifts
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Instant corrective action tickets from the manager app
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Compliance records with 1–5 year photo history
+          </li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+      </div>
+      <div class="role-panel-img">
+        <img src="assets/dashboard/Screenshot 2026-04-11 at 8.01.55 PM.png"
+             alt="FotoFinish dashboard showing multi-site cleaning compliance overview"
+             width="480" height="360" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="role-panel" id="panel-franchise" role="tabpanel" aria-labelledby="tab-franchise" hidden>
+      <div class="role-panel-text">
+        <span class="label">Franchise & Retail</span>
+        <h3>Brand Standards Enforced at Every Location</h3>
+        <p>Ensure every franchisee and every store lives up to your brand promise: visible cleanliness, every day.</p>
+        <ul class="role-bullets">
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Custom FotoFlows matching your exact brand checklist
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Franchise-wide leaderboard drives friendly competition
+          </li>
+          <li class="role-bullet">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Documented compliance for health inspections &amp; audits
+          </li>
+        </ul>
+        <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+      </div>
+      <div class="role-panel-img">
+        <img src="assets/photos/App in use Bathroom.png"
+             alt="FotoFinish app displayed on a smartphone screen in a commercial restroom setting"
+             width="480" height="360" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     SOCIAL PROOF BAND
+══════════════════════════════════════════════════════ -->
+<div class="proof-band reveal" aria-label="Social proof">
+  <div class="container">
+    <div class="proof-inner">
+      <div class="proof-stat">
+        <div class="proof-stat-num" aria-label="300 percent">300%</div>
+        <div class="proof-stat-label">increase in<br>client satisfaction</div>
+      </div>
+      <div class="proof-quote">
+        <blockquote>"Janitors now perform as if an inspector will spot-check their work daily, which dramatically increases their accountability and, in turn, the cleanliness of our sites."</blockquote>
+        <div class="proof-attribution">Verified FotoFinish Client</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     BEFORE / AFTER
+══════════════════════════════════════════════════════ -->
+<section class="before-after" id="before-after" aria-labelledby="ba-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">The FotoFinish Difference</span>
+      <h2 id="ba-heading">Before vs. After</h2>
+      <p>See what changes when every shift is documented with photo proof.</p>
+    </div>
+    <div class="ba-grid">
+      <div class="ba-card before reveal reveal-delay-1">
+        <div class="ba-card-label">Before</div>
+        <img src="../4. AI Gen Support Images/40's Supervisor Janitor and bank.png"
+             alt="Supervisor and janitor at a commercial facility without photo verification accountability"
+             width="540" height="280" loading="lazy" style="height:280px;width:100%;object-fit:cover;display:block;">
+        <div class="ba-card-body">
+          <h4>No Accountability System</h4>
+          <p>Supervisors rely on costly in-person visits and verbal reports. No proof, no consistency, no way to verify quality at scale.</p>
+        </div>
+      </div>
+      <div class="ba-card after reveal reveal-delay-2">
+        <div class="ba-card-label">After FotoFinish</div>
+        <img src="assets/photos/Hand Cellphone Toilet.png"
+             alt="Cleaning staff submitting photo proof via the FotoFinish app at a commercial restroom facility"
+             width="540" height="280" loading="lazy" style="height:280px;object-fit:contain;background:#f0f4f8;padding:12px;">
+        <div class="ba-card-body">
+          <h4>Photo-Verified Every Shift</h4>
+          <p>Every janitor submits photo evidence after each shift. Supervisors see results remotely, cutting supervision costs by up to 40%.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     DASHBOARD SHOWCASE
+══════════════════════════════════════════════════════ -->
+<section class="dashboard-showcase" aria-labelledby="dash-heading">
+  <div class="container">
+    <div class="dashboard-inner">
+      <div class="dashboard-text reveal">
+        <span class="label">The Dashboard</span>
+        <h2 id="dash-heading" style="color:var(--white);">Your Command Center for Every Site</h2>
+        <p>One view. All locations. Real-time photo reports across your entire network, from anywhere.</p>
+        <div class="dashboard-stats">
+          <div class="dashboard-stat">
+            <div class="dashboard-stat-num">+6,000</div>
+            <div class="dashboard-stat-label">Sites worldwide</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="dashboard-stat-num">40%</div>
+            <div class="dashboard-stat-label">Avg. cost reduction</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="dashboard-stat-num">300%</div>
+            <div class="dashboard-stat-label">Client satisfaction lift</div>
+          </div>
+          <div class="dashboard-stat">
+            <div class="dashboard-stat-num">10 day</div>
+            <div class="dashboard-stat-label">Free trial, no card</div>
+          </div>
+        </div>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">See Pricing Plans</a>
+      </div>
+      <div class="dashboard-img reveal reveal-delay-2">
+        <img src="assets/dashboard/Screenshot 2026-04-11 at 8.01.55 PM.png"
+             alt="FotoFinish web dashboard displaying photo submissions, site compliance scores, and trend charts across multiple locations"
+             width="600" height="400" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     VIDEO EMBED
+══════════════════════════════════════════════════════ -->
+<section class="video-section" aria-labelledby="video-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">See It in Action</span>
+      <h2 id="video-heading">How FotoFlow Works</h2>
+      <p>A 2-minute walkthrough of how the photo verification loop drives accountability on every shift.</p>
+    </div>
+    <div class="video-wrapper reveal" style="cursor:pointer;position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;">
+      <iframe
+        src="https://www.youtube.com/embed/LA48SCutGWI?rel=0&modestbranding=1"
+        title="How a FotoFlow Works - FotoFinish"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:20px;"
+        loading="lazy">
+      </iframe>
+    </div>
+    <p class="video-caption reveal reveal-delay-1">Product walkthrough · 2 min · No audio required</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     ROI CALCULATOR TEASER
+══════════════════════════════════════════════════════ -->
+<section class="roi-teaser" id="roi" aria-labelledby="roi-heading">
+  <div class="container">
+    <div class="roi-inner">
+      <div class="roi-text reveal">
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Cleaning ROI Calculator</span>
+        <h2 id="roi-heading">What Could You Save?</h2>
+        <p>On average, FotoFinish clients save $18,000/year per 10 sites by replacing physical supervision visits with remote photo verification.</p>
+        <p style="margin-top:12px;font-size:15px;">Use our full interactive calculator to see what your network could save.</p>
+        <a href="#" class="btn btn-primary" style="margin-top:28px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Open ROI Calculator
+        </a>
+      </div>
+      <div class="roi-preview reveal reveal-delay-2" aria-label="ROI estimate preview">
+        <div class="roi-row">
+          <span class="roi-row-label">Sites in your network</span>
+          <span class="roi-row-value">25 sites</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-row-label">Supervision visits per month</span>
+          <span class="roi-row-value">4 per site</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-row-label">Avg. cost per visit</span>
+          <span class="roi-row-value">$85</span>
+        </div>
+        <div class="roi-row">
+          <span class="roi-row-label">Visits eliminated by FotoFinish</span>
+          <span class="roi-row-value">~60%</span>
+        </div>
+        <div class="roi-total">
+          <span class="roi-total-label">Estimated annual savings</span>
+          <span class="roi-total-value">$61,200 / yr</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     PRICING
+══════════════════════════════════════════════════════ -->
+<section class="pricing section" id="pricing" aria-labelledby="pricing-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Pricing</span>
+      <h2 id="pricing-heading">Flexible Scale-Pricing</h2>
+      <p>Plans scale with the number of sites. Add as many users as you need at no extra cost.</p>
+    </div>
+
+    <!-- Annual/Monthly Toggle -->
+    <div class="pricing-toggle reveal" aria-label="Billing period">
+      <span class="pricing-toggle-label active" id="label-monthly">Monthly</span>
+      <button class="toggle-track" id="billingToggle" aria-pressed="false" aria-label="Toggle annual billing">
+      </button>
+      <span class="pricing-toggle-label" id="label-annual">Annual</span>
+      <span class="annual-badge" id="annualBadge" aria-label="Save 20% with annual billing">Save 20%</span>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- PRO -->
+      <div class="pricing-card reveal reveal-delay-1">
+        <div class="pricing-tier">Pro</div>
+        <h3>Pro</h3>
+        <div class="pricing-price">
+          <span class="pricing-amount" id="price-pro">$20</span>
+          <span class="pricing-period">USD / site / month</span>
+        </div>
+        <div class="pricing-annual-note" id="annual-note-pro"></div>
+        <p class="pricing-desc">Ideal for small or medium networks of sites or facilities.</p>
+        <div class="pricing-features">
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Results dashboard
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Unlimited users
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            1-year photo history
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Best-practice setup guide
+          </div>
+        </div>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-outline pricing-cta">Start 10-Day Free Trial</a>
+        <p class="pricing-note">10-day free trial · No credit card required</p>
+      </div>
+
+      <!-- PREMIUM (featured) -->
+      <div class="pricing-card featured reveal reveal-delay-2">
+        <div class="pricing-badge">Most Popular</div>
+        <div class="pricing-tier">Premium</div>
+        <h3>Premium</h3>
+        <div class="pricing-price">
+          <span class="pricing-amount" id="price-premium">$40</span>
+          <span class="pricing-period">USD / site / month</span>
+        </div>
+        <div class="pricing-annual-note" id="annual-note-premium"></div>
+        <p class="pricing-desc">Ideal for large distributed networks of sites or facilities.</p>
+        <div class="pricing-features">
+          <div class="pricing-divider">Everything in Pro, plus:</div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Attendance tracking
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Photo evaluations (1 full shift/site/day)
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            3-year photo history
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated implementation support
+          </div>
+        </div>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary pricing-cta">Start 10-Day Free Trial</a>
+        <p class="pricing-note">10-day free trial · No credit card required</p>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="pricing-card reveal reveal-delay-3">
+        <div class="pricing-tier">Enterprise</div>
+        <h3>Enterprise</h3>
+        <div class="pricing-price" style="margin-bottom:8px;">
+          <span class="pricing-amount" style="font-size:32px;">Custom</span>
+        </div>
+        <div class="pricing-annual-note">Volume pricing available</div>
+        <p class="pricing-desc">For multinational corporations managing large distributed networks. Includes SLA, integrations, and dedicated support.</p>
+        <div class="pricing-features">
+          <div class="pricing-divider">Everything in Premium, plus:</div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Volume &amp; multi-year pricing
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            5-year photo history &amp; data export
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Full onboarding &amp; onsite training
+          </div>
+          <div class="pricing-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedicated account manager + SLA
+          </div>
+        </div>
+        <a href="#" class="btn btn-outline pricing-cta">Request a Custom Quote</a>
+        <p class="pricing-note">Typically responds within 1 business day</p>
+      </div>
+
+    </div>
+
+    <!-- Trust Badges -->
+    <div class="trust-badges reveal" aria-label="Industry certifications and trust signals">
+      <div class="trust-badge">
+        <img src="assets/badges/IFMA logo.png" alt="IFMA – International Facility Management Association" loading="lazy" height="28">
+        <span>IFMA Member</span>
+      </div>
+      <div class="trust-badge">
+        <img src="assets/badges/ISSA-logo.jpeg" alt="ISSA – The Worldwide Cleaning Industry Association" loading="lazy" height="28">
+        <span>ISSA Member</span>
+      </div>
+      <div class="trust-badge">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#003F73" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>SOC 2 data security</span>
+      </div>
+    </div>
+
+    <!-- Review Platform Badges -->
+    <div class="review-badges reveal" aria-label="Software review platform badges" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid rgba(0,63,115,.08);">
+      <!-- SourceForge: Top Performer Winter 2026 -->
+      <div class="sf-root" data-id="3340613" data-badge="top-performer-winter-white" data-variant-id="sf" data-metadata="achievement=top-performer-seasonal-2026-winter" style="width:125px">
+        <a href="https://sourceforge.net/software/product/FotoFinish/" target="_blank" rel="noopener">FotoFinish Reviews</a>
+      </div>
+      <!-- Slashdot: Light Default -->
+      <div class="sf-root" data-id="3340613" data-badge="light-default" data-variant-id="sd" style="width:125px">
+        <a href="https://slashdot.org/software/p/FotoFinish/" target="_blank" rel="noopener">FotoFinish Reviews</a>
+      </div>
+      <!-- TopBusinessSoftware: Most Loved -->
+      <div class="sf-root" data-id="3340613" data-badge="most-loved" data-variant-id="tbs" style="width:125px">
+        <a href="https://topbusinesssoftware.com/products/FotoFinish/reviews/" target="_blank" rel="noopener">FotoFinish Reviews</a>
+      </div>
+      <!-- TopBusinessSoftware: High Achiever Winter 2026 -->
+      <div class="sf-root" data-id="3340613" data-badge="high-achiever-winter" data-variant-id="tbs" data-metadata="achievement=top-performer-seasonal-2026-winter" style="width:125px">
+        <a href="https://topbusinesssoftware.com/products/FotoFinish/reviews/" target="_blank" rel="noopener">FotoFinish Reviews</a>
+      </div>
+    </div>
+    <!-- Single shared badge loader (all 4 badges share the same sf_id) -->
+    <script>(function(){var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3340613&variant_id=sf';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc,p);})();</script>
+    <script>(function(){var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3340613&variant_id=sd';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc,p);})();</script>
+    <script>(function(){var sc=document.createElement('script');sc.async=true;sc.src='https://b.sf-syn.com/badge_js?sf_id=3340613&variant_id=tbs';var p=document.getElementsByTagName('script')[0];p.parentNode.insertBefore(sc,p);})();</script>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     HOW IT WORKS
+══════════════════════════════════════════════════════ -->
+<section class="hiw section" id="how-it-works" aria-labelledby="hiw-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Simplify Reporting</span>
+      <h2 id="hiw-heading">Up and Running in 3 Steps</h2>
+      <p>From setup to first photo report, in under 24 hours.</p>
+    </div>
+
+    <div class="hiw-steps">
+
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="step-num" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h4>1. Set Up Your Sites</h4>
+        <p>Add your sites, upload reference photos of how each area should look, and assign your team. Takes under 30 minutes.</p>
+      </div>
+
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="step-num" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h4>2. Capture & Submit</h4>
+        <p>After each shift, the janitor opens the app, replicates a randomly selected set of site photos, and taps "Finish."</p>
+      </div>
+
+      <div class="hiw-step reveal reveal-delay-3">
+        <div class="step-num" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h4>3. Review & Act</h4>
+        <p>Supervisors see results on the dashboard instantly. Issues are flagged, tickets are created, standards are enforced.</p>
+      </div>
+
+    </div>
+
+    <!-- Graduated CTA Funnel -->
+    <div class="hiw-cta-funnel" aria-label="Get started options">
+      <a href="#" class="btn btn-ghost" style="background:var(--cloud);color:var(--navy);border-color:var(--cloud);">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Live Demo
+      </a>
+      <span class="funnel-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+      <a href="#pricing" class="btn btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Start Free 10-Day Trial
+      </a>
+      <span class="funnel-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+      </span>
+      <a href="#" class="btn btn-outline">
+        Request Custom Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════ -->
+<section class="testimonials section" id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Testimonials</span>
+      <h2 id="testimonials-heading">What Our Clients Say</h2>
+    </div>
+  </div>
+
+  <!-- Marquee ticker -->
+  <div class="test-marquee-wrap" role="region" aria-label="Client testimonials carousel">
+    <div class="test-track">
+
+      <!-- ── CARD 1 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>60% fewer supervisor visits</div>
+        <p class="test-quote">"I like being able to view a location every day, without actually having to travel there or be there. FotoFinish gives you full visibility on all your sites, all the time."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">TL</div>
+          <div><div class="test-name">Trevor L.</div><div class="test-role">Territory Manager</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 2 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>3 years of consistent use</div>
+        <p class="test-quote">"Very positive user experience. I have been using the FotoFinish app for the past 2 to 3 years, and it is a great tool to manage what is happening at our clients' stores and branches."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">SS</div>
+          <div><div class="test-name">Sandra S.</div><div class="test-role">Franchise Supervisor</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 3 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>40% reduction in supervision costs</div>
+        <p class="test-quote">"We manage cleaning contracts across 200+ retail locations. FotoFinish eliminated the guesswork. Our clients can now see photo proof of every shift without us having to say a word."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">MR</div>
+          <div><div class="test-name">Marcus R.</div><div class="test-role">Operations Director, BSC</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 4 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Zero missed inspections in 18 months</div>
+        <p class="test-quote">"Our franchise compliance used to rely on quarterly visits. Now we have daily photo evidence from every location. Disputes with franchisees dropped to nearly zero."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">KP</div>
+          <div><div class="test-name">Karen P.</div><div class="test-role">Franchise Operations Manager</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 5 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Client retention up 25%</div>
+        <p class="test-quote">"Our clients love getting the daily photo summary. It became a key differentiator when renewing contracts (nobody else in our market offers this level of transparency)."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">JD</div>
+          <div><div class="test-name">James D.</div><div class="test-role">CEO, Commercial Cleaning Co.</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 6 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Setup in under a day</div>
+        <p class="test-quote">"Implementation was surprisingly fast. We had our first FotoFlow running the same afternoon we signed up. The onboarding support team walked us through everything."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">AL</div>
+          <div><div class="test-name">Angela L.</div><div class="test-role">Facilities Manager, Healthcare</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 7 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Used across 5 countries</div>
+        <p class="test-quote">"We rolled FotoFinish out to our operations in the US, Canada, and Latin America. The platform handles everything in one dashboard, language barriers and time zones included."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">RM</div>
+          <div><div class="test-name">Roberto M.</div><div class="test-role">VP Operations, Multi-National FM</div></div>
+        </div>
+      </div>
+
+      <!-- ── CARD 8 ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Staff performance improved 35%</div>
+        <p class="test-quote">"The moment our cleaning staff knew their work was being photo-verified, the quality went up immediately. Accountability through visibility. It really works."</p>
+        <div class="test-author">
+          <div class="test-avatar" aria-hidden="true">NW</div>
+          <div><div class="test-name">Nicole W.</div><div class="test-role">Regional Manager, Retail Chain</div></div>
+        </div>
+      </div>
+
+      <!-- ── DUPLICATE SET for seamless loop ── -->
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>60% fewer supervisor visits</div>
+        <p class="test-quote">"I like being able to view a location every day, without actually having to travel there or be there. FotoFinish gives you full visibility on all your sites, all the time."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">TL</div><div><div class="test-name">Trevor L.</div><div class="test-role">Territory Manager</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>3 years of consistent use</div>
+        <p class="test-quote">"Very positive user experience. I have been using the FotoFinish app for the past 2 to 3 years, and it is a great tool to manage what is happening at our clients' stores and branches."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">SS</div><div><div class="test-name">Sandra S.</div><div class="test-role">Franchise Supervisor</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>40% reduction in supervision costs</div>
+        <p class="test-quote">"We manage cleaning contracts across 200+ retail locations. FotoFinish eliminated the guesswork. Our clients can now see photo proof of every shift without us having to say a word."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">MR</div><div><div class="test-name">Marcus R.</div><div class="test-role">Operations Director, BSC</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Zero missed inspections in 18 months</div>
+        <p class="test-quote">"Our franchise compliance used to rely on quarterly visits. Now we have daily photo evidence from every location. Disputes with franchisees dropped to nearly zero."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">KP</div><div><div class="test-name">Karen P.</div><div class="test-role">Franchise Operations Manager</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Client retention up 25%</div>
+        <p class="test-quote">"Our clients love getting the daily photo summary. It became a key differentiator when renewing contracts (nobody else in our market offers this level of transparency)."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">JD</div><div><div class="test-name">James D.</div><div class="test-role">CEO, Commercial Cleaning Co.</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Setup in under a day</div>
+        <p class="test-quote">"Implementation was surprisingly fast. We had our first FotoFlow running the same afternoon we signed up. The onboarding support team walked us through everything."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">AL</div><div><div class="test-name">Angela L.</div><div class="test-role">Facilities Manager, Healthcare</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Used across 5 countries</div>
+        <p class="test-quote">"We rolled FotoFinish out to our operations in the US, Canada, and Latin America. The platform handles everything in one dashboard, language barriers and time zones included."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">RM</div><div><div class="test-name">Roberto M.</div><div class="test-role">VP Operations, Multi-National FM</div></div></div>
+      </div>
+      <div class="test-card">
+        <div class="test-stars" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div class="test-metric"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>Staff performance improved 35%</div>
+        <p class="test-quote">"The moment our cleaning staff knew their work was being photo-verified, the quality went up immediately. Accountability through visibility. It really works."</p>
+        <div class="test-author"><div class="test-avatar" aria-hidden="true">NW</div><div><div class="test-name">Nicole W.</div><div class="test-role">Regional Manager, Retail Chain</div></div></div>
+      </div>
+
+    </div><!-- /test-track -->
+  </div><!-- /test-marquee-wrap -->
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════════════════ -->
+<section class="faq section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">FAQ</span>
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list reveal" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can I upgrade or downgrade anytime?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Yes, you can do it by going into settings and upgrading or cancelling your subscription at any time.</div></div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          What kind of business can benefit from FotoFinish?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">FotoFinish benefits any multi-site business: cleaning companies, facility managers, franchises, retail chains, and more. The app captures whatever is important to you and your customers: cleaning results, visual merchandising, policy adherence, or vendor compliance.</div></div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          Can I use FotoFinish for things beyond cleaning?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">Yes. You can use FotoFinish to validate whatever matters to you: health &amp; safety board postings, signage, landscaping, vendor compliance, legal compliance, instrument readings, or franchise standards.</div></div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          How do I pay for FotoFinish?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">You pay through the FotoFinish portal. We accept all major credit cards and online payment methods.</div></div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          What is a FotoFlow?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">A virtual supervision flow that arranges "Slots," each containing multiple reference images of your site in ideal condition. The app randomly picks one photo from each slot and asks the employee to replicate it after cleaning. This automates a daily-changing report of representative site photos. <a href="#">Watch the animated video →</a></div></div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          What is the FotoFinish Evaluation Center?
+          <div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </button>
+        <div class="faq-a" role="region"><div class="faq-a-inner">A dedicated service where fully trained evaluators independently review each photo submission against your specific standards. Having photos evaluated independently reduces bias and frees your management team to focus on your core business.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════════════════════ -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 class="reveal" id="cta-heading">Ready to Cut Supervision Costs?</h2>
+    <p class="reveal reveal-delay-1">Join +6,000 sites worldwide. Start your free 10-day trial, no credit card required.</p>
+    <div class="cta-band-btns reveal reveal-delay-2">
+      <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow btn-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        Start Free Trial
+      </a>
+      <a href="#" class="btn btn-ghost btn-lg">Book a Demo</a>
+      <a href="#" class="btn btn-ghost btn-lg" style="border-color:rgba(255,255,255,.15);">Request Enterprise Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════ -->
+<div class="footer-top-hook">
+  <div class="container">
+    <div class="footer-hook-text">
+      <h4>Stop guessing. Start verifying.</h4>
+      <p>10-day free trial · No credit card · Cancel anytime</p>
+    </div>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today →</a>
+  </div>
+</div>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png"
+             alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Patent Pending Technology</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook">
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn">
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube">
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── NAV SCROLL BEHAVIOR ──────────────────────────────────
+const nav = document.getElementById('mainNav');
+const navLogo = document.getElementById('navLogo');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.classList.add('scrolled');
+    navLogo.src = 'FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';
+  } else {
+    nav.classList.remove('scrolled');
+    navLogo.src = 'FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';
+  }
+}, { passive: true });
+
+// ── SCROLL REVEAL ────────────────────────────────────────
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!prefersReducedMotion) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+
+// ── FAQ ACCORDION ────────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// ── SOLUTIONS TABS ───────────────────────────────────────
+const tabs = document.querySelectorAll('.role-tab');
+const panels = document.querySelectorAll('.role-panel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    panels.forEach(p => { p.classList.remove('active'); p.hidden = true; });
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    const panelId = tab.getAttribute('aria-controls');
+    const panel = document.getElementById(panelId);
+    panel.classList.add('active');
+    panel.hidden = false;
+  });
+});
+
+// ── PRICING TOGGLE ───────────────────────────────────────
+const toggle = document.getElementById('billingToggle');
+const labelMonthly = document.getElementById('label-monthly');
+const labelAnnual  = document.getElementById('label-annual');
+const annualBadge  = document.getElementById('annualBadge');
+const pricePro = document.getElementById('price-pro');
+const pricePremium = document.getElementById('price-premium');
+const notePro = document.getElementById('annual-note-pro');
+const notePremium = document.getElementById('annual-note-premium');
+let isAnnual = false;
+
+toggle.addEventListener('click', () => {
+  isAnnual = !isAnnual;
+  toggle.classList.toggle('annual', isAnnual);
+  toggle.setAttribute('aria-pressed', String(isAnnual));
+  labelMonthly.classList.toggle('active', !isAnnual);
+  labelAnnual.classList.toggle('active', isAnnual);
+  annualBadge.style.opacity = isAnnual ? '1' : '0.4';
+  if (isAnnual) {
+    pricePro.textContent = '$16';
+    pricePremium.textContent = '$32';
+    notePro.textContent = 'Billed $192/site/year (save $48)';
+    notePremium.textContent = 'Billed $384/site/year (save $96)';
+  } else {
+    pricePro.textContent = '$20';
+    pricePremium.textContent = '$40';
+    notePro.textContent = '';
+    notePremium.textContent = '';
+  }
+});
+
+// ── VIDEO WRAPPER ────────────────────────────────────────
+const videoWrapper = document.querySelector('.video-wrapper');
+if (videoWrapper) {
+  videoWrapper.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); videoWrapper.click(); }
+  });
+}
+</script>
+</body>
+</html>

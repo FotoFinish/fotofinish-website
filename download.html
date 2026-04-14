@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download the App | FotoFinish</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}ul{list-style:none;}
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
+.section-header h2{margin-bottom:16px;}
+.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .nav-logo-img{filter:none;}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}}
+.page-hero{min-height:520px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;text-align:center;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 50% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
+.page-hero .container{position:relative;z-index:1;}
+.page-hero .breadcrumb{display:flex;align-items:center;justify-content:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
+.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
+.page-hero .breadcrumb a:hover{color:var(--white);}
+.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
+.page-hero h1{color:var(--white);margin-bottom:16px;}
+.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;margin:0 auto 40px;}
+.download-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.download-btn{display:inline-flex;align-items:center;gap:14px;background:var(--white);color:var(--navy);border-radius:12px;padding:14px 28px;font-weight:700;font-size:15px;box-shadow:var(--shadow-lg);transition:transform var(--transition),box-shadow var(--transition);}
+.download-btn:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(0,0,0,.2);}
+.download-btn svg{flex-shrink:0;}
+.download-btn-sub{font-size:11px;font-weight:400;color:var(--gray);display:block;margin-bottom:2px;}
+.phone-mockup-section{background:var(--cloud);padding:96px 0;}
+.phone-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+@media(max-width:768px){.phone-grid{grid-template-columns:1fr;}.phone-mockup-img{display:none;}}
+.phone-mockup-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);max-width:320px;margin:0 auto;}
+.features-cols{background:var(--white);padding:96px 0;}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+@media(max-width:768px){.feat-grid{grid-template-columns:1fr;}}
+.feat-item{text-align:center;padding:36px 28px;border:1px solid rgba(0,63,115,.07);border-radius:20px;transition:box-shadow var(--transition);}
+.feat-item:hover{box-shadow:var(--shadow-lg);}
+.feat-icon{width:52px;height:52px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.feat-icon svg{width:24px;height:24px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.supervisor-callout{background:linear-gradient(135deg,var(--navy),#005599);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;margin-top:64px;}
+@media(max-width:768px){.supervisor-callout{grid-template-columns:1fr;}}
+.supervisor-callout h3{color:var(--white);margin-bottom:12px;}
+.supervisor-callout p{color:rgba(255,255,255,.75);}
+.faq-section{background:var(--cloud);padding:96px 0;}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);}
+.faq-item.open{border-color:rgba(0,63,115,.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:16px;color:var(--navy);background:var(--white);border:none;width:100%;text-align:left;transition:background var(--transition);}
+.faq-q:hover{background:var(--cloud);}
+.faq-q:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
+.faq-icon{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--cloud);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--navy);}
+.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition);}
+.faq-item.open .faq-icon svg{stroke:var(--white);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.7;border-top:1px solid rgba(0,63,115,.08);}
+.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
+.cta-band h2{color:var(--white);margin-bottom:16px;}
+.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-top-hook{background:var(--navy);padding:32px 0;}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link" aria-haspopup="true">Services <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="fotofinish-redesign.html#pricing" class="nav-link" aria-haspopup="true">Pricing <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="fotofinish-redesign.html#pricing" role="menuitem">Subscription Plans</a>
+            <a href="fotofinish-redesign.html#roi" role="menuitem">Cleaning ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">Training <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">About <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="Download app hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="fotofinish-redesign.html">Home</a>
+      <span>/</span>
+      <span aria-current="page">Download the App</span>
+    </nav>
+    <h1 class="reveal">Take FotoFinish Anywhere</h1>
+    <p class="reveal reveal-delay-1">The FotoFinish mobile app puts photo verification in every janitor's pocket. Download it free on iOS and Android.</p>
+    <div class="download-btns reveal reveal-delay-2">
+      <!-- App Store -->
+      <a href="#" class="download-btn" aria-label="Download FotoFinish on the App Store (iOS)">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--navy)" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <div>
+          <span class="download-btn-sub">Download on the</span>
+          App Store
+        </div>
+      </a>
+      <!-- Google Play -->
+      <a href="#" class="download-btn" aria-label="Download FotoFinish on Google Play (Android)">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--navy)" aria-hidden="true"><path d="M3.18 23.76a2 2 0 01-.68-.64 2 2 0 01-.25-.98V1.86c0-.36.08-.68.25-.98.17-.29.4-.52.68-.64L13.5 12 3.18 23.76zm1.43.55L16.5 18.2l-2.88-2.88L4.61 24.31zM18.3 13.1L15.94 12l2.36-1.1 2.47 1.1-2.47 1.1zM4.61-.31l9.01 8.99-2.88 2.88L4.61-.31z"/></svg>
+        <div>
+          <span class="download-btn-sub">Get it on</span>
+          Google Play
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Phone Mockup + Description -->
+<section class="phone-mockup-section" aria-labelledby="app-features-heading">
+  <div class="container">
+    <div class="phone-grid">
+      <div class="reveal">
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">The Mobile App</span>
+        <h2 id="app-features-heading">Built for the Person Doing the Work</h2>
+        <p style="margin:16px 0 24px;">The FotoFinish app is designed to be used at the end of every shift — in a few taps, employees capture and submit their assigned photos, creating a verified record of every clean.</p>
+        <ul style="display:flex;flex-direction:column;gap:14px;">
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Side-by-side reference photos guide each capture
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Randomly selected photos from each slot every shift
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            One tap to submit the completed report
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            View assigned tasks and corrective action items
+          </li>
+          <li style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Access full site history directly from the app
+          </li>
+        </ul>
+      </div>
+      <div class="phone-mockup-img reveal reveal-delay-2">
+        <img src="assets/app-photos/FotoFinish app in iPhone 13.png" alt="FotoFinish mobile app displayed on an iPhone 13 showing the photo capture interface" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Columns -->
+<section class="features-cols section" aria-labelledby="feat-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">What the App Does</span>
+      <h2 id="feat-heading">Everything On-site Users Need</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-item reveal reveal-delay-1">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+        <h4>Submit Photo Reports</h4>
+        <p>Capture each assigned photo, replicate the reference, and submit your full shift report in minutes.</p>
+      </div>
+      <div class="feat-item reveal reveal-delay-2">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <h4>View Assigned Tasks</h4>
+        <p>See any corrective action tickets assigned to you by your supervisor, with deadlines and context.</p>
+      </div>
+      <div class="feat-item reveal reveal-delay-3">
+        <div class="feat-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h4>Access Site History</h4>
+        <p>Review past photo submissions for your site and track improvement over time — all in the app.</p>
+      </div>
+    </div>
+
+    <!-- Supervisor Callout -->
+    <div class="supervisor-callout reveal" aria-label="For supervisors and managers">
+      <div>
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">For Supervisors</span>
+        <h3>Managing Multiple Sites?</h3>
+        <p style="margin-top:8px;">Supervisors and managers use the full web dashboard at app.fotofinish.com to review photo reports, track compliance across all sites, and issue corrective actions — from any device.</p>
+      </div>
+      <a href="https://app.fotofinish.com" class="btn btn-yellow btn-lg" style="flex-shrink:0;">Open Dashboard</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="dl-faq-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">FAQ</span>
+      <h2 id="dl-faq-heading">App Questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do I get started with the app?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">Download the app from the App Store or Google Play, then log in with the credentials your account administrator has set up for you. Your assigned FotoFlows and sites will appear automatically.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is the app free?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">The app itself is free to download. FotoFinish is a subscription service — your organization's administrator handles the subscription. On-site users and supervisors are included in the plan at no extra cost per user.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What devices are supported?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">FotoFinish is available on iPhone (iOS 13 and above) and Android phones (Android 8.0 and above). The supervisor web dashboard works on any modern browser including Chrome, Safari, and Edge.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer-top-hook">
+  <div class="container">
+    <div class="footer-hook-text"><h4>Stop guessing. Start verifying.</h4><p>10-day free trial · No credit card · Cancel anytime</p></div>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
+  </div>
+</div>
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
+      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
+</script>
+</body>
+</html>

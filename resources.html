@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources | FotoFinish</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}ul{list-style:none;}
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.section-header{text-align:center;margin-bottom:56px;}
+.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
+.section-header h2{margin-bottom:16px;}
+.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .nav-logo-img{filter:none;}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}}
+.page-hero{min-height:420px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
+.page-hero-inner{max-width:700px;}
+.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
+.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
+.page-hero .breadcrumb a:hover{color:var(--white);}
+.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
+.page-hero h1{color:var(--white);margin-bottom:16px;}
+.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
+.getting-started{background:var(--white);padding:96px 0;}
+.gs-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+@media(max-width:768px){.gs-grid{grid-template-columns:1fr;}}
+.video-cards{background:var(--cloud);padding:96px 0;}
+.vc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;}
+@media(max-width:768px){.vc-grid{grid-template-columns:1fr;}}
+.vc-card{background:var(--white);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow var(--transition),transform var(--transition);}
+.vc-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);}
+.vc-thumb{aspect-ratio:16/9;position:relative;overflow:hidden;}
+.vc-thumb iframe{width:100%;height:100%;border:none;display:block;}
+.vc-body{padding:24px 28px;}
+.vc-body h4{margin-bottom:8px;}
+.vc-body p{font-size:14px;}
+.guides{background:var(--white);padding:96px 0;}
+.guides-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+@media(max-width:768px){.guides-grid{grid-template-columns:1fr;}}
+.guide-card{border:2px solid rgba(0,63,115,.08);border-radius:20px;padding:36px 28px;text-align:center;transition:box-shadow var(--transition),border-color var(--transition);}
+.guide-card:hover{box-shadow:var(--shadow-lg);border-color:rgba(0,63,115,.2);}
+.guide-icon{width:56px;height:56px;border-radius:14px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.guide-icon svg{width:26px;height:26px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.guide-card h4{margin-bottom:10px;}
+.guide-card p{font-size:14px;margin-bottom:20px;}
+.faq-link-section{background:var(--cloud);padding:64px 0;text-align:center;}
+.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
+.cta-band h2{color:var(--white);margin-bottom:16px;}
+.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
+.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-top-hook{background:var(--navy);padding:32px 0;}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link" aria-haspopup="true">Services <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="fotofinish-redesign.html#pricing" class="nav-link" aria-haspopup="true">Pricing <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="fotofinish-redesign.html#pricing" role="menuitem">Subscription Plans</a>
+            <a href="fotofinish-redesign.html#roi" role="menuitem">Cleaning ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">Training <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">About <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="Resources hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="fotofinish-redesign.html">Home</a>
+        <span>/</span>
+        <span aria-current="page">Resources</span>
+      </nav>
+      <h1 class="reveal">Everything You Need to Get Started and Succeed</h1>
+      <p class="reveal reveal-delay-1">Guides, videos, and documentation to help you and your team get the most out of FotoFinish — from day one and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Getting Started -->
+<section class="getting-started" aria-labelledby="gs-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Start Here</span>
+      <h2 id="gs-heading">Getting Started</h2>
+      <p>New to FotoFinish? Start with the Initial Setup Demo to get your first site running in under 30 minutes.</p>
+    </div>
+    <div class="gs-grid">
+      <div class="reveal">
+        <div style="aspect-ratio:16/9;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);">
+          <iframe src="https://www.youtube.com/embed/A2BucZiqK0k?rel=0&modestbranding=1" title="FotoFinish Initial Setup Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" style="width:100%;height:100%;border:none;display:block;"></iframe>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Quick Start Guide</span>
+        <h3>Up and Running in 30 Minutes</h3>
+        <p style="margin:16px 0;">The Initial Setup Demo walks you through creating your account, adding your first site, building your first FotoFlow, and inviting your team. Everything you need to go live today.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Watch the setup demo video (above)
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Download the setup guide PDF for step-by-step instructions
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Contact support if you need hands-on help
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+          <a href="#" class="btn btn-primary" download aria-label="Download the FotoFinish setup guide PDF">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Setup Guide
+          </a>
+          <a href="training-admin.html" class="btn btn-outline">Admin Training</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Library -->
+<section class="video-cards" aria-labelledby="vl-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Video Library</span>
+      <h2 id="vl-heading">Learn at Your Own Pace</h2>
+      <p>A short library of videos covering everything from a quick product overview to a full setup walkthrough.</p>
+    </div>
+    <div class="vc-grid">
+      <div class="vc-card reveal reveal-delay-1">
+        <div class="vc-thumb">
+          <iframe src="https://www.youtube.com/embed/LA48SCutGWI?rel=0&modestbranding=1" title="FotoFlow Explained" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="vc-body">
+          <h4>FotoFlow Explained</h4>
+          <p>A deep dive into how FotoFlows work: slots, random photo selection, and how they create daily-changing accountability reports.</p>
+        </div>
+      </div>
+      <div class="vc-card reveal reveal-delay-2">
+        <div class="vc-thumb">
+          <iframe src="https://www.youtube.com/embed/IVazFZOKFds?rel=0&modestbranding=1" title="How FotoFinish Works (Short)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="vc-body">
+          <h4>How It Works (Short)</h4>
+          <p>A quick 60-second overview of the FotoFinish photo verification loop. Perfect for sharing with your team or a potential client.</p>
+        </div>
+      </div>
+      <div class="vc-card reveal reveal-delay-1">
+        <div class="vc-thumb">
+          <iframe src="https://www.youtube.com/embed/7qVWBk42mpk?rel=0&modestbranding=1" title="How FotoFinish Works (Full Walkthrough)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="vc-body">
+          <h4>How It Works (Full Walkthrough)</h4>
+          <p>The complete walkthrough of the FotoFinish platform — from the on-site mobile app experience to the supervisor dashboard review.</p>
+        </div>
+      </div>
+      <div class="vc-card reveal reveal-delay-2">
+        <div class="vc-thumb">
+          <iframe src="https://www.youtube.com/embed/A2BucZiqK0k?rel=0&modestbranding=1" title="Initial Setup Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="vc-body">
+          <h4>Initial Setup Demo</h4>
+          <p>Step-by-step video guide for administrators setting up their account, creating sites, building FotoFlows, and inviting users for the first time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guides & Downloads -->
+<section class="guides section" aria-labelledby="guides-heading">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label">Guides &amp; Downloads</span>
+      <h2 id="guides-heading">Printable &amp; PDF Resources</h2>
+      <p>Downloadable guides to support your setup, training, and ongoing operations.</p>
+    </div>
+    <div class="guides-grid">
+      <div class="guide-card reveal reveal-delay-1">
+        <div class="guide-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h4>Setup Guide</h4>
+        <p>Complete step-by-step instructions for setting up your FotoFinish account, creating sites, and launching your first FotoFlow.</p>
+        <a href="#" class="btn btn-outline" download aria-label="Download FotoFinish Setup Guide PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+      <div class="guide-card reveal reveal-delay-2">
+        <div class="guide-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h4>Best Practices Guide</h4>
+        <p>Proven strategies for building effective FotoFlows, designing strong reference photos, and getting the highest compliance rates across your sites.</p>
+        <a href="#" class="btn btn-outline" download aria-label="Download FotoFinish Best Practices Guide PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+      <div class="guide-card reveal reveal-delay-3">
+        <div class="guide-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h4>Admin Training Guide</h4>
+        <p>A reference manual for admin users covering site management, user permissions, FotoFlow creation, and how to read and act on your results dashboard.</p>
+        <a href="#" class="btn btn-outline" download aria-label="Download FotoFinish Admin Training Guide PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Teaser -->
+<section class="faq-link-section" aria-labelledby="faq-teaser-heading">
+  <div class="container">
+    <div class="reveal">
+      <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Still Have Questions?</span>
+      <h2 id="faq-teaser-heading" style="margin-bottom:16px;">Check the FAQ</h2>
+      <p style="max-width:480px;margin:0 auto 28px;font-size:18px;">Find answers to the most common questions about FotoFinish — how it works, what it costs, and how to get started.</p>
+      <a href="fotofinish-redesign.html#faq" class="btn btn-primary">View All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-labelledby="resources-cta-heading">
+  <div class="container">
+    <h2 class="reveal" id="resources-cta-heading">Ready to See It Live?</h2>
+    <p class="reveal reveal-delay-1">Start your free 10-day trial or book a live demo with our team.</p>
+    <div class="cta-band-btns reveal reveal-delay-2">
+      <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow btn-lg">Start Free Trial</a>
+      <a href="contact.html" class="btn btn-ghost btn-lg">Book a Demo</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer-top-hook">
+  <div class="container">
+    <div class="footer-hook-text"><h4>Stop guessing. Start verifying.</h4><p>10-day free trial · No credit card · Cancel anytime</p></div>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
+  </div>
+</div>
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
+      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+</script>
+</body>
+</html>

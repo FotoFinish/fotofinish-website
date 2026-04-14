@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | FotoFinish</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}ul{list-style:none;}
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(32px,4.5vw,56px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(24px,3vw,38px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,26px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:18px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;transition:filter var(--transition);}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:var(--navy);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;color:var(--navy);}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;}}
+/* Contact page: light hero, nav always visible dark */
+.nav{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.page-hero{background:linear-gradient(135deg,#EEF6FC,var(--cloud));padding:120px 0 64px;}
+.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--gray);margin-bottom:20px;}
+.page-hero .breadcrumb a{color:var(--gray);transition:color var(--transition);}
+.page-hero .breadcrumb a:hover{color:var(--navy);}
+.page-hero .breadcrumb span{color:rgba(0,63,115,.35);}
+.page-hero h1{margin-bottom:12px;}
+.page-hero p{font-size:18px;max-width:540px;}
+.contact-section{padding:80px 0;}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start;}
+@media(max-width:768px){.contact-grid{grid-template-columns:1fr;}}
+/* Form */
+.contact-form{background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:20px;padding:40px 36px;box-shadow:var(--shadow);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:560px){.form-row{grid-template-columns:1fr;}}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.form-group label{font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:14px;color:var(--navy);}
+.form-group input,.form-group select,.form-group textarea{font-family:'Plus Jakarta Sans',Arial;font-size:15px;color:var(--dark);border:1.5px solid rgba(0,63,115,.15);border-radius:8px;padding:12px 16px;background:var(--white);transition:border-color var(--transition),box-shadow var(--transition);outline:none;width:100%;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(117,190,233,.2);}
+.form-group textarea{resize:vertical;min-height:120px;}
+.form-submit{width:100%;justify-content:center;font-size:16px;padding:15px;}
+/* Contact Info Cards */
+.contact-info{display:flex;flex-direction:column;gap:20px;}
+.info-card{background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:16px;padding:24px 28px;box-shadow:var(--shadow);}
+.info-card-icon{width:44px;height:44px;border-radius:12px;background:var(--cloud);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.info-card-icon svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.info-card h4{margin-bottom:4px;}
+.info-card p{font-size:14px;}
+.info-card a{color:var(--navy);font-weight:600;border-bottom:1px solid var(--blue);}
+.demo-card{background:linear-gradient(135deg,var(--navy),#005599);border-radius:16px;padding:28px;margin-top:4px;}
+.demo-card h4{color:var(--white);margin-bottom:8px;}
+.demo-card p{font-size:14px;color:rgba(255,255,255,.75);margin-bottom:20px;}
+/* Quick Links */
+.quick-links{background:var(--cloud);padding:64px 0;}
+.ql-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:768px){.ql-grid{grid-template-columns:1fr;}}
+.ql-card{background:var(--white);border:1px solid rgba(0,63,115,.08);border-radius:16px;padding:28px 24px;text-align:center;transition:box-shadow var(--transition),transform var(--transition);}
+.ql-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);}
+.ql-icon{width:48px;height:48px;border-radius:12px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
+.ql-icon svg{width:22px;height:22px;stroke:var(--white);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.ql-card h4{margin-bottom:8px;}
+.ql-card p{font-size:14px;margin-bottom:16px;}
+/* FAQ Teaser */
+.faq-teaser{background:var(--white);padding:64px 0;}
+.faq-two{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
+.faq-item{border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);}
+.faq-item.open{border-color:rgba(0,63,115,.3);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:16px;color:var(--navy);background:var(--white);border:none;width:100%;text-align:left;transition:background var(--transition);}
+.faq-q:hover{background:var(--cloud);}
+.faq-q:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
+.faq-icon{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--cloud);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--navy);}
+.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition);}
+.faq-item.open .faq-icon svg{stroke:var(--white);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
+.faq-item.open .faq-a{max-height:400px;}
+.faq-a-inner{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.7;border-top:1px solid rgba(0,63,115,.08);}
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-top-hook{background:var(--navy);padding:32px 0;}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+/* Success message */
+.form-success{display:none;background:rgba(0,63,115,.06);border:1px solid var(--blue);border-radius:12px;padding:20px 24px;text-align:center;margin-top:16px;}
+.form-success.visible{display:block;}
+.form-success p{color:var(--navy);font-weight:600;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColor.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link" aria-haspopup="true">Services <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="fotofinish-redesign.html#pricing" class="nav-link" aria-haspopup="true">Pricing <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="fotofinish-redesign.html#pricing" role="menuitem">Subscription Plans</a>
+            <a href="fotofinish-redesign.html#roi" role="menuitem">Cleaning ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">Training <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">About <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="Contact hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="fotofinish-redesign.html">Home</a>
+      <span>/</span>
+      <span aria-current="page">Contact Us</span>
+    </nav>
+    <h1 class="reveal">Get in Touch</h1>
+    <p class="reveal reveal-delay-1">Whether you have a question, want to book a demo, or need enterprise pricing, we are here to help. We typically respond within one business day.</p>
+  </div>
+</section>
+
+<!-- Contact Form + Info -->
+<section class="contact-section" aria-labelledby="contact-form-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Form -->
+      <div class="reveal">
+        <div class="contact-form">
+          <span class="label" style="color:var(--blue);display:block;margin-bottom:16px;">Send Us a Message</span>
+          <h2 id="contact-form-heading" style="font-size:clamp(22px,3vw,30px);margin-bottom:24px;">We Would Love to Hear from You</h2>
+          <form id="contactForm" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span aria-hidden="true" style="color:#c00;">*</span></label>
+                <input type="text" id="firstName" name="firstName" placeholder="Jane" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span aria-hidden="true" style="color:#c00;">*</span></label>
+                <input type="text" id="lastName" name="lastName" placeholder="Smith" required autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="Acme Cleaning Services" autocomplete="organization">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address <span aria-hidden="true" style="color:#c00;">*</span></label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required autocomplete="email">
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">How Can We Help? <span aria-hidden="true" style="color:#c00;">*</span></label>
+              <select id="subject" name="subject" required>
+                <option value="" disabled selected>Select a topic...</option>
+                <option value="general">General inquiry</option>
+                <option value="demo">Book a demo</option>
+                <option value="enterprise">Enterprise pricing</option>
+                <option value="support">Technical support</option>
+                <option value="partnership">Partnership</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message <span aria-hidden="true" style="color:#c00;">*</span></label>
+              <textarea id="message" name="message" placeholder="Tell us about your operation — number of sites, current challenges, questions..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess" role="alert">
+            <p>Thank you! Your message has been received. We will be in touch within one business day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Info -->
+      <div class="contact-info reveal reveal-delay-2">
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/></svg>
+          </div>
+          <h4>Email Us</h4>
+          <p>For general inquiries, support, or anything else:</p>
+          <p style="margin-top:8px;"><a href="mailto:hello@fotofinish.com">hello@fotofinish.com</a></p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Response Time</h4>
+          <p>We respond to all inquiries within <strong style="color:var(--navy);">1 business day</strong>. For urgent technical support, include "URGENT" in your subject line.</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h4>Based In</h4>
+          <p>FotoFinish is headquartered in North America, serving customers across the US, Canada, Mexico, and Latin America.</p>
+        </div>
+
+        <div class="demo-card" aria-label="Book a demo call to action">
+          <h4>Book a Live Demo</h4>
+          <p>See FotoFinish in action with a 30-minute personalized walkthrough for your team. No obligation.</p>
+          <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="width:100%;justify-content:center;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Quick Links -->
+<section class="quick-links" aria-labelledby="ql-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;" class="reveal">
+      <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Quick Links</span>
+      <h2 id="ql-heading">Not Sure Where to Start?</h2>
+    </div>
+    <div class="ql-grid">
+      <div class="ql-card reveal reveal-delay-1">
+        <div class="ql-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h4>Book a Demo</h4>
+        <p>Get a personalized 30-minute walkthrough with one of our team members.</p>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary" style="width:100%;justify-content:center;">Book Demo</a>
+      </div>
+      <div class="ql-card reveal reveal-delay-2">
+        <div class="ql-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </div>
+        <h4>Start Free Trial</h4>
+        <p>Try FotoFinish free for 10 days. Full access, no credit card required.</p>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="width:100%;justify-content:center;">Start Free Trial</a>
+      </div>
+      <div class="ql-card reveal reveal-delay-3">
+        <div class="ql-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h4>Download the App</h4>
+        <p>Get the FotoFinish app on iOS or Android and start submitting today.</p>
+        <a href="download.html" class="btn btn-outline" style="width:100%;justify-content:center;">Download App</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Teaser -->
+<section class="faq-teaser" aria-labelledby="contact-faq-heading">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;" class="reveal">
+      <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Quick Answers</span>
+      <h2 id="contact-faq-heading">Common Questions</h2>
+    </div>
+    <div class="faq-two reveal">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How quickly can we get started?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">Most teams are fully set up and running within 24 hours of signing up. You can start your free trial immediately at app.fotofinish.com — no onboarding call required, though we are happy to help if you want one.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you offer custom enterprise pricing?<div class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. For large networks of sites (typically 50 or more), we offer custom volume pricing, multi-year agreements, dedicated support, and full onboarding. Use the contact form above and select "Enterprise pricing" to get started.</div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px;" class="reveal reveal-delay-1">
+      <a href="fotofinish-redesign.html#faq" class="btn btn-outline">View All FAQs</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer-top-hook">
+  <div class="container">
+    <div class="footer-hook-text"><h4>Stop guessing. Start verifying.</h4><p>10-day free trial · No credit card · Cancel anytime</p></div>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
+  </div>
+</div>
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="FotoFinish Logo/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div><h5>Company</h5><ul class="footer-links" role="list"><li><a href="fotofinish-redesign.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="fotofinish-redesign.html#pricing">Pricing</a></li><li><a href="contact.html">Contact</a></li><li><a href="about.html">About Us</a></li></ul></div>
+      <div><h5>Legal</h5><ul class="footer-links" role="list"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li><li><a href="#">Patent Pending Technology</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav: contact page starts scrolled (white bg) — keep dark logo, update on scroll anyway
+const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
+window.addEventListener('scroll',()=>{if(window.scrollY>20){nav.style.boxShadow='0 1px 24px rgba(0,63,115,.14)';}else{nav.style.boxShadow='0 1px 24px rgba(0,63,115,.10)';}},{passive:true});
+// Scroll reveal
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
+// Form submit (client-side demo)
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const required=['firstName','lastName','email','subject','message'];
+  let valid=true;
+  required.forEach(id=>{const el=document.getElementById(id);if(!el.value.trim()){el.style.borderColor='#c00';valid=false;}else{el.style.borderColor='';}});
+  if(valid){this.style.display='none';document.getElementById('formSuccess').classList.add('visible');}
+});
+</script>
+</body>
+</html>
