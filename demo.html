@@ -56,7 +56,27 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
 .hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
 .hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
-@media(max-width:900px){.nav-links{display:none;}.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}}
+/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
+.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
+.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
+.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
+.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
+.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
+.mobile-nav-close svg{width:18px;height:18px;}
+.mobile-nav-body{flex:1;padding:12px 0 20px;}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
+.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
+.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
+.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
+.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
+.mobile-nav-item.open .mobile-nav-sub{display:block;}
+.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
+.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
+.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
+.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
+@media(max-width:900px){.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}.nav-right .btn{display:none;}.nav-links{display:none !important;}}
 /* PAGE HERO */
 .page-hero{min-height:420px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
 .page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
@@ -161,6 +181,40 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
   </div>
 </nav>
+
+<!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
+<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-nav-header">
+    <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav-body" aria-label="Mobile navigation">
+    <div class="mobile-nav-item"><a href="fotofinish-redesign.html" class="mobile-nav-link">Home</a></div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Services<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="services.html">Services</a><a href="resources.html">Resources</a><a href="download.html">Download App</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Pricing<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="fotofinish-redesign.html#pricing">Subscription Plans</a><a href="roi-calculator.html">ROI Calculator</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Training<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="training-admin.html">Admin User</a><a href="training-onsite.html">On-site User</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">About<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="about.html">About Us</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="https://blog.fotofinish.com">Blog</a></div>
+    </div>
+  </nav>
+  <div class="mobile-nav-footer">
+    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Free Trial</a>
+  </div>
+</div>
+
 
 <section class="page-hero" aria-label="Book a Demo hero">
   <div class="container">
@@ -280,6 +334,26 @@ const nav=document.getElementById('mainNav');const navLogo=document.getElementBy
 window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
 const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+
+// ── MOBILE NAV OVERLAY ───────────────────────────────────
+(function(){
+  var hamburger   = document.querySelector('.hamburger');
+  var mobileNav   = document.getElementById('mobileNav');
+  var mobileClose = document.getElementById('mobileNavClose');
+  if(!hamburger||!mobileNav) return;
+  function openNav(){ mobileNav.classList.add('open'); document.body.style.overflow='hidden'; hamburger.setAttribute('aria-expanded','true'); }
+  function closeNav(){ mobileNav.classList.remove('open'); document.body.style.overflow=''; hamburger.setAttribute('aria-expanded','false'); }
+  hamburger.addEventListener('click', openNav);
+  mobileClose.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('.mobile-nav-link[aria-expanded]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item=btn.closest('.mobile-nav-item'), isOpen=item.classList.contains('open');
+      mobileNav.querySelectorAll('.mobile-nav-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('[aria-expanded]').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+})();
 </script>
 </body>
 </html>
