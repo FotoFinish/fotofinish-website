@@ -804,44 +804,553 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <!-- ══════════════════════════════════════════════════════
      ROI CALCULATOR TEASER
 ══════════════════════════════════════════════════════ -->
-<section class="roi-teaser" id="roi" aria-labelledby="roi-heading">
+<!-- ══════════════════════════════════════════════════════
+     ROI CALCULATOR
+══════════════════════════════════════════════════════ -->
+<section class="roi-calc-section section" id="roi" aria-labelledby="roi-heading">
   <div class="container">
-    <div class="roi-inner">
-      <div class="roi-text reveal">
-        <span class="label" style="color:var(--blue);display:block;margin-bottom:12px;">Cleaning ROI Calculator</span>
-        <h2 id="roi-heading">What Could You Save?</h2>
-        <p>On average, FotoFinish clients save $18,000/year per 10 sites by replacing physical supervision visits with remote photo verification.</p>
-        <p style="margin-top:12px;font-size:15px;">Use our full interactive calculator to see what your network could save.</p>
-        <a href="#" class="btn btn-primary" style="margin-top:28px;">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          Open ROI Calculator
-        </a>
+
+    <div class="section-header reveal">
+      <span class="label">ROI Calculator</span>
+      <h2 id="roi-heading">See What You Could Save</h2>
+      <p>Adjust the sliders to match your operation. Savings update instantly.</p>
+    </div>
+
+    <div class="roi-calc-wrap reveal">
+
+      <!-- ── LEFT: Inputs ── -->
+      <div class="roi-inputs">
+
+        <!-- Module 1: Supervision Visits -->
+        <div class="roi-module">
+          <div class="roi-module-header">
+            <div class="roi-module-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <div>
+              <div class="roi-module-title">Supervision Visits</div>
+              <div class="roi-module-sub">Physical site visits you can replace with remote verification</div>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="numSites">Number of Sites</label>
+              <span class="roi-field-val" id="numSitesVal">25</span>
+            </div>
+            <input type="range" id="numSites" min="1" max="200" value="25" step="1" class="roi-slider">
+            <div class="roi-slider-bounds"><span>1</span><span>200</span></div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="visitsPerSite">Supervisor Visits / Site / Month</label>
+              <span class="roi-field-val" id="visitsPerSiteVal">4</span>
+            </div>
+            <input type="range" id="visitsPerSite" min="1" max="20" value="4" step="1" class="roi-slider">
+            <div class="roi-slider-bounds"><span>1</span><span>20</span></div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="visitCost">Avg. Cost per Visit (travel + time)</label>
+              <span class="roi-field-val" id="visitCostVal">$85</span>
+            </div>
+            <input type="range" id="visitCost" min="20" max="300" value="85" step="5" class="roi-slider">
+            <div class="roi-slider-bounds"><span>$20</span><span>$300</span></div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="visitReduction">Visits Replaced by FotoFinish</label>
+              <span class="roi-field-val" id="visitReductionVal">60%</span>
+            </div>
+            <input type="range" id="visitReduction" min="20" max="90" value="60" step="5" class="roi-slider">
+            <div class="roi-slider-bounds"><span>20%</span><span>90%</span></div>
+          </div>
+        </div>
+
+        <!-- Module 2: Escalation & Rework Costs -->
+        <div class="roi-module">
+          <div class="roi-module-header">
+            <div class="roi-module-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+            <div>
+              <div class="roi-module-title">Escalations &amp; Rework</div>
+              <div class="roi-module-sub">Complaints, missed tasks, and emergency re-cleans your team handles monthly</div>
+            </div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="escalationsPerMonth">Escalations / Month (all sites)</label>
+              <span class="roi-field-val" id="escalationsPerMonthVal">8</span>
+            </div>
+            <input type="range" id="escalationsPerMonth" min="0" max="60" value="8" step="1" class="roi-slider">
+            <div class="roi-slider-bounds"><span>0</span><span>60</span></div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="escalationCost">Avg. Cost per Escalation</label>
+              <span class="roi-field-val" id="escalationCostVal">$150</span>
+            </div>
+            <input type="range" id="escalationCost" min="50" max="500" value="150" step="10" class="roi-slider">
+            <div class="roi-slider-bounds"><span>$50</span><span>$500</span></div>
+          </div>
+
+          <div class="roi-field">
+            <div class="roi-field-header">
+              <label for="escalationReduction">Escalations Prevented by FotoFinish</label>
+              <span class="roi-field-val" id="escalationReductionVal">50%</span>
+            </div>
+            <input type="range" id="escalationReduction" min="10" max="80" value="50" step="5" class="roi-slider">
+            <div class="roi-slider-bounds"><span>10%</span><span>80%</span></div>
+          </div>
+        </div>
+
+        <!-- Period toggle -->
+        <div class="roi-period-toggle">
+          <button class="roi-period-btn active" id="roiBtnMonthly" data-period="monthly">Monthly</button>
+          <button class="roi-period-btn" id="roiBtnAnnual" data-period="annual">Annual</button>
+        </div>
+
       </div>
-      <div class="roi-preview reveal reveal-delay-2" aria-label="ROI estimate preview">
-        <div class="roi-row">
-          <span class="roi-row-label">Sites in your network</span>
-          <span class="roi-row-value">25 sites</span>
+
+      <!-- ── RIGHT: Results ── -->
+      <div class="roi-results">
+
+        <!-- Big savings number -->
+        <div class="roi-hero-result">
+          <div class="roi-hero-label" id="roiHeroLabel">Estimated Monthly Savings</div>
+          <div class="roi-hero-amount" id="roiHeroAmount">$0</div>
+          <div class="roi-hero-sub" id="roiHeroSub">across your 25 sites</div>
         </div>
-        <div class="roi-row">
-          <span class="roi-row-label">Supervision visits per month</span>
-          <span class="roi-row-value">4 per site</span>
+
+        <!-- Breakdown rows -->
+        <div class="roi-breakdown">
+          <div class="roi-breakdown-row">
+            <span class="roi-breakdown-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+              Visit savings
+            </span>
+            <span class="roi-breakdown-val positive" id="roiVisitSavings">$0</span>
+          </div>
+          <div class="roi-breakdown-row">
+            <span class="roi-breakdown-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              Escalation savings
+            </span>
+            <span class="roi-breakdown-val positive" id="roiEscalationSavings">$0</span>
+          </div>
+          <div class="roi-breakdown-row">
+            <span class="roi-breakdown-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              FotoFinish cost
+            </span>
+            <span class="roi-breakdown-val negative" id="roiFotoCost">-$0</span>
+          </div>
+          <div class="roi-breakdown-divider"></div>
+          <div class="roi-breakdown-row total">
+            <span class="roi-breakdown-label">Net savings</span>
+            <span class="roi-breakdown-val positive" id="roiNetSavings">$0</span>
+          </div>
         </div>
-        <div class="roi-row">
-          <span class="roi-row-label">Avg. cost per visit</span>
-          <span class="roi-row-value">$85</span>
+
+        <!-- Plan comparison -->
+        <div class="roi-plan-compare">
+          <div class="roi-plan-card" id="roiPlanPro">
+            <div class="roi-plan-name">Pro Plan</div>
+            <div class="roi-plan-price" id="roiPlanProCost">$500/mo</div>
+            <div class="roi-plan-net">Net savings: <strong id="roiPlanProNet">$0</strong></div>
+            <div class="roi-plan-roi">ROI: <strong id="roiPlanProROI">0%</strong></div>
+            <a href="https://app.fotofinish.com/subscription" class="roi-plan-cta">Start Free Trial</a>
+          </div>
+          <div class="roi-plan-card featured" id="roiPlanPremium">
+            <div class="roi-plan-badge">Best Value</div>
+            <div class="roi-plan-name">Premium Plan</div>
+            <div class="roi-plan-price" id="roiPlanPremiumCost">$1,000/mo</div>
+            <div class="roi-plan-net">Net savings: <strong id="roiPlanPremiumNet">$0</strong></div>
+            <div class="roi-plan-roi">ROI: <strong id="roiPlanPremiumROI">0%</strong></div>
+            <a href="https://app.fotofinish.com/subscription" class="roi-plan-cta">Start Free Trial</a>
+          </div>
         </div>
-        <div class="roi-row">
-          <span class="roi-row-label">Visits eliminated by FotoFinish</span>
-          <span class="roi-row-value">~60%</span>
-        </div>
-        <div class="roi-total">
-          <span class="roi-total-label">Estimated annual savings</span>
-          <span class="roi-total-value">$61,200 / yr</span>
-        </div>
+
+        <p class="roi-disclaimer">Estimates based on industry averages. Actual results vary by operation size and management practices.</p>
       </div>
+
     </div>
   </div>
 </section>
+
+<style>
+/* ── ROI CALCULATOR ─────────────────────────────────────── */
+.roi-calc-section {
+  background: var(--cloud);
+}
+.roi-calc-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 48px;
+}
+@media(max-width:900px){
+  .roi-calc-wrap { grid-template-columns: 1fr; }
+}
+
+/* Modules */
+.roi-module {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,63,115,.07);
+}
+.roi-module-header {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.roi-module-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0,63,115,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--navy);
+}
+.roi-module-icon svg { width: 20px; height: 20px; }
+.roi-module-title { font-weight: 700; color: var(--navy); font-size: 15px; margin-bottom: 2px; }
+.roi-module-sub { font-size: 13px; color: var(--gray); line-height: 1.4; }
+
+/* Sliders */
+.roi-field { margin-bottom: 18px; }
+.roi-field:last-child { margin-bottom: 0; }
+.roi-field-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.roi-field-header label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--dark);
+}
+.roi-field-val {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  background: rgba(0,63,115,.07);
+  padding: 2px 10px;
+  border-radius: 20px;
+  min-width: 48px;
+  text-align: center;
+}
+.roi-slider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  background: linear-gradient(to right, var(--navy) 0%, var(--navy) var(--pct,30%), #dce5f0 var(--pct,30%), #dce5f0 100%);
+  outline: none;
+  cursor: pointer;
+}
+.roi-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,63,115,.3);
+  cursor: pointer;
+  transition: transform .15s;
+}
+.roi-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.roi-slider::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,63,115,.3);
+  cursor: pointer;
+}
+.roi-slider-bounds {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--gray);
+  margin-top: 4px;
+}
+
+/* Period toggle */
+.roi-period-toggle {
+  display: flex;
+  gap: 0;
+  background: #fff;
+  border: 2px solid rgba(0,63,115,.15);
+  border-radius: 10px;
+  overflow: hidden;
+  width: fit-content;
+}
+.roi-period-btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray);
+  transition: all .2s;
+}
+.roi-period-btn.active {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Results panel */
+.roi-results {
+  position: sticky;
+  top: 96px;
+}
+.roi-hero-result {
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--navy) 0%, #005fa8 100%);
+}
+.roi-hero-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,.7);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 8px;
+}
+.roi-hero-amount {
+  font-size: 52px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 8px;
+  transition: all .3s;
+}
+.roi-hero-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,.65);
+}
+
+/* Breakdown */
+.roi-breakdown {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 12px rgba(0,63,115,.07);
+}
+.roi-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+}
+.roi-breakdown-row.total {
+  font-weight: 700;
+  font-size: 15px;
+  padding-top: 10px;
+}
+.roi-breakdown-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--dark);
+}
+.roi-breakdown-label svg { width: 15px; height: 15px; color: var(--gray); flex-shrink: 0; }
+.roi-breakdown-val { font-weight: 700; }
+.roi-breakdown-val.positive { color: #1a9e4a; }
+.roi-breakdown-val.negative { color: #d94f3d; }
+.roi-breakdown-divider { border-top: 1px solid rgba(0,63,115,.1); margin: 4px 0; }
+
+/* Plan comparison */
+.roi-plan-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.roi-plan-card {
+  background: #fff;
+  border: 2px solid rgba(0,63,115,.12);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+  transition: border-color .2s;
+}
+.roi-plan-card.featured {
+  border-color: var(--blue);
+  background: rgba(117,190,233,.06);
+}
+.roi-plan-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--blue);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.roi-plan-name { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.roi-plan-price { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+.roi-plan-net, .roi-plan-roi { font-size: 12px; color: var(--gray); margin-bottom: 3px; }
+.roi-plan-net strong, .roi-plan-roi strong { color: #1a9e4a; }
+.roi-plan-cta {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background .2s;
+}
+.roi-plan-card.featured .roi-plan-cta { background: var(--blue); color: var(--navy); }
+.roi-plan-cta:hover { opacity: .85; }
+
+.roi-disclaimer {
+  font-size: 11px;
+  color: var(--gray);
+  text-align: center;
+  line-height: 1.5;
+}
+</style>
+
+<script>
+(function(){
+  var period = 'monthly';
+
+  function fmt(n){ return '$' + n.toLocaleString('en-US', {maximumFractionDigits:0}); }
+
+  function updateSliderFill(el){
+    var min = +el.min, max = +el.max, val = +el.value;
+    var pct = ((val - min) / (max - min) * 100).toFixed(1);
+    el.style.setProperty('--pct', pct + '%');
+    el.style.background = 'linear-gradient(to right, var(--navy) 0%, var(--navy) '+pct+'%, #dce5f0 '+pct+'%, #dce5f0 100%)';
+  }
+
+  function animateVal(el, to, prefix, suffix){
+    var from = el._curr || 0;
+    var steps = 20, step = 0;
+    clearInterval(el._anim);
+    el._anim = setInterval(function(){
+      step++;
+      var v = Math.round(from + (to - from) * step / steps);
+      el.textContent = (prefix||'') + v.toLocaleString('en-US') + (suffix||'');
+      if(step >= steps){ el._curr = to; clearInterval(el._anim); }
+    }, 16);
+  }
+
+  function calc(){
+    var sites        = +document.getElementById('numSites').value;
+    var visits       = +document.getElementById('visitsPerSite').value;
+    var visitCost    = +document.getElementById('visitCost').value;
+    var visitRed     = +document.getElementById('visitReduction').value / 100;
+    var escalations  = +document.getElementById('escalationsPerMonth').value;
+    var escalCost    = +document.getElementById('escalationCost').value;
+    var escalRed     = +document.getElementById('escalationReduction').value / 100;
+
+    var mul = (period === 'annual') ? 12 : 1;
+
+    var visitSavingsMo     = sites * visits * visitCost * visitRed;
+    var escalSavingsMo     = escalations * escalCost * escalRed;
+    var totalSavingsMo     = visitSavingsMo + escalSavingsMo;
+    var proCostMo          = sites * 20;
+    var premCostMo         = sites * 40;
+    var proNetMo           = totalSavingsMo - proCostMo;
+    var premNetMo          = totalSavingsMo - premCostMo;
+    var proROI             = proCostMo > 0 ? Math.round(proNetMo / proCostMo * 100) : 0;
+    var premROI            = premCostMo > 0 ? Math.round(premNetMo / premCostMo * 100) : 0;
+
+    var heroAmt    = Math.round(totalSavingsMo * mul);
+    var visitDisp  = Math.round(visitSavingsMo * mul);
+    var escalDisp  = Math.round(escalSavingsMo * mul);
+    var proDisp    = Math.round(proCostMo * mul);
+    var premDisp   = Math.round(premCostMo * mul);
+    var proNetDisp = Math.round(proNetMo * mul);
+    var premNetDisp= Math.round(premNetMo * mul);
+
+    var perStr = period === 'annual' ? '/yr' : '/mo';
+
+    // Hero
+    var heroEl = document.getElementById('roiHeroAmount');
+    animateVal(heroEl, heroAmt, '$', '');
+    document.getElementById('roiHeroLabel').textContent = period === 'annual' ? 'Estimated Annual Savings' : 'Estimated Monthly Savings';
+    document.getElementById('roiHeroSub').textContent = 'across your ' + sites + ' site' + (sites===1?'':'s');
+
+    // Breakdown
+    document.getElementById('roiVisitSavings').textContent   = fmt(visitDisp);
+    document.getElementById('roiEscalationSavings').textContent = fmt(escalDisp);
+    document.getElementById('roiFotoCost').textContent       = '-' + fmt(proDisp);
+    document.getElementById('roiNetSavings').textContent     = fmt(proNetDisp);
+
+    // Plan cards
+    document.getElementById('roiPlanProCost').textContent    = fmt(proDisp) + perStr;
+    document.getElementById('roiPlanPremiumCost').textContent= fmt(premDisp) + perStr;
+    document.getElementById('roiPlanProNet').textContent     = fmt(proNetDisp);
+    document.getElementById('roiPlanPremiumNet').textContent = fmt(premNetDisp);
+    document.getElementById('roiPlanProROI').textContent     = proROI + '%';
+    document.getElementById('roiPlanPremiumROI').textContent = premROI + '%';
+  }
+
+  // Wire sliders
+  ['numSites','visitsPerSite','visitCost','visitReduction','escalationsPerMonth','escalationCost','escalationReduction'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    updateSliderFill(el);
+    el.addEventListener('input', function(){
+      updateSliderFill(el);
+      var valEl = document.getElementById(id + 'Val');
+      if(valEl){
+        var v = +el.value;
+        if(id === 'visitCost' || id === 'escalationCost') valEl.textContent = '$' + v;
+        else if(id === 'visitReduction' || id === 'escalationReduction') valEl.textContent = v + '%';
+        else valEl.textContent = v;
+      }
+      calc();
+    });
+  });
+
+  // Wire period toggle
+  document.querySelectorAll('.roi-period-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.roi-period-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      period = btn.dataset.period;
+      calc();
+    });
+  });
+
+  calc();
+})();
+</script>
 
 <!-- ══════════════════════════════════════════════════════
      PRICING
