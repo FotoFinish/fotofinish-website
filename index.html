@@ -964,27 +964,18 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           </div>
         </div>
 
-        <!-- Plan comparison -->
-        <div class="roi-plan-compare">
-          <div class="roi-plan-card" id="roiPlanPro">
-            <div class="roi-plan-name">Pro Plan</div>
-            <div class="roi-plan-price" id="roiPlanProCost">$500/mo</div>
-            <div class="roi-plan-net">Net savings: <strong id="roiPlanProNet">$0</strong></div>
-            <div class="roi-plan-roi">ROI: <strong id="roiPlanProROI">0%</strong></div>
-            <div class="roi-plan-features-note">Photo verification only</div>
-            <a href="https://app.fotofinish.com/subscription" class="roi-plan-cta">Start Free Trial</a>
-          </div>
+        <!-- Plan card: Premium only -->
+        <div class="roi-plan-compare" style="grid-template-columns:1fr;">
           <div class="roi-plan-card featured" id="roiPlanPremium">
-            <div class="roi-plan-badge">Higher Savings</div>
-            <div class="roi-plan-name">Premium Plan</div>
+            <div class="roi-plan-badge">Premium Plan</div>
             <div class="roi-plan-price" id="roiPlanPremiumCost">$1,000/mo</div>
             <div class="roi-plan-net">Net savings: <strong id="roiPlanPremiumNet">$0</strong></div>
             <div class="roi-plan-roi">ROI: <strong id="roiPlanPremiumROI">0%</strong></div>
             <div class="roi-plan-multiplier">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              Attendance + evaluations unlock deeper savings
+              Attendance tracking + photo evaluations included
             </div>
-            <a href="https://app.fotofinish.com/subscription" class="roi-plan-cta">Start Free Trial</a>
+            <a href="https://app.fotofinish.com/subscription" class="roi-plan-cta" style="display:block;text-align:center;margin-top:14px;padding:10px 20px;font-size:13px;">Start 10-Day Free Trial</a>
           </div>
         </div>
 
@@ -1415,27 +1406,24 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     var mul = (period === 'annual') ? 12 : 1;
     var perStr = period === 'annual' ? '/yr' : '/mo';
 
-    // Hero shows Pro savings (conservative baseline)
-    var heroAmt = Math.round(proTotalSavingsMo * mul);
+    // Hero and breakdown use Premium savings
+    var heroAmt = Math.round(premTotalSavingsMo * mul);
 
     // Hero
     var heroEl = document.getElementById('roiHeroAmount');
     animateVal(heroEl, heroAmt, '$', '');
-    document.getElementById('roiHeroLabel').textContent = period === 'annual' ? 'Estimated Annual Savings (Pro)' : 'Estimated Monthly Savings (Pro)';
+    document.getElementById('roiHeroLabel').textContent = period === 'annual' ? 'Estimated Annual Savings' : 'Estimated Monthly Savings';
     document.getElementById('roiHeroSub').textContent = 'across your ' + sites + ' site' + (sites===1?'':'s');
 
-    // Breakdown (Pro basis)
-    document.getElementById('roiVisitSavings').textContent      = fmt(Math.round(proVisitSavingsMo * mul));
-    document.getElementById('roiEscalationSavings').textContent = fmt(Math.round(proEscalSavingsMo * mul));
-    document.getElementById('roiFotoCost').textContent          = '-' + fmt(Math.round(proCostMo * mul));
-    document.getElementById('roiNetSavings').textContent        = fmt(Math.round(proNetMo * mul));
+    // Breakdown (Premium basis)
+    document.getElementById('roiVisitSavings').textContent      = fmt(Math.round(premVisitSavingsMo * mul));
+    document.getElementById('roiEscalationSavings').textContent = fmt(Math.round(premEscalSavingsMo * mul));
+    document.getElementById('roiFotoCost').textContent          = '-' + fmt(Math.round(premCostMo * mul));
+    document.getElementById('roiNetSavings').textContent        = fmt(Math.round(premNetMo * mul));
 
-    // Plan cards
-    document.getElementById('roiPlanProCost').textContent       = fmt(Math.round(proCostMo * mul)) + perStr;
+    // Premium plan card
     document.getElementById('roiPlanPremiumCost').textContent   = fmt(Math.round(premCostMo * mul)) + perStr;
-    document.getElementById('roiPlanProNet').textContent        = fmt(Math.round(proNetMo * mul));
     document.getElementById('roiPlanPremiumNet').textContent    = fmt(Math.round(premNetMo * mul));
-    document.getElementById('roiPlanProROI').textContent        = proROI + '%';
     document.getElementById('roiPlanPremiumROI').textContent    = premROI + '%';
   }
 
