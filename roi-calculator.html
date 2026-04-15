@@ -395,7 +395,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 
         <!-- Premium plan card -->
         <div class="calc-plan-card reveal reveal-delay-2">
-          <div class="calc-plan-badge">Premium Plan — $40 / site / month</div>
+          <div class="calc-plan-badge" id="calcPlanBadge">Premium Plan — $40 / site / month</div>
           <div style="margin-top:16px;">
             <div class="calc-plan-price" id="calcPlanCost">$1,000/mo</div>
             <div class="calc-plan-metrics">
@@ -407,6 +407,9 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
                 <div class="calc-plan-metric-label">ROI</div>
                 <div class="calc-plan-metric-val" id="calcPlanROI">0%</div>
               </div>
+            </div>
+            <div class="calc-plan-annual-note" id="calcPlanAnnualNote" style="display:none;background:rgba(26,158,74,.1);border-radius:8px;padding:8px 12px;margin-bottom:12px;font-size:12px;color:#1a9e4a;font-weight:700;text-align:center;">
+              Annual billing saves you <span id="calcAnnualDiscount">$0</span> vs. monthly
             </div>
             <div class="calc-plan-includes">
               Includes <strong>photo verification</strong>, <strong>attendance tracking</strong>, and <strong>photo evaluations</strong> — everything you need to enforce standards without extra site visits.
@@ -550,8 +553,9 @@ if (!prefersReducedMotion) {
     var escalSavingsMo = totalEscalations * escalCost * escalRed;
     var grossMo        = visitSavingsMo + escalSavingsMo;
 
-    // Premium plan cost: $40/site/month
-    var premCostMo = sites * 40;
+    // Premium plan cost: $40/site/month monthly, $32/site/month annual (20% off)
+    var premRateMo = period === 'annual' ? 32 : 40;
+    var premCostMo = sites * premRateMo;
 
     // Net
     var netMo  = grossMo - premCostMo;
@@ -584,6 +588,18 @@ if (!prefersReducedMotion) {
     document.getElementById('calcPlanCost').textContent = fmt(premDisp) + perStr;
     document.getElementById('calcPlanNet').textContent  = fmt(netDisp);
     document.getElementById('calcPlanROI').textContent  = roi + '%';
+    document.getElementById('calcPlanBadge').textContent =
+      period === 'annual'
+        ? 'Premium Plan — $32 / site / month (billed annually)'
+        : 'Premium Plan — $40 / site / month';
+    var annualNote = document.getElementById('calcPlanAnnualNote');
+    if (period === 'annual') {
+      var annualDiscount = Math.round(sites * 40 * 12 - premDisp); // full-price annual minus discounted annual
+      document.getElementById('calcAnnualDiscount').textContent = fmt(annualDiscount);
+      annualNote.style.display = 'block';
+    } else {
+      annualNote.style.display = 'none';
+    }
   }
 
   // Wire up all sliders
