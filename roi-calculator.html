@@ -415,6 +415,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
               Includes <strong>photo verification</strong>, <strong>attendance tracking</strong>, and <strong>photo evaluations</strong> — everything you need to enforce standards without extra site visits.
             </div>
             <a href="https://app.fotofinish.com/subscription" class="calc-plan-cta">Start 10-Day Free Trial — No Credit Card</a>
+            <button type="button" class="calc-pdf-btn" id="openPdfModal">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+              Download PDF Report
+            </button>
           </div>
         </div>
 
@@ -483,6 +487,251 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
   </div>
 </footer>
+
+<!-- ── PDF MODAL ───────────────────────────────────────────── -->
+<div class="pdf-modal-overlay" id="pdfModalOverlay" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle" hidden>
+  <div class="pdf-modal">
+    <button class="pdf-modal-close" id="closePdfModal" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="pdf-modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+    </div>
+    <h3 id="pdfModalTitle">Get Your ROI Report</h3>
+    <p class="pdf-modal-sub">We'll email you a copy and follow up with personalized savings recommendations.</p>
+
+    <form id="pdfLeadForm" novalidate>
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="ROI Calculator — PDF Report Request">
+      <input type="hidden" name="from_name" value="FotoFinish ROI Calculator">
+      <input type="hidden" name="redirect" value="false">
+      <input type="checkbox" name="botcheck" style="display:none">
+      <input type="hidden" name="roi_data" id="pdfRoiData">
+
+      <div class="pdf-form-row">
+        <div class="pdf-form-field">
+          <label for="pdfName">Full name <span aria-hidden="true">*</span></label>
+          <input type="text" id="pdfName" name="name" placeholder="Jane Smith" required autocomplete="name">
+        </div>
+        <div class="pdf-form-field">
+          <label for="pdfCompany">Company <span aria-hidden="true">*</span></label>
+          <input type="text" id="pdfCompany" name="company" placeholder="Acme Cleaning Co." required autocomplete="organization">
+        </div>
+      </div>
+      <div class="pdf-form-row">
+        <div class="pdf-form-field">
+          <label for="pdfEmail">Email address <span aria-hidden="true">*</span></label>
+          <input type="email" id="pdfEmail" name="email" placeholder="jane@company.com" required autocomplete="email">
+        </div>
+        <div class="pdf-form-field">
+          <label for="pdfPhone">Phone <span class="pdf-optional">(optional)</span></label>
+          <input type="tel" id="pdfPhone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+        </div>
+      </div>
+      <div id="pdfFormError" class="pdf-form-error" hidden>Please fill in all required fields.</div>
+      <button type="submit" class="pdf-submit-btn" id="pdfSubmitBtn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        Generate &amp; Download PDF
+      </button>
+    </form>
+
+    <div class="pdf-success" id="pdfSuccess" hidden>
+      <div class="pdf-success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h4>Your report is on its way!</h4>
+      <p>Check your inbox. Your PDF is also opening now — use <strong>File &rarr; Print &rarr; Save as PDF</strong> to save it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRINT REPORT (hidden on screen, visible on print) ── -->
+<div id="printReport" aria-hidden="true">
+  <div class="pr-header">
+    <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png" alt="FotoFinish" class="pr-logo">
+    <div class="pr-header-right">
+      <div class="pr-title">ROI Savings Report</div>
+      <div class="pr-date" id="prDate"></div>
+    </div>
+  </div>
+  <div class="pr-intro">
+    <p>Prepared for: <strong id="prName">—</strong> &nbsp;|&nbsp; <strong id="prCompany">—</strong></p>
+  </div>
+  <div class="pr-section-title">Your Operation</div>
+  <table class="pr-table">
+    <tr><td>Number of sites</td><td id="prSites">—</td></tr>
+    <tr><td>Supervisor visits / site / month</td><td id="prVisits">—</td></tr>
+    <tr><td>Avg. cost per visit</td><td id="prVisitCost">—</td></tr>
+    <tr><td>Visits replaced by FotoFinish</td><td id="prVisitRed">—</td></tr>
+    <tr><td>Escalations / month per 10 sites</td><td id="prEscalPer10">—</td></tr>
+    <tr><td>Avg. cost per escalation</td><td id="prEscalCost">—</td></tr>
+    <tr><td>Escalations prevented by FotoFinish</td><td id="prEscalRed">—</td></tr>
+    <tr><td>Billing period</td><td id="prPeriod">—</td></tr>
+  </table>
+  <div class="pr-section-title">Savings Estimate</div>
+  <table class="pr-table">
+    <tr><td>Visits eliminated</td><td class="pr-positive" id="prVisitSavings">—</td></tr>
+    <tr><td>Escalations prevented</td><td class="pr-positive" id="prEscalSavings">—</td></tr>
+    <tr class="pr-cost-row"><td>FotoFinish Premium cost</td><td class="pr-negative" id="prPremCost">—</td></tr>
+    <tr class="pr-total-row"><td>Net savings</td><td class="pr-positive" id="prNetSavings">—</td></tr>
+    <tr><td>Return on investment (ROI)</td><td class="pr-positive" id="prROI">—</td></tr>
+  </table>
+  <div class="pr-footer">
+    <p>Estimates based on industry averages (BSCAI, ISSA) and FotoFinish customer data. Actual results vary.</p>
+    <p>FotoFinish Premium Plan · $40/site/month (monthly) or $32/site/month (annual, 20% off)</p>
+    <p>fotofinish.com &nbsp;|&nbsp; hello@fotofinish.com &nbsp;|&nbsp; Start your 10-day free trial at app.fotofinish.com</p>
+  </div>
+</div>
+
+<style>
+/* ── PDF BUTTON ─────────────────────────────────────────── */
+.calc-pdf-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 20px;
+  background: transparent;
+  border: 2px solid var(--navy);
+  border-radius: 10px;
+  color: var(--navy);
+  font-family: 'Plus Jakarta Sans', Arial;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.calc-pdf-btn:hover { background: var(--cloud); }
+
+/* ── MODAL ──────────────────────────────────────────────── */
+.pdf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+}
+.pdf-modal-overlay[hidden] { display: none; }
+.pdf-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(0,0,0,.25);
+  animation: modalIn .25s cubic-bezier(.4,0,.2,1);
+}
+@keyframes modalIn { from { opacity:0; transform:translateY(16px) scale(.97); } to { opacity:1; transform:none; } }
+.pdf-modal-close {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: var(--cloud);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray);
+  transition: background .2s;
+}
+.pdf-modal-close svg { width: 16px; height: 16px; }
+.pdf-modal-close:hover { background: #dce5f0; }
+.pdf-modal-icon {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: rgba(0,63,115,.08);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+.pdf-modal-icon svg { width: 26px; height: 26px; }
+.pdf-modal h3 { font-size: 22px; color: var(--navy); margin-bottom: 6px; }
+.pdf-modal-sub { font-size: 14px; color: var(--gray); margin-bottom: 24px; line-height: 1.5; }
+.pdf-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media(max-width:500px){ .pdf-form-row { grid-template-columns: 1fr; } }
+.pdf-form-field { display: flex; flex-direction: column; gap: 5px; }
+.pdf-form-field label { font-size: 12px; font-weight: 700; color: var(--dark); }
+.pdf-optional { font-weight: 400; color: var(--gray); }
+.pdf-form-field input {
+  padding: 10px 14px;
+  border: 1.5px solid rgba(0,63,115,.2);
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', Arial;
+  font-size: 14px;
+  color: var(--dark);
+  outline: none;
+  transition: border-color .2s;
+}
+.pdf-form-field input:focus { border-color: var(--navy); }
+.pdf-form-field input.error { border-color: #d94f3d; }
+.pdf-form-error { font-size: 12px; color: #d94f3d; font-weight: 600; margin-bottom: 10px; }
+.pdf-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  padding: 14px;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Plus Jakarta Sans', Arial;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: 4px;
+}
+.pdf-submit-btn:hover { background: var(--dark); }
+.pdf-submit-btn:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Success state */
+.pdf-success { text-align: center; padding: 12px 0; }
+.pdf-success-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: rgba(26,158,74,.12);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  color: #1a9e4a;
+}
+.pdf-success-icon svg { width: 28px; height: 28px; }
+.pdf-success h4 { font-size: 20px; color: var(--navy); margin-bottom: 8px; }
+.pdf-success p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+/* ── PRINT REPORT ───────────────────────────────────────── */
+#printReport { display: none; }
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  body > *:not(#printReport) { display: none !important; }
+  #printReport { display: block !important; font-family: 'Plus Jakarta Sans', Arial, sans-serif; padding: 40px; color: #1A2B3C; }
+  .pr-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 3px solid #003F73; }
+  .pr-logo { height: 36px; }
+  .pr-header-right { text-align: right; }
+  .pr-title { font-size: 20px; font-weight: 800; color: #003F73; }
+  .pr-date { font-size: 13px; color: #555; margin-top: 4px; }
+  .pr-intro { background: #F2F5F9; border-radius: 8px; padding: 12px 16px; margin-bottom: 24px; font-size: 14px; }
+  .pr-section-title { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; color: #003F73; margin: 24px 0 10px; }
+  .pr-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .pr-table tr { border-bottom: 1px solid #e8eef5; }
+  .pr-table td { padding: 9px 4px; }
+  .pr-table td:last-child { text-align: right; font-weight: 700; }
+  .pr-positive { color: #1a9e4a !important; }
+  .pr-negative { color: #d94f3d !important; }
+  .pr-cost-row td { border-top: 1px solid #e8eef5; }
+  .pr-total-row td { font-size: 16px; font-weight: 800; color: #003F73 !important; border-top: 2px solid #003F73; padding-top: 12px; }
+  .pr-footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid #dce5f0; font-size: 11px; color: #888; line-height: 1.8; }
+}
+</style>
 
 <script>
 // ── NAV ───────────────────────────────────────────────────
@@ -634,6 +883,117 @@ if (!prefersReducedMotion) {
   });
 
   calc();
+
+  // ── PDF MODAL ─────────────────────────────────────────────
+  var overlay    = document.getElementById('pdfModalOverlay');
+  var openBtn    = document.getElementById('openPdfModal');
+  var closeBtn   = document.getElementById('closePdfModal');
+  var leadForm   = document.getElementById('pdfLeadForm');
+  var submitBtn  = document.getElementById('pdfSubmitBtn');
+  var successEl  = document.getElementById('pdfSuccess');
+  var formErrEl  = document.getElementById('pdfFormError');
+
+  function openModal() {
+    // Snapshot current ROI inputs into the hidden field for the email
+    var sites     = document.getElementById('numSites').value;
+    var visits    = document.getElementById('visitsPerSite').value;
+    var visitCost = document.getElementById('visitCost').value;
+    var visitRed  = document.getElementById('visitReduction').value;
+    var esc10     = document.getElementById('escalationsPer10').value;
+    var escalCost = document.getElementById('escalationCost').value;
+    var escalRed  = document.getElementById('escalationReduction').value;
+    var period    = document.querySelector('.calc-period-btn.active').dataset.period;
+    var heroAmt   = document.getElementById('calcHeroAmount').textContent;
+    var netSav    = document.getElementById('calcNetSavings').textContent;
+    var roi       = document.getElementById('calcPlanROI').textContent;
+    var premCost  = document.getElementById('calcPlanCost').textContent;
+
+    var summary = [
+      'Sites: ' + sites,
+      'Visits/site/month: ' + visits,
+      'Cost/visit: $' + visitCost,
+      'Visits replaced: ' + visitRed + '%',
+      'Escalations/10 sites/month: ' + esc10,
+      'Cost/escalation: $' + escalCost,
+      'Escalations prevented: ' + escalRed + '%',
+      'Billing period: ' + period,
+      '---',
+      'Gross savings (' + period + '): ' + heroAmt,
+      'Premium cost (' + period + '): ' + premCost,
+      'Net savings: ' + netSav,
+      'ROI: ' + roi
+    ].join('\n');
+    document.getElementById('pdfRoiData').value = summary;
+
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    document.getElementById('pdfName').focus();
+  }
+
+  function closeModal() {
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    // Reset form for next open
+    leadForm.style.display = '';
+    successEl.hidden = true;
+    leadForm.reset();
+    formErrEl.hidden = true;
+    document.querySelectorAll('.pdf-form-field input').forEach(function(i){ i.classList.remove('error'); });
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !overlay.hidden) closeModal(); });
+
+  function populatePrintReport() {
+    var period = document.querySelector('.calc-period-btn.active').dataset.period;
+    document.getElementById('prDate').textContent = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric' });
+    document.getElementById('prName').textContent    = document.getElementById('pdfName').value || '—';
+    document.getElementById('prCompany').textContent = document.getElementById('pdfCompany').value || '—';
+    document.getElementById('prSites').textContent     = document.getElementById('numSites').value;
+    document.getElementById('prVisits').textContent    = document.getElementById('visitsPerSite').value;
+    document.getElementById('prVisitCost').textContent = '$' + document.getElementById('visitCost').value;
+    document.getElementById('prVisitRed').textContent  = document.getElementById('visitReduction').value + '%';
+    document.getElementById('prEscalPer10').textContent = document.getElementById('escalationsPer10').value;
+    document.getElementById('prEscalCost').textContent  = '$' + document.getElementById('escalationCost').value;
+    document.getElementById('prEscalRed').textContent   = document.getElementById('escalationReduction').value + '%';
+    document.getElementById('prPeriod').textContent     = period.charAt(0).toUpperCase() + period.slice(1);
+    document.getElementById('prVisitSavings').textContent = document.getElementById('calcVisitSavings').textContent;
+    document.getElementById('prEscalSavings').textContent = document.getElementById('calcEscalSavings').textContent;
+    document.getElementById('prPremCost').textContent     = document.getElementById('calcPremiumCost').textContent;
+    document.getElementById('prNetSavings').textContent   = document.getElementById('calcNetSavings').textContent;
+    document.getElementById('prROI').textContent          = document.getElementById('calcPlanROI').textContent;
+  }
+
+  leadForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Validate required fields
+    var valid = true;
+    ['pdfName','pdfCompany','pdfEmail'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (!el.value.trim()) { el.classList.add('error'); valid = false; }
+      else el.classList.remove('error');
+    });
+    if (!valid) { formErrEl.hidden = false; return; }
+    formErrEl.hidden = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    // Submit lead to Web3Forms
+    var data = new FormData(leadForm);
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
+      .catch(function(){}) // fire-and-forget — don't block the PDF
+      .finally(function() {
+        // Show success, populate + print report
+        leadForm.style.display = 'none';
+        successEl.hidden = false;
+        populatePrintReport();
+        setTimeout(function(){ window.print(); }, 800);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Generate & Download PDF';
+      });
+  });
 })();
 </script>
 </body>
