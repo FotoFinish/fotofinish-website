@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+Disallow: /fotofinish-redesign.html
+
+# Allow AI search crawlers (citations/answers)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Block AI training crawlers (no citation benefit)
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+Sitemap: https://fotofinish.com/sitemap.xml

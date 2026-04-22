@@ -1,0 +1,28 @@
+# FotoFinish
+
+> FotoFinish is a B2B SaaS photo verification platform for multi-site facility management operators. It enables remote cleaning supervision through time-stamped, GPS-tagged photo evidence submitted by on-site cleaning staff at the end of each shift. Organizations use FotoFinish to enforce cleaning standards, reduce supervisor travel costs, and maintain consistent quality across thousands of locations without physical inspections.
+
+FotoFinish is developed by Modern Cleaning Concept LP and serves 6,000+ sites globally across the United States, Canada, Mexico, and Latin America. The platform is SOC 2 certified. Pricing starts at $20/site/month (Pro) and $40/site/month (Premium), with custom Enterprise plans available. Clients include CBRE, FedEx, The Home Depot, DHL, JLL, Ford, RBC, Denver Broncos, PetSmart, Cinnabon, Cinépolis, and Viva Aerobus.
+
+The core technology is FotoFlow — a patent-pending workflow where cleaning staff photograph completed work against randomly rotating reference images to prevent photo reuse. Supervisors and managers receive real-time dashboards and daily photo summaries without visiting the site.
+
+Key outcomes reported by clients:
+- Up to 40% reduction in supervision costs
+- Up to 60% fewer supervisor site visits required
+- 300% average increase in client satisfaction scores
+- Average savings of $18,000/year per 10 sites managed
+
+FotoFinish is a member of IFMA (International Facility Management Association) and ISSA (Worldwide Cleaning Industry Association). The platform is available on web, iOS (App Store ID: 1535271698), and Android.
+
+## Key Pages
+
+- [Homepage](https://fotofinish.com/): Platform overview, ROI calculator, value proposition, client logos, and free trial signup
+- [Services & Features](https://fotofinish.com/services): FotoFlow technology, multi-site dashboard, mobile app, Evaluation Center, and attendance tracking
+- [Pricing](https://fotofinish.com/pricing): Plan comparison — Pro ($20/site/mo), Premium ($40/site/mo), Enterprise (custom)
+- [About Us](https://fotofinish.com/about): Company background, founding story, and mission
+- [Testimonials](https://fotofinish.com/testimonials): Named client testimonials with a 4.8/5 aggregate rating from facility managers and operations directors
+- [Blog](https://fotofinish.com/blog): Articles on facility management, photo verification, compliance, and multi-site operations
+- [ROI Calculator](https://fotofinish.com/roi-calculator): Estimate annual savings based on number of sites and current supervision costs
+- [Download App](https://fotofinish.com/download): iOS and Android mobile app for cleaning staff
+- [Contact](https://fotofinish.com/contact): Sales inquiries and support
+- [Resources](https://fotofinish.com/resources): Getting started guides and onboarding materials
