@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>You're Signed Up | FotoFinish</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
+h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
+h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
+h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
+p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
+.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
+.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+.section{padding:96px 0;}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
+.btn:hover{transform:translateY(-2px);}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
+.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
+.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
+.btn-outline:hover{background:var(--navy);color:var(--white);}
+.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
+.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
+.btn-ghost:hover{background:rgba(255,255,255,.22);}
+.btn-lg{padding:17px 36px;font-size:17px;}
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
+.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
+.nav.scrolled .nav-link{color:var(--navy);}
+.nav.scrolled .nav-logo-img{filter:none;}
+.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
+.nav-logo{display:flex;align-items:center;flex-shrink:0;}
+.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
+.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
+.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
+.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
+.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
+.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
+.nav-dropdown{position:relative;}
+.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
+.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
+.nav-dropdown-menu a:hover{background:var(--cloud);}
+.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
+/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
+.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
+.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
+.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
+.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
+.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
+.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
+.mobile-nav-close svg{width:18px;height:18px;}
+.mobile-nav-body{flex:1;padding:12px 0 20px;}
+.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
+.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
+.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
+.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
+.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
+.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
+.mobile-nav-item.open .mobile-nav-sub{display:block;}
+.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
+.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
+.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
+.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
+@media(max-width:900px){.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}.nav-right .btn{display:none;}.nav-links{display:none !important;}}
+/* PAGE HERO */
+.page-hero{min-height:420px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
+.page-hero-inner{max-width:760px;position:relative;}
+.page-hero h1{color:var(--white);margin-bottom:28px;}
+.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
+/* CONFIRMATION BADGE */
+.confirm-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:8px 18px 8px 12px;margin-bottom:24px;}
+.confirm-badge svg{width:20px;height:20px;stroke:var(--yellow);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+.confirm-badge span{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--white);}
+/* WEBINAR TITLE */
+.webinar-title{border-left:4px solid var(--yellow);padding-left:22px;}
+.webinar-title .label{color:var(--blue);display:block;margin-bottom:10px;}
+.webinar-title h2{color:var(--white);font-size:clamp(22px,3vw,34px);line-height:1.22;}
+/* DETAILS */
+.detail-section{padding:96px 0;background:var(--white);}
+.when-card{max-width:760px;margin:0 auto 56px;background:var(--cloud);border:1px solid rgba(0,63,115,.1);border-radius:20px;padding:44px 36px;text-align:center;box-shadow:var(--shadow);}
+.when-card .label{color:var(--navy);opacity:.55;display:block;margin-bottom:16px;}
+.when-date{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(24px,3.4vw,38px);line-height:1.2;color:var(--navy);margin-bottom:22px;}
+.when-times{display:flex;align-items:stretch;justify-content:center;gap:0;flex-wrap:wrap;}
+.when-time{padding:0 26px;border-left:1px solid rgba(0,63,115,.14);}
+.when-time:first-child{border-left:none;}
+.when-time strong{display:block;font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:22px;color:var(--navy);line-height:1.3;}
+.when-time span{display:block;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);opacity:.7;margin-top:4px;}
+@media(max-width:600px){.when-card{padding:34px 22px;}.when-times{flex-direction:column;gap:18px;}.when-time{padding:0;border-left:none;}}
+.people-block{max-width:760px;margin:0 auto;}
+.people-block + .people-block{margin-top:44px;}
+.people-block > .label{color:var(--blue);display:block;margin-bottom:18px;}
+.people-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.people-grid.single{grid-template-columns:1fr;max-width:370px;}
+@media(max-width:600px){.people-grid{grid-template-columns:1fr;}}
+.person{display:flex;align-items:center;gap:16px;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow);}
+.person-initials{width:52px;height:52px;flex-shrink:0;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:16px;letter-spacing:.5px;}
+.person-name{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:17px;color:var(--navy);line-height:1.3;}
+.person-role{font-family:'Plus Jakarta Sans',Arial;font-weight:500;font-size:14px;color:var(--gray);margin-top:2px;}
+/* FOOTER */
+.footer{background:var(--dark);padding:64px 0 32px;}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:0;}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
+.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
+.footer-links a:hover{color:var(--white);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
+.social-links{display:flex;gap:12px;}
+.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
+.social-link:hover{background:var(--navy);}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
+.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}
+.reveal-delay-2{transition-delay:.2s;}
+.reveal-delay-3{transition-delay:.3s;}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="fotofinish-redesign.html" class="nav-logo" aria-label="FotoFinish – go to homepage">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="nav-logo-img" id="navLogo">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="fotofinish-redesign.html" class="nav-link">Home</a></li>
+        <li class="nav-dropdown">
+          <a href="services.html" class="nav-link" aria-haspopup="true">Services <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="services.html" role="menuitem">Services</a>
+            <a href="resources.html" role="menuitem">Resources</a>
+            <a href="download.html" role="menuitem">Download App</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="fotofinish-redesign.html#pricing" class="nav-link" aria-haspopup="true">Pricing <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="fotofinish-redesign.html#pricing" role="menuitem">Subscription Plans</a>
+            <a href="roi-calculator.html" role="menuitem">ROI Calculator</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">Training <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="training-admin.html" role="menuitem">Admin User</a>
+            <a href="training-onsite.html" role="menuitem">On-site User</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="#" class="nav-link" aria-haspopup="true">About <svg class="nav-chevron" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dropdown-menu" role="menu">
+            <a href="about.html" role="menuitem">About Us</a>
+            <a href="testimonials.html" role="menuitem">Testimonials</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
+        <a href="demo.html" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Book a Demo</a>
+        <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
+<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="mobile-nav-header">
+    <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav-body" aria-label="Mobile navigation">
+    <div class="mobile-nav-item"><a href="fotofinish-redesign.html" class="mobile-nav-link">Home</a></div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Services<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="services.html">Services</a><a href="resources.html">Resources</a><a href="download.html">Download App</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Pricing<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="fotofinish-redesign.html#pricing">Subscription Plans</a><a href="roi-calculator.html">ROI Calculator</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">Training<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="training-admin.html">Admin User</a><a href="training-onsite.html">On-site User</a></div>
+    </div>
+    <div class="mobile-nav-item">
+      <button class="mobile-nav-link" aria-expanded="false">About<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="mobile-nav-sub"><a href="about.html">About Us</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="https://blog.fotofinish.com">Blog</a></div>
+    </div>
+  </nav>
+  <div class="mobile-nav-footer">
+    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
+    <a href="demo.html" class="btn btn-yellow">Book a Demo</a>
+  </div>
+</div>
+
+
+<section class="page-hero" aria-labelledby="confirm-heading">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="confirm-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>Registration Confirmed</span>
+      </div>
+      <h1 id="confirm-heading">You're signed up.</h1>
+      <div class="webinar-title">
+        <span class="label">The Webinar</span>
+        <h2>200% Turnover. Zero Visibility. One Fix.</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="detail-section" aria-label="Webinar details">
+  <div class="container">
+
+    <div class="when-card">
+      <span class="label">When</span>
+      <div class="when-date">
+        <time datetime="2026-09-29T09:00:00-07:00">Tuesday, September 29, 2026</time>
+      </div>
+      <div class="when-times">
+        <div class="when-time"><strong>9 AM</strong><span>PT</span></div>
+        <div class="when-time"><strong>11 AM</strong><span>CT</span></div>
+        <div class="when-time"><strong>12 PM</strong><span>ET</span></div>
+      </div>
+    </div>
+
+    <div class="people-block">
+      <span class="label">Host</span>
+      <div class="people-grid single">
+        <div class="person">
+          <div class="person-initials" aria-hidden="true">RG</div>
+          <div>
+            <div class="person-name">Ricardo Ganem</div>
+            <div class="person-role">Head of Sales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="people-block">
+      <span class="label">Speakers</span>
+      <div class="people-grid">
+        <div class="person">
+          <div class="person-initials" aria-hidden="true">AB</div>
+          <div>
+            <div class="person-name">Alejandro Bremer</div>
+          </div>
+        </div>
+        <div class="person">
+          <div class="person-initials" aria-hidden="true">DG</div>
+          <div>
+            <div class="person-name">David Godfrey</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
+        <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="fotofinish-redesign.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="fotofinish-redesign.html#pricing">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul class="footer-links" role="list">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><a href="#">Patent Pending Technology</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Modern Cleaning Concept LP. All rights reserved.</p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/fotofinishapp" class="social-link" aria-label="FotoFinish on Facebook"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+        <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
+window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
+const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+
+// ── MOBILE NAV OVERLAY ───────────────────────────────────
+(function(){
+  var hamburger   = document.querySelector('.hamburger');
+  var mobileNav   = document.getElementById('mobileNav');
+  var mobileClose = document.getElementById('mobileNavClose');
+  if(!hamburger||!mobileNav) return;
+  function openNav(){ mobileNav.classList.add('open'); document.body.style.overflow='hidden'; hamburger.setAttribute('aria-expanded','true'); }
+  function closeNav(){ mobileNav.classList.remove('open'); document.body.style.overflow=''; hamburger.setAttribute('aria-expanded','false'); }
+  hamburger.addEventListener('click', openNav);
+  mobileClose.addEventListener('click', closeNav);
+  mobileNav.querySelectorAll('.mobile-nav-link[aria-expanded]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item=btn.closest('.mobile-nav-item'), isOpen=item.classList.contains('open');
+      mobileNav.querySelectorAll('.mobile-nav-item.open').forEach(function(i){ i.classList.remove('open'); i.querySelector('[aria-expanded]').setAttribute('aria-expanded','false'); });
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+  mobileNav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+})();
+</script>
+</body>
+</html>
