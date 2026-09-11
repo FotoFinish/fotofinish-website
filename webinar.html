@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>Webinar Registration | FotoFinish</title>
+<link rel="alternate" hreflang="en" href="https://fotofinish.com/webinar">
+<link rel="alternate" hreflang="es" href="https://fotofinish.com/es/webinar">
+<link rel="alternate" hreflang="x-default" href="https://fotofinish.com/webinar">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
@@ -149,6 +152,21 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 .reveal-delay-1{transition-delay:.1s;}
 .reveal-delay-2{transition-delay:.2s;}
 .reveal-delay-3{transition-delay:.3s;}
+
+/* ── LANGUAGE SWITCHER ─────────────────────────────────── */
+.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px;}
+.nav.scrolled .lang-switch{border-color:rgba(0,63,115,.16);}
+.lang-opt{font-family:'Plus Jakarta Sans',Arial;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1;padding:6px 9px;border-radius:999px;color:rgba(255,255,255,.72);text-decoration:none;transition:color var(--transition),background var(--transition);}
+.nav.scrolled .lang-opt{color:var(--gray);}
+.lang-opt:hover{color:#fff;}
+.nav.scrolled .lang-opt:hover{color:var(--navy);}
+.lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
+.nav.scrolled .lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
+@media(max-width:980px){.lang-switch{display:none;}}
+.mobile-lang{display:flex;align-items:center;gap:10px;padding:18px 24px 4px;margin-top:6px;border-top:1px solid rgba(255,255,255,.07);}
+.mobile-lang-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);}
+.mobile-lang a{font-family:'Plus Jakarta Sans',Arial;font-size:14px;font-weight:700;padding:7px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;}
+.mobile-lang a[aria-current="true"]{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
 </style>
 </head>
 <body>
@@ -193,6 +211,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </li>
       </ul>
       <div class="nav-right">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <a href="/webinar" class="lang-opt" hreflang="en" lang="en" aria-current="true">EN</a>
+          <a href="/es/webinar" class="lang-opt" hreflang="es" lang="es">ES</a>
+        </div>
         <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
         <a href="demo.html" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Book a Demo</a>
         <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
@@ -226,6 +248,11 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     <div class="mobile-nav-item">
       <button class="mobile-nav-link" aria-expanded="false">About<svg class="mobile-nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="mobile-nav-sub"><a href="about.html">About Us</a><a href="testimonials.html">Testimonials</a><a href="contact.html">Contact</a><a href="https://blog.fotofinish.com">Blog</a></div>
+    </div>
+    <div class="mobile-lang">
+      <span class="mobile-lang-label">Language</span>
+      <a href="/webinar" hreflang="en" lang="en" aria-current="true">English</a>
+      <a href="/es/webinar" hreflang="es" lang="es">Español</a>
     </div>
   </nav>
   <div class="mobile-nav-footer">
