@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/blog", "destination": "https://blog.fotofinish.com/", "permanent": true },
+    { "source": "/blog/:path*", "destination": "https://blog.fotofinish.com/:path*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
