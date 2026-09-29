@@ -6,7 +6,7 @@
     { "source": "/blog/:path*", "destination": "https://blog.fotofinish.com/:path*", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/assets/favicon-32.png" }
+    { "source": "/favicon.ico", "destination": "/assets/favicon-v2-32.png" }
   ],
   "headers": [
     {
