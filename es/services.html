@@ -15,152 +15,36 @@
 <meta property="og:url" content="https://fotofinish.com/es/services">
 <meta property="og:image" content="https://fotofinish.com/assets/icons/FotoFlow%201%20-%205x4.png">
 <meta name="twitter:card" content="summary_large_image">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-ul{list-style:none;}
-h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
-h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
-h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
-h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
-p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
-.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.section{padding:96px 0;}
-.section-header{text-align:center;margin-bottom:56px;}
-.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
-.section-header h2{margin-bottom:16px;}
-.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
-.btn:hover{transform:translateY(-2px);}
-.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
-.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
-.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
-.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
-.btn-outline:hover{background:var(--navy);color:var(--white);}
-.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
-.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
-.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
-.btn-ghost:hover{background:rgba(255,255,255,.22);}
-.btn-lg{padding:17px 36px;font-size:17px;}
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
-.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
-.nav.scrolled .nav-link{color:var(--navy);}
-.nav.scrolled .nav-logo-img{filter:none;}
-.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
-.nav-logo{display:flex;align-items:center;flex-shrink:0;}
-.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
-.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
-.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
-.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
-.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
-.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
-.nav-dropdown{position:relative;}
-.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
-.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
-.nav-dropdown-menu a:hover{background:var(--cloud);}
-.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
-.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
-/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
-.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
-.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
-.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
-.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
-.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
-.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
-.mobile-nav-close svg{width:18px;height:18px;}
-.mobile-nav-body{flex:1;padding:12px 0 20px;}
-.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
-.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
-.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
-.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
-.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
-.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
-.mobile-nav-item.open .mobile-nav-sub{display:block;}
-.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
-.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
-.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
-.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
-@media(max-width:900px){.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}.nav-right .btn{display:none;}.nav-links{display:none !important;}}
-.page-hero{min-height:420px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
-.page-hero-inner{max-width:700px;}
-.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
-.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
-.page-hero .breadcrumb a:hover{color:var(--white);}
-.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
-.page-hero h1{color:var(--white);margin-bottom:16px;}
-.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
-.service-section{padding:96px 0;}
-.service-section:nth-child(odd){background:var(--cloud);}
-.service-section:nth-child(even){background:var(--white);}
-.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-.service-grid.reverse{direction:rtl;}
-.service-grid.reverse > *{direction:ltr;}
-.service-text .label{color:var(--blue);display:block;margin-bottom:12px;}
-.service-text h2{margin-bottom:16px;}
-.service-text p{font-size:17px;margin-bottom:24px;}
-.service-img{border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);}
-.service-img img{width:100%;height:auto;display:block;object-fit:cover;max-height:400px;}
-@media(max-width:768px){.service-grid,.service-grid.reverse{grid-template-columns:1fr;direction:ltr;}.service-img{display:none;}}
-.feature-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
-.feature-list li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--gray);}
-.feature-list li svg{width:18px;height:18px;flex-shrink:0;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px;}
-.video-wrapper{max-width:760px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:16/9;}
-.video-wrapper iframe{width:100%;height:100%;border:none;display:block;}
-.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
-.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
-.cta-band h2{color:var(--white);margin-bottom:16px;}
-.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
-.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.footer{background:var(--dark);padding:64px 0 32px;}
-.footer-top-hook{background:var(--navy);padding:32px 0;margin-bottom:0;}
-.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
-.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
-.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
-.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
-.footer-links{display:flex;flex-direction:column;gap:8px;}
-.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
-.footer-links a:hover{color:var(--white);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
-.social-links{display:flex;gap:12px;}
-.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
-.social-link:hover{background:var(--navy);}
-.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
-.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
-
-/* ── LANGUAGE SWITCHER ─────────────────────────────────── */
-.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px;}
-.nav.scrolled .lang-switch{border-color:rgba(0,63,115,.16);}
-.lang-opt{font-family:'Plus Jakarta Sans',Arial;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1;padding:6px 9px;border-radius:999px;color:rgba(255,255,255,.72);text-decoration:none;transition:color var(--transition),background var(--transition);}
-.nav.scrolled .lang-opt{color:var(--gray);}
-.lang-opt:hover{color:#fff;}
-.nav.scrolled .lang-opt:hover{color:var(--navy);}
-.lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
-.nav.scrolled .lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
-@media(max-width:980px){.lang-switch{display:none;}}
-.mobile-lang{display:flex;align-items:center;gap:10px;padding:18px 24px 4px;margin-top:6px;border-top:1px solid rgba(255,255,255,.07);}
-.mobile-lang-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);}
-.mobile-lang a{font-family:'Plus Jakarta Sans',Arial;font-size:14px;font-weight:700;padding:7px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;}
-.mobile-lang a[aria-current="true"]{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition)}
+.mobile-nav-close svg{width:18px;height:18px}
+.service-section{padding:96px 0}
+.service-section:nth-child(odd){background:var(--cloud)}
+.service-section:nth-child(even){background:var(--white)}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.service-grid.reverse{direction:rtl}
+.service-grid.reverse > *{direction:ltr}
+.service-text .label{color:var(--muted);display:block;margin-bottom:12px}
+.service-text h2{margin-bottom:16px}
+.service-text p{font-size:16px;margin-bottom:24px}
+.service-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+.service-img img{width:100%;height:auto;display:block;object-fit:cover;max-height:400px}
+@media(max-width:768px){.service-grid,.service-grid.reverse{grid-template-columns:1fr;direction:ltr}.service-img{display:none}}
+.feature-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.feature-list li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--gray)}
+.feature-list li svg{width:18px;height:18px;flex-shrink:0;stroke:var(--navy);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+.video-wrapper{max-width:760px;margin:0 auto;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/9}
+.video-wrapper iframe{width:100%;height:100%;border:none;display:block}
+.footer-top-hook{background:var(--navy);padding:32px 0;margin-bottom:0}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-hook-text h4{color:var(--white);font-size:20px;margin-bottom:4px}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6)}
+@media(max-width:768px){.footer-top-hook .container{flex-direction:column;text-align:center}}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-v2-32.png">
 <link rel="apple-touch-icon" href="/assets/favicon-v2-180.png">
@@ -211,8 +95,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <a href="/services" class="lang-opt" hreflang="en" lang="en">EN</a>
           <a href="/es/services" class="lang-opt" hreflang="es" lang="es" aria-current="true">ES</a>
         </div>
-        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Iniciar sesión</a>
-        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Iniciar prueba gratuita</a>
+        <a href="https://app.fotofinish.com/login" class="nav-login">Iniciar sesión</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary btn-sm">Iniciar prueba gratuita</a>
         <button class="hamburger" aria-label="Abrir menú de navegación"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -220,7 +104,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 </nav>
 
 <!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+<div class="mobile-nav-overlay on-navy" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <div class="mobile-nav-header">
     <img src="/assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">
@@ -252,13 +136,13 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
   </nav>
   <div class="mobile-nav-footer">
-    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Iniciar sesión</a>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Iniciar prueba gratuita</a>
+    <a href="https://app.fotofinish.com/login" class="btn btn-secondary">Iniciar sesión</a>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-primary">Iniciar prueba gratuita</a>
   </div>
 </div>
 
 
-<section class="page-hero" aria-label="Encabezado: servicios">
+<section class="page-hero on-navy" aria-label="Encabezado: servicios">
   <div class="container">
     <div class="page-hero-inner">
       <nav class="breadcrumb" aria-label="Ruta de navegación">
@@ -266,8 +150,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <span aria-hidden="true">/</span>
         <span aria-current="page">Servicios</span>
       </nav>
-      <h1 class="reveal">Todo lo que necesita para verificar, dar seguimiento y mejorar</h1>
-      <p class="reveal reveal-delay-1">Desde la captura de fotos en piso hasta los paneles de supervisión en la nube, FotoFinish le da a cada rol de tu operación exactamente lo que necesita.</p>
+      <h1>Todo lo que necesita para verificar, dar seguimiento y mejorar</h1>
+      <p>Desde la captura de fotos en piso hasta los paneles de supervisión en la nube, FotoFinish le da a cada rol de tu operación exactamente lo que necesita.</p>
     </div>
   </div>
 </section>
@@ -276,11 +160,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="fotoflow-heading">
   <div class="container">
     <div class="service-grid">
-      <div class="service-text reveal">
-        <span class="label">Tecnología central</span>
+      <div class="service-text">
         <h2 id="fotoflow-heading">FotoFlow: el ciclo de verificación fotográfica</h2>
         <p>Un FotoFlow es el motor inteligente que está en el centro de FotoFinish. Cada FotoFlow se configura para un sitio o turno específico y contiene una serie de «Grupos de Fotos»; cada Grupo guarda varias imágenes de referencia de tu sitio en condiciones ideales.</p>
-        <p style="margin-top:12px;">Cuando un empleado inicia su reporte, la app elige al azar una foto de cada Grupo y le pide que la replique. Así se genera un reporte que cambia todos los días, con fotos representativas del sitio, y hacer trampa se vuelve prácticamente imposible.</p>
+        <p style="margin-top:12px">Cuando un empleado inicia su reporte, la app elige al azar una foto de cada Grupo y le pide que la replique. Así se genera un reporte que cambia todos los días, con fotos representativas del sitio, y hacer trampa se vuelve prácticamente imposible.</p>
         <ul class="feature-list">
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Grupos de Fotos configurables para cada área de tu sitio</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>La selección aleatoria de fotos elimina la previsibilidad</li>
@@ -289,13 +172,12 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="https://app.fotofinish.com/subscription" class="btn btn-primary">Iniciar prueba gratuita</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
+      <div class="service-img">
         <img src="/assets/icons/FotoFlow 1 - 5x4.png" alt="Diagrama de FotoFlow que muestra cómo los Grupos de Fotos y la selección aleatoria generan reportes de verificación distintos cada día" loading="lazy">
       </div>
     </div>
-    <div style="margin-top:64px;" class="reveal">
-      <div class="section-header" style="margin-bottom:32px;">
-        <span class="label">Míralo en acción</span>
+    <div style="margin-top:64px">
+      <div class="section-header" style="margin-bottom:32px">
         <h2>Cómo funciona un FotoFlow</h2>
         <p>Mira el recorrido de 2 minutos que explica el ciclo de verificación fotográfica de principio a fin.</p>
       </div>
@@ -310,8 +192,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="dashboard-heading">
   <div class="container">
     <div class="service-grid reverse">
-      <div class="service-text reveal">
-        <span class="label">Aplicación web</span>
+      <div class="service-text">
         <h2 id="dashboard-heading">Panel de control multisitio</h2>
         <p>El Panel de control web de FotoFinish les da a supervisores y gerentes una ventana en tiempo real a cada ubicación de tu red. Ve los reportes fotográficos conforme llegan, compara sitios lado a lado e identifica al instante qué ubicaciones necesitan atención, todo desde una sola pantalla.</p>
         <ul class="feature-list">
@@ -322,7 +203,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="https://app.fotofinish.com/login" class="btn btn-primary">Iniciar sesión</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
+      <div class="service-img">
         <img src="/assets/mockup/graphic-dashboard-results.png" alt="Panel de control gráfico de FotoFinish que muestra resultados de limpieza y puntuaciones de cumplimiento de varios sitios" loading="lazy">
       </div>
     </div>
@@ -333,8 +214,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="mobile-heading">
   <div class="container">
     <div class="service-grid">
-      <div class="service-text reveal">
-        <span class="label">Aplicación móvil</span>
+      <div class="service-text">
         <h2 id="mobile-heading">App móvil para Usuarios del Sitio</h2>
         <p>La app móvil de FotoFinish está diseñada para quien hace el trabajo en piso. Guía a los empleados paso a paso en cada envío de fotos: sin necesidad de capacitación y sin margen de ambigüedad.</p>
         <ul class="feature-list">
@@ -345,7 +225,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="/es/download" class="btn btn-primary">Descargar la app</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
+      <div class="service-img">
         <img src="/assets/app-photos/App in hand working.png" alt="Personal de limpieza con un smartphone usando la app móvil de FotoFinish para capturar un reporte fotográfico en sitio" loading="lazy">
       </div>
     </div>
@@ -356,11 +236,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="eval-heading">
   <div class="container">
     <div class="service-grid reverse">
-      <div class="service-text reveal">
-        <span class="label">Servicio adicional opcional</span>
+      <div class="service-text">
         <h2 id="eval-heading">Centro de Evaluación</h2>
         <p>El Centro de Evaluación de FotoFinish es un servicio opcional de evaluación humana de fotos. Evaluadores plenamente capacitados revisan de forma independiente cada envío conforme a tus estándares específicos y entregan una puntuación objetiva, sin sesgo interno.</p>
-        <p style="margin-top:12px;">Que las fotos se evalúen de forma independiente le permite a tu equipo directivo concentrarse en dirigir el negocio en lugar de revisar fotos.</p>
+        <p style="margin-top:12px">Que las fotos se evalúen de forma independiente le permite a tu equipo directivo concentrarse en dirigir el negocio en lugar de revisar fotos.</p>
         <ul class="feature-list">
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Evaluadores capacitados revisan cada foto conforme a tus estándares</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>La puntuación objetiva elimina el sesgo del supervisor</li>
@@ -369,7 +248,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="/es/pricing" class="btn btn-primary">Ver planes y precios</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
+      <div class="service-img">
         <img src="/assets/app-photos/Results Dashboard Laptop Man on Phone.png" alt="Gerente de operaciones revisando a distancia el estado de un sitio en una laptop" loading="lazy">
       </div>
     </div>
@@ -380,8 +259,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="manager-heading">
   <div class="container">
     <div class="service-grid">
-      <div class="service-text reveal">
-        <span class="label">Gestión en sitio</span>
+      <div class="service-text">
         <h2 id="manager-heading">App del Gerente</h2>
         <p>Los supervisores que visitan sitios en persona pueden usar la App del Gerente de FotoFinish para crear tickets de acción correctiva en el momento. Vincula un problema directamente a un reporte fotográfico, asígnalo a alguien del equipo y dale seguimiento a su resolución, todo desde el teléfono.</p>
         <ul class="feature-list">
@@ -392,8 +270,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="https://app.fotofinish.com/login" class="btn btn-primary">Iniciar sesión</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
-        <img src="/assets/app-photos/FotoFinish app in iPhone 13.png" alt="App móvil de FotoFinish en un iPhone 13 mostrando la interfaz de captura de fotos" loading="lazy" style="border-radius:16px;box-shadow:0 16px 48px rgba(0,63,115,.18);">
+      <div class="service-img">
+        <img src="/assets/app-photos/FotoFinish app in iPhone 13.png" alt="App móvil de FotoFinish en un iPhone 13 mostrando la interfaz de captura de fotos" loading="lazy" style="border-radius:16px;box-shadow:var(--shadow)">
       </div>
     </div>
   </div>
@@ -403,11 +281,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <section class="service-section" aria-labelledby="attendance-heading">
   <div class="container">
     <div class="service-grid">
-      <div class="service-text reveal">
-        <span class="label">Función Premium</span>
+      <div class="service-text">
         <h2 id="attendance-heading">Seguimiento de asistencia</h2>
         <p>Entérate de quién llegó y a qué hora, de forma automática. FotoFinish registra la asistencia de cada Usuario del Sitio en cada turno, sin pedirle nada extra a tu personal. En cuanto un empleado envía su reporte fotográfico, queda registrada su presencia en ese sitio.</p>
-        <p style="margin-top:12px;">Se acabaron las listas de asistencia en papel. Se acabaron las llamadas para confirmar quién estuvo en sitio. Se acabaron las discusiones sobre si un turno se cubrió o no. Obtienes un registro de asistencia completo, con fecha y hora, de cada sitio y cada día.</p>
+        <p style="margin-top:12px">Se acabaron las listas de asistencia en papel. Se acabaron las llamadas para confirmar quién estuvo en sitio. Se acabaron las discusiones sobre si un turno se cubrió o no. Obtienes un registro de asistencia completo, con fecha y hora, de cada sitio y cada día.</p>
         <ul class="feature-list">
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Registro de entrada automático con cada envío de reporte fotográfico</li>
           <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Consulta el historial de asistencia completo por sitio y por empleado</li>
@@ -417,18 +294,18 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </ul>
         <a href="/es/pricing" class="btn btn-primary">Ver planes y precios</a>
       </div>
-      <div class="service-img reveal reveal-delay-2">
+      <div class="service-img">
         <img src="/assets/mockup/graphic-dashboard-results.png" alt="Panel de control gráfico de FotoFinish que muestra resultados de limpieza y puntuaciones de cumplimiento de varios sitios" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<section class="cta-band" aria-labelledby="services-cta-heading">
+<section class="cta-band on-navy" aria-labelledby="services-cta-heading">
   <div class="container">
-    <h2 class="reveal" id="services-cta-heading">Inicia tu prueba gratuita de 10 días</h2>
-    <p class="reveal reveal-delay-1">Sin tarjeta de crédito. Acceso completo a todas las funciones desde el primer día.</p>
-    <div class="cta-band-btns reveal reveal-delay-2">
+    <h2 id="services-cta-heading">Inicia tu prueba gratuita de 10 días</h2>
+    <p>Sin tarjeta de crédito. Acceso completo a todas las funciones desde el primer día.</p>
+    <div class="cta-band-btns">
       <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow btn-lg">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         Iniciar prueba gratuita
@@ -438,23 +315,14 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   </div>
 </section>
 
-<div class="footer-top-hook">
-  <div class="container">
-    <div class="footer-hook-text">
-      <h4>Deja de suponer. Empieza a verificar.</h4>
-      <p>Prueba gratuita de 10 días · Sin tarjeta de crédito · Cancela cuando quieras</p>
-    </div>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Empieza a ahorrar hoy &rarr;</a>
-  </div>
-</div>
-<footer class="footer" aria-label="Pie de página">
+<footer class="footer on-navy" aria-label="Pie de página">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software para operadores de múltiples sitios que impulsa la responsabilidad mediante la validación fotográfica de la ejecución del trabajo.</p>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Empresa</h5>
         <ul class="footer-links" role="list">
           <li><a href="/es">Inicio</a></li>
@@ -464,7 +332,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <li><a href="/es/about">Acerca de nosotros</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Legal</h5>
         <ul class="footer-links" role="list">
           <li><a href="/privacy-policy" hreflang="en" lang="en">Aviso de privacidad <span lang="es">(en inglés)</span></a></li>
@@ -480,7 +348,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish en LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish en X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
         <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish en Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
-        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish en YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish en YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#002B4E"/></svg></a>
       </div>
     </div>
   </div>
@@ -489,8 +357,6 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
 window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='/assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='/assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
-const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 
 // ── MOBILE NAV OVERLAY ───────────────────────────────────
 (function(){

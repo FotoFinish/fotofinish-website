@@ -54,226 +54,54 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-/* ── BRAND TOKENS ─────────────────────────────────────── */
-:root {
-  --navy:    #003F73;
-  --blue:    #75BEE9;
-  --yellow:  #FBF49B;
-  --gray:    #555555;
-  --dark:    #1A2B3C;
-  --cloud:   #F2F5F9;
-  --white:   #FFFFFF;
-  --shadow:  0 4px 24px rgba(0,63,115,.10);
-  --shadow-lg: 0 12px 48px rgba(0,63,115,.16);
-  --radius:  12px;
-  --transition: .22s cubic-bezier(.4,0,.2,1);
-}
-
-/* ── REDUCED MOTION ────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .reveal { opacity: 1 !important; transform: none !important; }
-}
-
-/* ── RESET ─────────────────────────────────────────────── */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-ul{list-style:none;}
-
-/* ── TYPOGRAPHY ────────────────────────────────────────── */
-h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
-h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
-h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.5vw,28px);line-height:1.2;color:var(--navy);}
-h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
-p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
-.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
-
-/* ── LAYOUT ────────────────────────────────────────────── */
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.section{padding:96px 0;}
-.section-header{text-align:center;margin-bottom:56px;}
-.section-header .label{color:var(--blue);margin-bottom:12px;display:block;}
-.section-header h2{margin-bottom:16px;}
-.section-header p{max-width:540px;margin:0 auto;font-size:18px;}
-
-/* ── BUTTONS ───────────────────────────────────────────── */
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
-.btn:hover{transform:translateY(-2px);}
-.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
-.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
-.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
-.btn-outline{background:transparent;color:var(--navy);border-color:var(--navy);}
-.btn-outline:hover{background:var(--navy);color:var(--white);}
-.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
-.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
-.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
-.btn-ghost:hover{background:rgba(255,255,255,.22);}
-.btn-lg{padding:17px 36px;font-size:17px;}
-
-/* ── NAV ───────────────────────────────────────────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
-.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
-.nav.scrolled .nav-link{color:var(--navy);}
-.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
-.nav-logo{display:flex;align-items:center;flex-shrink:0;}
-.nav-logo-img{height:36px;width:auto;object-fit:contain;transition:opacity var(--transition);}
-.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
-.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
-.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
-.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
-.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
-.nav-dropdown{position:relative;}
-.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:100%;padding-top:8px;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
-.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
-.nav-dropdown-menu a:hover{background:var(--cloud);}
-.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
-.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
-
-/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
-.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
-.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
-.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
-.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
-.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
-.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
-.mobile-nav-close svg{width:18px;height:18px;}
-.mobile-nav-body{flex:1;padding:12px 0 20px;}
-.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
-.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
-.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
-.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
-.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
-.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
-.mobile-nav-item.open .mobile-nav-sub{display:block;}
-.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
-.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
-.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
-.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
-@media(max-width:900px){
-  .hamburger{display:flex;color:var(--white);}
-  .nav.scrolled .hamburger{color:var(--navy);}
-  .nav-right .btn{display:none;}
-  .nav-links{display:none !important;}
-}
-
-/* ── PAGE HERO ─────────────────────────────────────────── */
-.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);padding:140px 0 80px;text-align:center;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 50% 60%,rgba(117,190,233,.15) 0%,transparent 60%);pointer-events:none;}
-.page-hero .label{color:var(--blue);display:block;margin-bottom:16px;}
-.page-hero h1{color:var(--white);margin-bottom:16px;font-size:clamp(32px,4.5vw,56px);}
-.page-hero p{color:rgba(255,255,255,.8);font-size:18px;max-width:560px;margin:0 auto;}
-
-/* ── PRICING ───────────────────────────────────────────── */
-.pricing{background:var(--cloud);}
-.pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px;}
-.pricing-toggle-label{font-size:15px;font-weight:600;color:var(--gray);cursor:pointer;transition:color var(--transition);}
-.pricing-toggle-label.active{color:var(--navy);}
-.toggle-track{width:48px;height:26px;border-radius:13px;background:var(--navy);position:relative;cursor:pointer;border:none;transition:background var(--transition);}
-.toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--white);transition:transform var(--transition);}
-.toggle-track.annual::after{transform:translateX(22px);}
-.annual-badge{background:var(--yellow);color:var(--navy);font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px;}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
-.pricing-card{background:var(--white);border:2px solid rgba(0,63,115,.08);border-radius:20px;padding:40px 32px;transition:box-shadow var(--transition),transform var(--transition),border-color var(--transition);cursor:pointer;}
-.pricing-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px);}
-.pricing-card.featured{border-color:var(--navy);position:relative;transform:scale(1.03);}
-.pricing-card.featured:hover{transform:scale(1.03) translateY(-4px);}
-.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--white);font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:20px;white-space:nowrap;}
-.pricing-tier{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}
-.pricing-card h3{font-size:24px;margin-bottom:4px;}
-.pricing-price{display:flex;align-items:baseline;gap:4px;margin:20px 0;}
-.pricing-amount{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:48px;color:var(--navy);line-height:1;}
-.pricing-period{font-size:14px;color:var(--gray);}
-.pricing-annual-note{font-size:12px;color:var(--blue);font-weight:600;margin-bottom:8px;min-height:18px;}
-.pricing-desc{font-size:14px;color:var(--gray);margin-bottom:24px;min-height:40px;}
-.pricing-features{margin-bottom:32px;display:flex;flex-direction:column;gap:10px;}
-.pricing-feature{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--gray);}
-.pricing-feature svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;}
-.pricing-divider{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,63,115,.4);margin:16px 0 14px;padding-bottom:10px;border-bottom:1px solid var(--cloud);}
-.pricing-cta{width:100%;text-align:center;justify-content:center;}
-.pricing-note{text-align:center;font-size:13px;color:var(--gray);margin-top:10px;}
-.trust-badges{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap;}
-.trust-badge{display:flex;align-items:center;gap:10px;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);padding:10px 18px;}
-.trust-badge img{height:28px;width:auto;filter:grayscale(1) opacity(.6);object-fit:contain;}
-.trust-badge span{font-size:12px;font-weight:600;color:var(--gray);}
-@media(max-width:900px){.pricing-grid{grid-template-columns:1fr;}.pricing-card.featured{transform:none;}}
-
-/* ── FAQ ───────────────────────────────────────────────── */
-.faq{background:var(--white);}
-.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:8px;}
-.faq-item{border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);overflow:hidden;transition:border-color var(--transition);}
-.faq-item.open{border-color:rgba(0,63,115,.3);}
-.faq-q{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 24px;cursor:pointer;font-family:'Plus Jakarta Sans',Arial;font-weight:600;font-size:16px;color:var(--navy);background:var(--white);border:none;width:100%;text-align:left;transition:background var(--transition);}
-.faq-q:hover{background:var(--cloud);}
-.faq-q:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;}
-.faq-icon{width:24px;height:24px;flex-shrink:0;border-radius:50%;background:var(--cloud);display:flex;align-items:center;justify-content:center;transition:transform var(--transition),background var(--transition);}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--navy);}
-.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition);}
-.faq-item.open .faq-icon svg{stroke:var(--white);}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
-.faq-item.open .faq-a{max-height:400px;}
-.faq-a-inner{padding:0 24px 20px;font-size:15px;color:var(--gray);line-height:1.7;border-top:1px solid rgba(0,63,115,.08);}
-
-/* ── CTA BAND ──────────────────────────────────────────── */
-.cta-band{background:linear-gradient(135deg,var(--navy),#005599);padding:96px 0;text-align:center;position:relative;overflow:hidden;}
-.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(117,190,233,.2),transparent 70%);pointer-events:none;}
-.cta-band h2{color:var(--white);margin-bottom:16px;}
-.cta-band p{color:rgba(255,255,255,.7);font-size:18px;max-width:480px;margin:0 auto 36px;}
-.cta-band-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-
-/* ── FOOTER ────────────────────────────────────────────── */
-.footer{background:var(--dark);padding:64px 0 32px;}
-.footer-top-hook{background:var(--navy);padding:32px 0;margin-bottom:0;}
-.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
-.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
-.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
-.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
-.footer-links{display:flex;flex-direction:column;gap:8px;}
-.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
-.footer-links a:hover{color:var(--white);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
-.social-links{display:flex;gap:12px;}
-.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
-.social-link:hover{background:var(--navy);}
-.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
-.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
-
-/* ── SCROLL REVEAL ─────────────────────────────────────── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:.1s;}
-.reveal-delay-2{transition-delay:.2s;}
-.reveal-delay-3{transition-delay:.3s;}
-
-/* ── LANGUAGE SWITCHER ─────────────────────────────────── */
-.lang-switch{display:flex;align-items:center;gap:2px;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px;}
-.nav.scrolled .lang-switch{border-color:rgba(0,63,115,.16);}
-.lang-opt{font-family:'Plus Jakarta Sans',Arial;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1;padding:6px 9px;border-radius:999px;color:rgba(255,255,255,.72);text-decoration:none;transition:color var(--transition),background var(--transition);}
-.nav.scrolled .lang-opt{color:var(--gray);}
-.lang-opt:hover{color:#fff;}
-.nav.scrolled .lang-opt:hover{color:var(--navy);}
-.lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
-.nav.scrolled .lang-opt[aria-current="true"]{background:var(--yellow);color:var(--navy);}
-@media(max-width:980px){.lang-switch{display:none;}}
-.mobile-lang{display:flex;align-items:center;gap:10px;padding:18px 24px 4px;margin-top:6px;border-top:1px solid rgba(255,255,255,.07);}
-.mobile-lang-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);}
-.mobile-lang a{font-family:'Plus Jakarta Sans',Arial;font-size:14px;font-weight:700;padding:7px 15px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;}
-.mobile-lang a[aria-current="true"]{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition)}
+.mobile-nav-close svg{width:18px;height:18px}
+.pricing{background:var(--cloud)}
+.pricing-toggle{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:48px}
+.pricing-toggle-label{font-size:14px;font-weight:600;color:var(--gray);cursor:pointer;transition:color var(--transition)}
+.pricing-toggle-label.active{color:var(--navy)}
+.toggle-track{width:48px;height:26px;border-radius:12px;background:var(--navy);position:relative;cursor:pointer;border:none;transition:background var(--transition)}
+.toggle-track::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:var(--white);transition:transform var(--transition)}
+.toggle-track.annual::after{transform:translateX(22px)}
+.annual-badge{color:var(--navy);font-family:var(--font);font-weight:600;font-size:14px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start}
+.pricing-card{background:var(--white);border:2px solid rgba(0,63,115,.08);border-radius:16px;padding:40px 32px;transition:box-shadow var(--transition),transform var(--transition),border-color var(--transition);cursor:pointer}
+.pricing-card:hover{box-shadow:var(--shadow)}
+.pricing-card.featured{border-color:var(--navy);position:relative;transform:scale(1.03)}
+.pricing-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--white);font-family:var(--font);font-weight:600;font-size:12px;padding:4px 16px;border-radius:8px;white-space:nowrap}
+.pricing-tier{font-family:var(--font);font-weight:600;font-size:12px;color:var(--muted);margin-bottom:12px}
+.pricing-card h3{font-size:24px;margin-bottom:4px}
+.pricing-price{display:flex;align-items:baseline;gap:4px;margin:20px 0}
+.pricing-amount{font-family:var(--font);font-weight:600;font-size:40px;color:var(--navy);line-height:1}
+.pricing-period{font-size:14px;color:var(--gray)}
+.pricing-annual-note{font-size:12px;color:var(--muted);font-weight:600;margin-bottom:8px;min-height:18px}
+.pricing-desc{font-size:14px;color:var(--gray);margin-bottom:24px;min-height:40px}
+.pricing-features{margin-bottom:32px;display:flex;flex-direction:column;gap:12px}
+.pricing-feature{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--gray)}
+.pricing-feature svg{width:16px;height:16px;flex-shrink:0;margin-top:2px}
+.pricing-divider{font-family:var(--font);font-weight:600;font-size:12px;color:var(--muted);margin:16px 0 16px;padding-bottom:12px;border-bottom:1px solid var(--cloud)}
+.pricing-cta{width:100%;text-align:center;justify-content:center}
+.pricing-note{text-align:center;font-size:12px;color:var(--gray);margin-top:12px}
+.trust-badges{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:40px;flex-wrap:wrap}
+.trust-badge{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);padding:12px 20px}
+.trust-badge img{height:28px;width:auto;filter:grayscale(1) opacity(.6);object-fit:contain}
+.trust-badge span{font-size:12px;font-weight:600;color:var(--gray)}
+@media(max-width:900px){.pricing-grid{grid-template-columns:1fr}.pricing-card.featured{transform:none}}
+.faq{background:var(--white)}
+.faq-icon svg{width:12px;height:12px;stroke:var(--navy);stroke-width:2.5;fill:none;stroke-linecap:round;transition:stroke var(--transition)}
+.faq-item.open .faq-icon svg{stroke:var(--white)}
+.footer-top-hook{background:var(--navy);padding:32px 0;margin-bottom:0}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-hook-text h4{color:var(--white);font-size:20px;margin-bottom:4px}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6)}
+@media(max-width:768px){.footer-top-hook .container{flex-direction:column;text-align:center}}
+.toggle-track::before{content:"";position:absolute;inset:-8px -4px;}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-v2-32.png">
 <link rel="apple-touch-icon" href="/assets/favicon-v2-180.png">
@@ -343,8 +171,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <a href="/pricing" class="lang-opt" hreflang="en" lang="en">EN</a>
           <a href="/es/pricing" class="lang-opt" hreflang="es" lang="es" aria-current="true">ES</a>
         </div>
-        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Iniciar sesión</a>
-        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Iniciar prueba gratuita</a>
+        <a href="https://app.fotofinish.com/login" class="nav-login">Iniciar sesión</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary btn-sm">Iniciar prueba gratuita</a>
         <button class="hamburger" aria-label="Abrir menú de navegación">
           <span></span><span></span><span></span>
         </button>
@@ -354,7 +182,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 </nav>
 
 <!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+<div class="mobile-nav-overlay on-navy" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
 
   <div class="mobile-nav-header">
     <img src="/assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
@@ -424,8 +252,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   </nav>
 
   <div class="mobile-nav-footer">
-    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Iniciar sesión</a>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Iniciar prueba gratuita</a>
+    <a href="https://app.fotofinish.com/login" class="btn btn-secondary">Iniciar sesión</a>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-primary">Iniciar prueba gratuita</a>
   </div>
 
 </div>
@@ -433,9 +261,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <!-- ══════════════════════════════════════════════════════
      PAGE HERO
 ══════════════════════════════════════════════════════ -->
-<section class="page-hero" aria-label="Encabezado: precios">
+<section class="page-hero on-navy" aria-label="Encabezado: precios">
   <div class="container">
-    <span class="label">Precios</span>
     <h1>Precios simples, por sitio</h1>
     <p>Pague por sitio, no por usuario. Escale de una ubicación a miles, sin cargos ocultos y sin contratos a largo plazo.</p>
   </div>
@@ -446,16 +273,15 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 ══════════════════════════════════════════════════════ -->
 <section class="pricing section" id="pricing" aria-labelledby="pricing-heading">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="label">Planes</span>
+    <div class="section-header">
       <h2 id="pricing-heading">Precios flexibles que escalan</h2>
       <p>Los planes escalan según el número de sitios. Agrega todos los usuarios que necesites sin costo adicional.</p>
     </div>
 
     <!-- Annual/Monthly Toggle -->
-    <div class="pricing-toggle reveal" aria-label="Periodo de facturación">
+    <div class="pricing-toggle" aria-label="Periodo de facturación">
       <span class="pricing-toggle-label active" id="label-monthly">Mensual</span>
-      <button class="toggle-track" id="billingToggle" aria-pressed="false" aria-label="Cambiar a facturación anual">
+      <button class="toggle-track on-navy" id="billingToggle" aria-pressed="false" aria-label="Cambiar a facturación anual">
       </button>
       <span class="pricing-toggle-label" id="label-annual">Anual</span>
       <span class="annual-badge" id="annualBadge" aria-label="Ahorre 20% con facturación anual">Ahorre 20%</span>
@@ -464,8 +290,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     <div class="pricing-grid">
 
       <!-- PRO -->
-      <div class="pricing-card reveal reveal-delay-1">
-        <div class="pricing-tier">Pro</div>
+      <div class="pricing-card">
         <h3>Pro</h3>
         <div class="pricing-price">
           <span class="pricing-amount" id="price-pro">$20</span>
@@ -496,9 +321,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       </div>
 
       <!-- PREMIUM (featured) -->
-      <div class="pricing-card featured reveal reveal-delay-2">
-        <div class="pricing-badge">Más popular</div>
-        <div class="pricing-tier">Premium</div>
+      <div class="pricing-card featured">
+        <div class="pricing-badge on-navy">Más popular</div>
         <h3>Premium</h3>
         <div class="pricing-price">
           <span class="pricing-amount" id="price-premium">$40</span>
@@ -530,11 +354,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       </div>
 
       <!-- ENTERPRISE -->
-      <div class="pricing-card reveal reveal-delay-3">
-        <div class="pricing-tier">Enterprise</div>
+      <div class="pricing-card">
         <h3>Enterprise</h3>
-        <div class="pricing-price" style="margin-bottom:8px;">
-          <span class="pricing-amount" style="font-size:32px;">Personalizado</span>
+        <div class="pricing-price" style="margin-bottom:8px">
+          <span class="pricing-amount" style="font-size:32px">Personalizado</span>
         </div>
         <div class="pricing-annual-note">Precios por volumen disponibles</div>
         <p class="pricing-desc">Para corporativos multinacionales que administran redes grandes y distribuidas. Incluye SLA, integraciones y soporte dedicado.</p>
@@ -564,7 +387,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
 
     <!-- Trust Badges -->
-    <div class="trust-badges reveal" aria-label="Certificaciones de la industria y señales de confianza">
+    <div class="trust-badges" aria-label="Certificaciones de la industria y señales de confianza">
       <div class="trust-badge">
         <img src="/assets/badges/IFMA logo.png" alt="IFMA – International Facility Management Association" loading="lazy" height="28">
         <span>Miembro de IFMA</span>
@@ -580,7 +403,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
 
     <!-- Review Platform Badges -->
-    <div class="review-badges reveal" aria-label="Insignias de plataformas de reseñas de software" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid rgba(0,63,115,.08);">
+    <div class="review-badges" aria-label="Insignias de plataformas de reseñas de software" style="display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid rgba(0,63,115,.08)">
       <div class="sf-root" data-id="3340613" data-badge="top-performer-winter" data-variant-id="sf" data-metadata="achievement=top-performer-seasonal-2026-winter" style="width:125px">
         <a href="https://sourceforge.net/software/product/FotoFinish/" target="_blank" rel="noopener">Reseñas de FotoFinish</a>
       </div>
@@ -605,11 +428,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 ══════════════════════════════════════════════════════ -->
 <section class="faq section" aria-labelledby="faq-heading">
   <div class="container">
-    <div class="section-header reveal">
-      <span class="label">Preguntas frecuentes</span>
+    <div class="section-header">
       <h2 id="faq-heading">Respuestas sobre precios</h2>
     </div>
-    <div class="faq-list reveal" role="list">
+    <div class="faq-list" role="list">
 
       <div class="faq-item" role="listitem">
         <button class="faq-q" aria-expanded="false">
@@ -658,11 +480,11 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <!-- ══════════════════════════════════════════════════════
      CTA BAND
 ══════════════════════════════════════════════════════ -->
-<section class="cta-band" aria-labelledby="cta-heading">
+<section class="cta-band on-navy" aria-labelledby="cta-heading">
   <div class="container">
-    <h2 class="reveal" id="cta-heading">¿Listo para reducir tus costos de supervisión?</h2>
-    <p class="reveal reveal-delay-1">Únete a más de 6,000 sitios en todo el mundo. Inicia tu prueba gratuita de 10 días, sin tarjeta de crédito.</p>
-    <div class="cta-band-btns reveal reveal-delay-2">
+    <h2 id="cta-heading">¿Listo para reducir tus costos de supervisión?</h2>
+    <p>Únete a más de 6,000 sitios en todo el mundo. Inicia tu prueba gratuita de 10 días, sin tarjeta de crédito.</p>
+    <div class="cta-band-btns">
       <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow btn-lg">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>
         Iniciar prueba gratuita
@@ -675,17 +497,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <!-- ══════════════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════════════ -->
-<div class="footer-top-hook">
-  <div class="container">
-    <div class="footer-hook-text">
-      <h4>Deja de suponer. Empieza a verificar.</h4>
-      <p>Prueba gratuita de 10 días · Sin tarjeta de crédito · Cancela cuando quieras</p>
-    </div>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Empieza a ahorrar hoy &rarr;</a>
-  </div>
-</div>
-
-<footer class="footer" aria-label="Pie de página">
+<footer class="footer on-navy" aria-label="Pie de página">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -693,7 +505,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
              alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software para operadores de múltiples sitios que impulsa la responsabilidad mediante la validación fotográfica de la ejecución del trabajo.</p>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Empresa</h5>
         <ul class="footer-links" role="list">
           <li><a href="/es">Inicio</a></li>
@@ -704,7 +516,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <li><a href="https://blog.fotofinish.com">Blog</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Legal</h5>
         <ul class="footer-links" role="list">
           <li><a href="/privacy-policy" hreflang="en" lang="en">Aviso de privacidad <span lang="es">(en inglés)</span></a></li>
@@ -729,7 +541,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg>
         </a>
         <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish en YouTube">
-          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg>
+          <svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#002B4E"/></svg>
         </a>
       </div>
     </div>
@@ -785,19 +597,6 @@ document.querySelectorAll('.mobile-nav-item .mobile-nav-link[aria-expanded]').fo
 });
 
 mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileNav));
-
-// ── SCROLL REVEAL ────────────────────────────────────────
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if (!prefersReducedMotion) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
-}
 
 // ── PRICING TOGGLE ───────────────────────────────────────
 const toggle = document.getElementById('billingToggle');

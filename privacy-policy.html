@@ -5,119 +5,28 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | FotoFinish</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-ul{list-style:none;}
-h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
-h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
-h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.2vw,24px);line-height:1.2;color:var(--navy);}
-h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
-p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
-.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
-.btn:hover{transform:translateY(-2px);}
-.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
-.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
-.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
-.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
-.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
-.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
-.btn-ghost:hover{background:rgba(255,255,255,.22);}
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
-.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
-.nav.scrolled .nav-link{color:var(--navy);}
-.nav.scrolled .nav-logo-img{filter:none;}
-.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
-.nav-logo{display:flex;align-items:center;flex-shrink:0;}
-.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
-.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
-.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
-.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
-.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
-.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
-.nav-dropdown{position:relative;}
-.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:100%;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
-.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
-.nav-dropdown-menu a:hover{background:var(--cloud);}
-.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
-.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
-/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
-.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
-.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
-.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
-.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
-.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
-.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
-.mobile-nav-close svg{width:18px;height:18px;}
-.mobile-nav-body{flex:1;padding:12px 0 20px;}
-.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
-.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
-.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
-.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
-.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
-.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
-.mobile-nav-item.open .mobile-nav-sub{display:block;}
-.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
-.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
-.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
-.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
-@media(max-width:900px){.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}.nav-right .btn{display:none;}.nav-links{display:none !important;}}
-/* PAGE HERO */
-.page-hero{min-height:380px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
-.page-hero-inner{max-width:700px;}
-.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
-.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
-.page-hero .breadcrumb a:hover{color:var(--white);}
-.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
-.page-hero h1{color:var(--white);margin-bottom:16px;}
-.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
-/* LEGAL CONTENT */
-.legal-section{padding:96px 0;background:var(--white);}
-.legal-body{max-width:760px;margin:0 auto;}
-.legal-body p{font-size:16px;line-height:1.8;margin-bottom:20px;}
-.legal-body h3{border-top:1px solid rgba(0,63,115,.08);padding-top:32px;margin-top:40px;margin-bottom:16px;}
-.legal-body ul{margin-bottom:20px;padding-left:0;}
-.legal-body ul li{position:relative;padding-left:20px;font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:8px;}
-.legal-body ul li::before{content:'–';position:absolute;left:0;color:var(--blue);}
-.legal-body a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;}
-.legal-body a:hover{color:var(--blue);}
-/* FOOTER */
-.footer{background:var(--dark);padding:64px 0 32px;}
-.footer-top-hook{background:var(--navy);padding:32px 0;}
-.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
-.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
-.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
-.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
-.footer-links{display:flex;flex-direction:column;gap:8px;}
-.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
-.footer-links a:hover{color:var(--white);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
-.social-links{display:flex;gap:12px;}
-.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
-.social-link:hover{background:var(--navy);}
-.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
-.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:.1s;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition)}
+.mobile-nav-close svg{width:18px;height:18px}
+.legal-section{padding:96px 0;background:var(--white)}
+.legal-body{max-width:760px;margin:0 auto}
+.legal-body p{font-size:16px;line-height:1.8;margin-bottom:20px}
+.legal-body h3{border-top:1px solid rgba(0,63,115,.08);padding-top:32px;margin-top:40px;margin-bottom:16px}
+.legal-body ul{margin-bottom:20px;padding-left:0}
+.legal-body ul li{position:relative;padding-left:20px;font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:8px}
+.legal-body ul li::before{content:'–';position:absolute;left:0;color:var(--muted)}
+.legal-body a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.legal-body a:hover{color:var(--muted)}
+.footer-top-hook{background:var(--navy);padding:32px 0}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-hook-text h4{color:var(--white);font-size:20px;margin-bottom:4px}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6)}
+@media(max-width:768px){.footer-top-hook .container{flex-direction:column;text-align:center}}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-v2-32.png">
 <link rel="apple-touch-icon" href="/assets/favicon-v2-180.png">
@@ -164,8 +73,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
-        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <a href="https://app.fotofinish.com/login" class="nav-login">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary btn-sm">Start free trial</a>
         <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -173,7 +82,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 </nav>
 
 <!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+<div class="mobile-nav-overlay on-navy" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="mobile-nav-header">
     <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
@@ -200,13 +109,13 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
   </nav>
   <div class="mobile-nav-footer">
-    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Free Trial</a>
+    <a href="https://app.fotofinish.com/login" class="btn btn-secondary">Log in</a>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-primary">Start free trial</a>
   </div>
 </div>
 
 
-<section class="page-hero" aria-label="Privacy Policy hero">
+<section class="page-hero on-navy" aria-label="Privacy Policy hero">
   <div class="container">
     <div class="page-hero-inner">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -214,32 +123,32 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <span aria-hidden="true">/</span>
         <span aria-current="page">Privacy Policy</span>
       </nav>
-      <h1 class="reveal">Privacy Policy</h1>
-      <p class="reveal reveal-delay-1">Last updated: August 29, 2026</p>
+      <h1>Privacy policy</h1>
+      <p>Last updated: August 29, 2026</p>
     </div>
   </div>
 </section>
 
 <section class="legal-section" aria-labelledby="privacy-heading">
   <div class="container">
-    <div class="legal-body reveal">
+    <div class="legal-body">
 
       <p>Your privacy matters to us. This policy explains how Modern Cleaning Concept LP ("FotoFinish," "we," "us," or "our") collects, uses, discloses, and protects personal information in connection with the FotoFinish mobile application and web platform (collectively, the "Service").</p>
 
-      <h3 id="privacy-consent">1. Your Consent</h3>
+      <h3 id="privacy-consent">1. Your consent</h3>
       <p>By using the Service, you consent to the collection and use of your information as described in this policy. You may withdraw consent at any time by contacting us, but doing so may limit your ability to use certain features.</p>
 
-      <h3 id="privacy-bci">2. What Is Business Contact Information?</h3>
+      <h3 id="privacy-bci">2. What is business contact information?</h3>
       <p>Business contact information includes details that identify you in a professional context: your work email, job title, company name, and business address. To the extent permitted by law, this includes publicly listed business contact details.</p>
 
-      <h3 id="privacy-collect">3. What Information We Collect</h3>
+      <h3 id="privacy-collect">3. What information we collect</h3>
       <p><strong>a. Information You Provide:</strong> name, email address, phone number, password, payment information (for paid plans), business details, photos uploaded through the app, and any correspondence with us.</p>
       <p><strong>b. Automatically Collected Information:</strong> device type, unique device ID, IP address, operating system, browser type, and usage data. Some of this is non-personal and treated accordingly.</p>
       <p><strong>c. Location Data:</strong> If your organization uses attendance features, the mobile app collects precise device location, including while the app is running in the background, in order to record when you arrive at and leave the sites assigned to you. This location information forms part of the attendance record visible to administrators at the organization you work for. We also use location to determine your general area and to support site-proximity features.</p>
       <p>You can turn off location access at any time in your device settings. Attendance features will not work without it, and the organization you work for may require it as a condition of using the Service.</p>
       <p>If you provide us personal information about another person (for example, when creating accounts for your team), you are responsible for being authorized to do so.</p>
 
-      <h3 id="privacy-use">4. How We Use Your Information</h3>
+      <h3 id="privacy-use">4. How we use your information</h3>
       <p>We use your information to:</p>
       <ul>
         <li>Provide and improve the Service</li>
@@ -251,7 +160,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <li>Protect our legal rights and prevent fraud</li>
       </ul>
 
-      <h3 id="privacy-share">5. How We Share Your Information</h3>
+      <h3 id="privacy-share">5. How we share your information</h3>
       <p>We do not sell your information. We share it only:</p>
       <ul>
         <li>As required by law</li>
@@ -261,7 +170,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <li>With your explicit consent</li>
       </ul>
 
-      <h3 id="privacy-providers">5a. Service Providers We Use</h3>
+      <h3 id="privacy-providers">5a. Service providers we use</h3>
       <p>We share information with a small number of providers who process it on our behalf, under contract and only on our instructions. They are bound by confidentiality and have no independent right to use your information.</p>
       <ul>
         <li><strong>Google (Firebase)</strong> &mdash; app infrastructure, push notifications, usage analytics, and crash diagnostics</li>
@@ -273,28 +182,28 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       </ul>
       <p>Providers used for automated and AI-assisted features are described in "Automated Processing and AI" below.</p>
 
-      <h3 id="privacy-ai">6. Automated Processing and AI</h3>
+      <h3 id="privacy-ai">6. Automated processing and AI</h3>
       <p>The Service may include automated, AI-assisted analysis of photos and related submission data, such as comparing submitted photos against reference standards, drafting evaluation feedback, and generating report summaries.</p>
       <p>To provide these features, we may use a small number of specialized AI infrastructure providers. They act only on our instructions as service providers: they are bound by confidentiality, have no independent right to use your information, are prohibited from using it to train AI models, and may not retain it beyond what is needed to process each request.</p>
       <p>We never use your identifiable content, including photos, to train AI or machine-learning models, and we do not permit our service providers to do so. Automated analysis processes your organization's data on its own; we do not combine it with other customers' data. Aggregated or anonymized data that does not identify you or your organization may be used to improve our services and produce industry insights (see "Non-Personal Information" below). Customers may separately opt in, by written agreement, to future AI training or data-partnership programs.</p>
       <p>Questions about automated features: <a href="mailto:privacy@fotofinish.com">privacy@fotofinish.com</a>.</p>
 
-      <h3 id="privacy-optout">7. Your Opt-Out Rights</h3>
+      <h3 id="privacy-optout">7. Your opt-out rights</h3>
       <p>You can stop all data collection by uninstalling the app. To request data deletion or to opt out of marketing communications, email <a href="mailto:privacy@fotofinish.com">privacy@fotofinish.com</a>.</p>
 
-      <h3 id="privacy-retention">8. Data Retention</h3>
+      <h3 id="privacy-retention">8. Data retention</h3>
       <p>We retain personal data for as long as your account is active and as needed to comply with legal obligations. All platform data (logs, photos, reports) is permanently deleted within 3 months of subscription cancellation. This deletion extends to any copies held by our service providers.</p>
 
-      <h3 id="privacy-transfers">9. International Data Transfers</h3>
+      <h3 id="privacy-transfers">9. International data transfers</h3>
       <p>Your data may be processed in Canada, the United States, or other countries. By using the Service, you consent to these transfers.</p>
 
-      <h3 id="privacy-accuracy">10. Data Accuracy</h3>
+      <h3 id="privacy-accuracy">10. Data accuracy</h3>
       <p>Please keep your information up to date. Notify us of changes at <a href="mailto:privacy@fotofinish.com">privacy@fotofinish.com</a>.</p>
 
-      <h3 id="privacy-nonpersonal">11. Non-Personal Information</h3>
+      <h3 id="privacy-nonpersonal">11. Non-personal information</h3>
       <p>Aggregated or anonymized data may be used for any business purpose, including improving our services and producing industry insights, and is not subject to this policy.</p>
 
-      <h3 id="privacy-thirdparty">12. Third-Party Links</h3>
+      <h3 id="privacy-thirdparty">12. Third-party links</h3>
       <p>The Service may link to third-party sites or tools. We are not responsible for their privacy practices. Review their policies before engaging.</p>
 
       <h3 id="privacy-children">13. Children</h3>
@@ -303,7 +212,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       <h3 id="privacy-security">14. Security</h3>
       <p>We use physical, electronic, and administrative safeguards to protect your information. However, no system is completely secure.</p>
 
-      <h3 id="privacy-changes">15. Changes to This Policy</h3>
+      <h3 id="privacy-changes">15. Changes to this policy</h3>
       <p>We may update this policy and will notify you by posting the updated version here and, for material changes, by email. Continued use of the Service constitutes acceptance.</p>
 
       <h3 id="privacy-contact">16. Contact</h3>
@@ -313,23 +222,14 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   </div>
 </section>
 
-<div class="footer-top-hook">
-  <div class="container">
-    <div class="footer-hook-text">
-      <h4>Stop guessing. Start verifying.</h4>
-      <p>10-day free trial · No credit card · Cancel anytime</p>
-    </div>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
-  </div>
-</div>
-<footer class="footer" aria-label="Site footer">
+<footer class="footer on-navy" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Company</h5>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>
@@ -339,7 +239,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Legal</h5>
         <ul class="footer-links" role="list">
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -355,7 +255,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
         <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
-        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#002B4E"/></svg></a>
       </div>
     </div>
   </div>
@@ -364,8 +264,6 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
 window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
-const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 
 // ── MOBILE NAV OVERLAY ───────────────────────────────────
 (function(){

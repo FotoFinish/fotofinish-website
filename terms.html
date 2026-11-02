@@ -5,120 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service | FotoFinish</title>
 <meta name="robots" content="noindex, nofollow">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/site.css">
 <style>
-:root{--navy:#003F73;--blue:#75BEE9;--yellow:#FBF49B;--gray:#555555;--dark:#1A2B3C;--cloud:#F2F5F9;--white:#FFFFFF;--shadow:0 4px 24px rgba(0,63,115,.10);--shadow-lg:0 12px 48px rgba(0,63,115,.16);--radius:12px;--transition:.22s cubic-bezier(.4,0,.2,1);}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important;}.reveal{opacity:1!important;transform:none!important;}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Plus Jakarta Sans',Arial,sans-serif;font-size:16px;line-height:1.6;color:var(--gray);background:var(--white);}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-ul{list-style:none;}
-h1{font-family:'Plus Jakarta Sans',Arial;font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1.08;color:var(--navy);}
-h2{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(26px,3.5vw,42px);line-height:1.1;color:var(--navy);}
-h3{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:clamp(18px,2.2vw,24px);line-height:1.2;color:var(--navy);}
-h4{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:20px;color:var(--navy);}
-p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-height:1.65;color:var(--gray);}
-.label{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;}
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:15px;letter-spacing:.3px;border-radius:8px;padding:14px 28px;border:2px solid transparent;cursor:pointer;transition:background var(--transition),color var(--transition),transform var(--transition),box-shadow var(--transition);white-space:nowrap;}
-.btn:hover{transform:translateY(-2px);}
-.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;}
-.btn-primary{background:var(--navy);color:var(--white);border-color:var(--navy);}
-.btn-primary:hover{background:var(--dark);border-color:var(--dark);box-shadow:var(--shadow-lg);}
-.btn-yellow{background:var(--yellow);color:var(--navy);border-color:var(--yellow);}
-.btn-yellow:hover{background:#f5ed80;box-shadow:0 8px 24px rgba(251,244,155,.5);}
-.btn-ghost{background:rgba(255,255,255,.12);color:var(--white);border-color:rgba(255,255,255,.3);}
-.btn-ghost:hover{background:rgba(255,255,255,.22);}
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background var(--transition),box-shadow var(--transition);}
-.nav.scrolled{background:var(--white);box-shadow:0 1px 24px rgba(0,63,115,.10);}
-.nav.scrolled .nav-link{color:var(--navy);}
-.nav.scrolled .nav-logo-img{filter:none;}
-.nav-inner{display:flex;align-items:center;height:72px;gap:0;}
-.nav-logo{display:flex;align-items:center;flex-shrink:0;}
-.nav-logo-img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter var(--transition);}
-.nav-links{display:flex;align-items:center;gap:4px;margin-left:40px;}
-.nav-link{font-weight:600;font-size:15px;color:rgba(255,255,255,.9);padding:8px 14px;border-radius:6px;transition:color var(--transition),background var(--transition);position:relative;display:flex;align-items:center;gap:5px;}
-.nav-link:hover{color:var(--white);background:rgba(255,255,255,.1);}
-.nav.scrolled .nav-link:hover{color:var(--navy);background:var(--cloud);}
-.nav-chevron{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--transition);}
-.nav-dropdown{position:relative;}
-.nav-dropdown:hover .nav-chevron{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:100%;left:0;background:var(--white);border:1px solid rgba(0,63,115,.1);border-radius:var(--radius);box-shadow:var(--shadow-lg);min-width:180px;padding:8px;opacity:0;pointer-events:none;transform:translateY(6px);transition:opacity var(--transition),transform var(--transition);}
-.nav-dropdown:hover .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateY(0);}
-.nav-dropdown-menu a{display:block;padding:9px 14px;font-size:14px;font-weight:600;color:var(--navy);border-radius:6px;transition:background var(--transition);}
-.nav-dropdown-menu a:hover{background:var(--cloud);}
-.nav-right{display:flex;align-items:center;gap:10px;margin-left:auto;}
-.hamburger{display:none;flex-direction:column;gap:5px;padding:8px;cursor:pointer;background:none;border:none;}
-.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition);}
-/* ── MOBILE NAV OVERLAY ─────────────────────────────────── */
-.mobile-nav-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--navy);flex-direction:column;overflow-y:auto;transform:translateX(100%);transition:transform .32s cubic-bezier(.4,0,.2,1);}
-.mobile-nav-overlay.open{display:flex;transform:translateX(0);}
-.mobile-nav-header{display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:72px;flex-shrink:0;border-bottom:1px solid rgba(255,255,255,.1);}
-.mobile-nav-logo{height:30px;width:auto;object-fit:contain;}
-.mobile-nav-close{width:40px;height:40px;border-radius:10px;border:none;background:rgba(255,255,255,.12);color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;}
-.mobile-nav-close:hover{background:rgba(255,255,255,.22);}
-.mobile-nav-close svg{width:18px;height:18px;}
-.mobile-nav-body{flex:1;padding:12px 0 20px;}
-.mobile-nav-item{border-bottom:1px solid rgba(255,255,255,.07);}
-.mobile-nav-link{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;font-family:'Plus Jakarta Sans',Arial;font-size:17px;font-weight:700;color:#fff;text-decoration:none;cursor:pointer;background:none;border:none;width:100%;text-align:left;transition:background .15s;}
-.mobile-nav-link:hover{background:rgba(255,255,255,.06);}
-.mobile-nav-chevron{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .22s;flex-shrink:0;}
-.mobile-nav-item.open .mobile-nav-chevron{transform:rotate(180deg);}
-.mobile-nav-sub{display:none;background:rgba(0,0,0,.2);padding:4px 0 8px;}
-.mobile-nav-item.open .mobile-nav-sub{display:block;}
-.mobile-nav-sub a{display:block;padding:11px 24px 11px 40px;font-family:'Plus Jakarta Sans',Arial;font-size:15px;font-weight:600;color:rgba(255,255,255,.75);text-decoration:none;transition:color .15s,background .15s;}
-.mobile-nav-sub a:hover{color:#fff;background:rgba(255,255,255,.05);}
-.mobile-nav-footer{padding:20px 20px 32px;display:flex;flex-direction:column;gap:10px;border-top:1px solid rgba(255,255,255,.1);}
-.mobile-nav-footer .btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;font-size:15px;border-radius:10px;}
-@media(max-width:900px){.hamburger{display:flex;color:var(--white);}.nav.scrolled .hamburger{color:var(--navy);}.nav-right .btn{display:none;}.nav-links{display:none !important;}}
-/* PAGE HERO */
-.page-hero{min-height:380px;background:linear-gradient(135deg,var(--navy) 0%,#005599 60%,#0070BB 100%);display:flex;align-items:center;padding:120px 0 80px;position:relative;overflow:hidden;}
-.page-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 70% 40%,rgba(117,190,233,.18) 0%,transparent 60%),radial-gradient(circle at 20% 80%,rgba(251,244,155,.08) 0%,transparent 40%);pointer-events:none;}
-.page-hero-inner{max-width:700px;}
-.page-hero .breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;}
-.page-hero .breadcrumb a{color:rgba(255,255,255,.6);transition:color var(--transition);}
-.page-hero .breadcrumb a:hover{color:var(--white);}
-.page-hero .breadcrumb span{color:rgba(255,255,255,.4);}
-.page-hero h1{color:var(--white);margin-bottom:16px;}
-.page-hero p{font-size:18px;color:rgba(255,255,255,.8);max-width:560px;}
-/* LEGAL CONTENT */
-.legal-section{padding:96px 0;background:var(--white);}
-.legal-body{max-width:760px;margin:0 auto;}
-.legal-body p{font-size:16px;line-height:1.8;margin-bottom:20px;}
-.legal-body h3{border-top:1px solid rgba(0,63,115,.08);padding-top:32px;margin-top:40px;margin-bottom:16px;}
-.legal-body ul{margin-bottom:20px;padding-left:0;}
-.legal-body ul li{position:relative;padding-left:20px;font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:8px;}
-.legal-body ul li::before{content:'–';position:absolute;left:0;color:var(--blue);}
-.legal-body a{color:var(--navy);text-decoration:underline;text-underline-offset:3px;}
-.legal-body a:hover{color:var(--blue);}
-.legal-copyright{margin-top:48px;padding-top:32px;border-top:1px solid rgba(0,63,115,.08);font-size:14px;color:rgba(0,63,115,.45);}
-/* FOOTER */
-.footer{background:var(--dark);padding:64px 0 32px;}
-.footer-top-hook{background:var(--navy);padding:32px 0;}
-.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.footer-hook-text h4{color:var(--white);font-size:18px;margin-bottom:4px;}
-.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px;}
-.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;margin-bottom:48px;padding-top:48px;}
-.footer-brand p{font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;max-width:280px;}
-.footer-col h5{font-family:'Plus Jakarta Sans',Arial;font-weight:700;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px;}
-.footer-links{display:flex;flex-direction:column;gap:8px;}
-.footer-links a{font-size:14px;color:rgba(255,255,255,.6);transition:color var(--transition);}
-.footer-links a:hover{color:var(--white);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
-.footer-bottom p{font-size:13px;color:rgba(255,255,255,.35);}
-.social-links{display:flex;gap:12px;}
-.social-link{width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background var(--transition);}
-.social-link:hover{background:var(--navy);}
-.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6);}
-.footer-logo-img{height:32px;filter:brightness(0) invert(1);opacity:.85;}
-@media(max-width:768px){.footer-grid{grid-template-columns:1fr;gap:32px;}.footer-bottom{flex-direction:column;text-align:center;}.footer-top-hook .container{flex-direction:column;text-align:center;}}
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .6s cubic-bezier(.4,0,.2,1),transform .6s cubic-bezier(.4,0,.2,1);}
-.reveal.visible{opacity:1;transform:none;}
-.reveal-delay-1{transition-delay:.1s;}
+.hamburger span{width:22px;height:2px;background:currentColor;display:block;transition:transform var(--transition)}
+.mobile-nav-close svg{width:18px;height:18px}
+.legal-section{padding:96px 0;background:var(--white)}
+.legal-body{max-width:760px;margin:0 auto}
+.legal-body p{font-size:16px;line-height:1.8;margin-bottom:20px}
+.legal-body h3{border-top:1px solid rgba(0,63,115,.08);padding-top:32px;margin-top:40px;margin-bottom:16px}
+.legal-body ul{margin-bottom:20px;padding-left:0}
+.legal-body ul li{position:relative;padding-left:20px;font-size:16px;line-height:1.8;color:var(--gray);margin-bottom:8px}
+.legal-body ul li::before{content:'–';position:absolute;left:0;color:var(--muted)}
+.legal-body a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.legal-body a:hover{color:var(--muted)}
+.legal-copyright{margin-top:48px;padding-top:32px;border-top:1px solid rgba(0,63,115,.08);font-size:14px;color:var(--muted)}
+.footer-top-hook{background:var(--navy);padding:32px 0}
+.footer-top-hook .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.footer-hook-text h4{color:var(--white);font-size:20px;margin-bottom:4px}
+.footer-hook-text p{color:rgba(255,255,255,.6);font-size:14px}
+.social-link svg{width:16px;height:16px;fill:rgba(255,255,255,.6)}
+@media(max-width:768px){.footer-top-hook .container{flex-direction:column;text-align:center}}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-v2-32.png">
 <link rel="apple-touch-icon" href="/assets/favicon-v2-180.png">
@@ -165,8 +74,8 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         </li>
       </ul>
       <div class="nav-right">
-        <a href="https://app.fotofinish.com/login" class="btn btn-ghost" style="padding:10px 20px;font-size:14px;">Log in</a>
-        <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow" style="padding:10px 20px;font-size:14px;">Start Free Trial</a>
+        <a href="https://app.fotofinish.com/login" class="nav-login">Log in</a>
+        <a href="https://app.fotofinish.com/subscription" class="btn btn-primary btn-sm">Start free trial</a>
         <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
       </div>
     </div>
@@ -174,7 +83,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 </nav>
 
 <!-- ── MOBILE NAV OVERLAY ───────────────────────────────── -->
-<div class="mobile-nav-overlay" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
+<div class="mobile-nav-overlay on-navy" id="mobileNav" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <div class="mobile-nav-header">
     <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="mobile-nav-logo">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">
@@ -201,13 +110,13 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
     </div>
   </nav>
   <div class="mobile-nav-footer">
-    <a href="https://app.fotofinish.com/login" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.4);">Log in</a>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Free Trial</a>
+    <a href="https://app.fotofinish.com/login" class="btn btn-secondary">Log in</a>
+    <a href="https://app.fotofinish.com/subscription" class="btn btn-primary">Start free trial</a>
   </div>
 </div>
 
 
-<section class="page-hero" aria-label="Terms of Service hero">
+<section class="page-hero on-navy" aria-label="Terms of Service hero">
   <div class="container">
     <div class="page-hero-inner">
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -215,22 +124,22 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <span aria-hidden="true">/</span>
         <span aria-current="page">Terms of Service</span>
       </nav>
-      <h1 class="reveal">Terms of Service</h1>
-      <p class="reveal reveal-delay-1">Effective date: August 9, 2026. Operated by Modern Cleaning Concept LP.</p>
+      <h1>Terms of service</h1>
+      <p>Effective date: August 9, 2026. Operated by Modern Cleaning Concept LP.</p>
     </div>
   </div>
 </section>
 
 <section class="legal-section" aria-labelledby="terms-heading">
   <div class="container">
-    <div class="legal-body reveal">
+    <div class="legal-body">
 
       <p>Please read these Terms of Service carefully before using the FotoFinish application or website. By accessing or using the Service, you agree to be bound by these terms. If you do not agree, do not use the Service. If you do not agree with these terms, or with any future update to them, your remedy is to stop using the Service and, if you are a subscriber, cancel your subscription.</p>
 
       <h3 id="terms-eligibility">1. Eligibility</h3>
       <p>You must be at least 13 years old to use the Service. By using it, you represent that you meet this requirement.</p>
 
-      <h3 id="terms-acceptable-use">2. Acceptable Use</h3>
+      <h3 id="terms-acceptable-use">2. Acceptable use</h3>
       <p>You agree not to:</p>
       <ul>
         <li>Use the Service for unlawful purposes</li>
@@ -243,40 +152,40 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       </ul>
       <p>Violations may result in immediate account termination.</p>
 
-      <h3 id="terms-general">3. General Conditions</h3>
+      <h3 id="terms-general">3. General conditions</h3>
       <p>FotoFinish reserves the right to refuse service to anyone at any time. Your content may be transmitted across networks and, while payment information is always encrypted, you acknowledge this inherent nature of internet communication. You may not reproduce or resell any part of the Service without written permission.</p>
 
-      <h3 id="terms-ip">4. Intellectual Property</h3>
+      <h3 id="terms-ip">4. Intellectual property</h3>
       <p>All content, software, and technology within the Service belong to FotoFinish or are used under license. You receive a limited, non-exclusive, non-transferable license to use the Service during your subscription. You may not decompile, reverse engineer, modify, create derivative works, sublicense, or use the Service to build a competing product.</p>
 
-      <h3 id="terms-your-content">5. Your Content</h3>
+      <h3 id="terms-your-content">5. Your content</h3>
       <p>You retain ownership of content you upload. By uploading, you grant FotoFinish a limited, non-exclusive license to host and process your content solely to provide the Service, including through the automated and AI-assisted analysis described in Section 6. FotoFinish treats your content as confidential and will not share it with anyone except the service providers described in our <a href="privacy-policy.html">Privacy Policy</a> (who are bound by confidentiality and may not use your content for any purpose of their own) or with your approval. We never use your identifiable content, including photos, to train AI or machine-learning models.</p>
 
-      <h3 id="terms-ai">6. Automated and AI-Assisted Features</h3>
+      <h3 id="terms-ai">6. Automated and AI-assisted features</h3>
       <p>The Service may include automated features, including AI-assisted analysis of photos and related submission data, such as comparing submitted photos against reference standards, drafting evaluation feedback, generating report summaries, and detecting photo-quality issues. Automated analysis operates alongside human review; FotoFinish determines the appropriate combination of automated and human review for each feature. Automated outputs may contain errors and are covered by the Disclaimer of Warranties below. Our service providers for automated processing, and the rules that bind them, are described in our <a href="privacy-policy.html">Privacy Policy</a>. We never use your identifiable content, including photos, to train AI or machine-learning models, and we do not permit our service providers to do so. Aggregated or anonymized data that does not identify you or your organization may be used to improve our services and produce industry insights, as described in our Privacy Policy. Customers may separately opt in, by written agreement, to future AI training or data-partnership programs.</p>
 
-      <h3 id="terms-billing">7. Subscriptions and Billing</h3>
+      <h3 id="terms-billing">7. Subscriptions and billing</h3>
       <p>Subscriptions are billed in advance on a monthly or annual basis. Applicable taxes are calculated based on your account information. Trial periods convert automatically to paid subscriptions at the end of the trial.</p>
 
-      <h3 id="terms-pricing">8. Pricing Changes</h3>
+      <h3 id="terms-pricing">8. Pricing changes</h3>
       <p>Prices may change at the start of your next billing period. Continued use constitutes acceptance. You may cancel before the change takes effect to avoid the new pricing.</p>
 
-      <h3 id="terms-renewals">9. Renewals and Cancellations</h3>
+      <h3 id="terms-renewals">9. Renewals and cancellations</h3>
       <p>Subscriptions renew automatically unless canceled before expiration. Enterprise clients should refer to their service contracts.</p>
 
-      <h3 id="terms-third-party-tools">10. Third-Party Tools</h3>
+      <h3 id="terms-third-party-tools">10. Third-party tools</h3>
       <p>FotoFinish may provide access to third-party tools on an "as is" basis. We do not monitor or endorse these tools and accept no liability for their use.</p>
 
-      <h3 id="terms-third-party-links">11. Third-Party Links</h3>
+      <h3 id="terms-third-party-links">11. Third-party links</h3>
       <p>The Service may link to third-party content. FotoFinish is not responsible for third-party materials and provides no warranties regarding them.</p>
 
-      <h3 id="terms-submissions">12. User Submissions</h3>
+      <h3 id="terms-submissions">12. User submissions</h3>
       <p>Feedback, ideas, or suggestions you submit may be used by FotoFinish without restriction or compensation. You are responsible for the accuracy of any content you submit.</p>
 
-      <h3 id="terms-errors">13. Errors and Corrections</h3>
+      <h3 id="terms-errors">13. Errors and corrections</h3>
       <p>FotoFinish may correct errors in the Service at any time without obligation to notify users, except as required by law.</p>
 
-      <h3 id="terms-prohibited">14. Prohibited Uses</h3>
+      <h3 id="terms-prohibited">14. Prohibited uses</h3>
       <p>The following are strictly prohibited when using the Service:</p>
       <ul>
         <li>Any unlawful, fraudulent, or harmful purpose</li>
@@ -287,10 +196,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <li>Any action that disrupts, damages, or overburdens the Service infrastructure</li>
       </ul>
 
-      <h3 id="terms-warranty">15. Disclaimer of Warranties</h3>
+      <h3 id="terms-warranty">15. Disclaimer of warranties</h3>
       <p>The Service is provided "as is" and "as available." FotoFinish makes no warranties about uptime, accuracy, or fitness for a particular purpose. We may suspend or discontinue the Service at any time without notice. All outputs of the Service, including automated and AI-assisted analysis, support your organization's internal accountability workflows and do not constitute professional advice. You are solely responsible for decisions made or actions taken based on the Service and its outputs.</p>
 
-      <h3 id="terms-liability">16. Limitation of Liability</h3>
+      <h3 id="terms-liability">16. Limitation of liability</h3>
       <p>To the maximum extent permitted by applicable law: (a) Modern Cleaning Concept LP and its directors, officers, employees, affiliates, agents, contractors, suppliers, service providers, and licensors are not liable for any indirect, incidental, special, punitive, or consequential damages of any kind (including lost profits, lost revenue, lost savings, lost data, replacement costs, or business interruption) arising from or related to your use of, or inability to use, the Service, whether based in contract, tort (including negligence), strict liability, or otherwise, even if advised of the possibility of such damages; (b) FotoFinish's total aggregate liability for all claims arising from or related to the Service is limited to the amounts you paid for the Service in the three months immediately preceding the event giving rise to the claim; and (c) your sole and exclusive remedy for any dissatisfaction with the Service or disagreement with these terms is to stop using the Service and cancel your subscription. Some jurisdictions do not allow certain exclusions or limitations of liability; in those jurisdictions, our liability is limited to the maximum extent permitted by law.</p>
 
       <h3 id="terms-indemnification">17. Indemnification</h3>
@@ -299,10 +208,10 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
       <h3 id="terms-termination">18. Termination</h3>
       <p>Either party may terminate these terms at any time. FotoFinish may terminate immediately for non-compliance. Obligations incurred before termination survive.</p>
 
-      <h3 id="terms-disputes">19. Dispute Resolution</h3>
+      <h3 id="terms-disputes">19. Dispute resolution</h3>
       <p>Disputes should first be resolved through informal negotiation by contacting <a href="mailto:legal@fotofinish.com">legal@fotofinish.com</a>. If unresolved, the parties agree to mediation and, if needed, binding arbitration in Quebec under Quebec and Canadian law. Disputes are resolved individually, not as class actions.</p>
 
-      <h3 id="terms-changes">20. Changes to These Terms</h3>
+      <h3 id="terms-changes">20. Changes to these terms</h3>
       <p>We reserve the right to update these terms. Continued use after changes constitutes acceptance. If we make material changes, we will also notify account administrators by email. If you do not agree with an update, stop using the Service and cancel your subscription.</p>
 
       <h3 id="terms-general-provisions">21. General</h3>
@@ -317,23 +226,14 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
   </div>
 </section>
 
-<div class="footer-top-hook">
-  <div class="container">
-    <div class="footer-hook-text">
-      <h4>Stop guessing. Start verifying.</h4>
-      <p>10-day free trial · No credit card · Cancel anytime</p>
-    </div>
-    <a href="https://app.fotofinish.com/subscription" class="btn btn-yellow">Start Saving Today &rarr;</a>
-  </div>
-</div>
-<footer class="footer" aria-label="Site footer">
+<footer class="footer on-navy" aria-label="Site footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png" alt="FotoFinish" class="footer-logo-img" loading="lazy">
         <p>Software for multi-site operators that drives accountability through photo validation of work execution.</p>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Company</h5>
         <ul class="footer-links" role="list">
           <li><a href="/">Home</a></li>
@@ -343,7 +243,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
           <li><a href="about.html">About Us</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h5>Legal</h5>
         <ul class="footer-links" role="list">
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
@@ -359,7 +259,7 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
         <a href="https://www.linkedin.com/company/fotofinish-app/" class="social-link" aria-label="FotoFinish on LinkedIn"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
         <a href="https://twitter.com/FotoFinishApp" class="social-link" aria-label="FotoFinish on X (Twitter)"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
         <a href="https://www.instagram.com/fotofinishapp/" class="social-link" aria-label="FotoFinish on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="rgba(255,255,255,.6)"/></svg></a>
-        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1A2B3C"/></svg></a>
+        <a href="https://www.youtube.com/@fotofinishapp" class="social-link" aria-label="FotoFinish on YouTube"><svg viewBox="0 0 24 24" fill="rgba(255,255,255,.6)" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#002B4E"/></svg></a>
       </div>
     </div>
   </div>
@@ -368,8 +268,6 @@ p{font-family:'Plus Jakarta Sans',Arial;font-weight:400;font-size:16px;line-heig
 <script>
 const nav=document.getElementById('mainNav');const navLogo=document.getElementById('navLogo');
 window.addEventListener('scroll',()=>{if(window.scrollY>60){nav.classList.add('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColor.png';}else{nav.classList.remove('scrolled');navLogo.src='assets/logos-brand/FotoFinish_HorizontalLogo_FullColorWhite.png';}},{passive:true});
-const prefersReducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(!prefersReducedMotion){const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
 
 // ── MOBILE NAV OVERLAY ───────────────────────────────────
 (function(){
